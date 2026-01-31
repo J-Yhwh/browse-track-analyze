@@ -1,6 +1,5 @@
-# README #
 
-# **CONCEPT** #
+# CONCEPT #
 A tool that collects browser-cookie data, stores it in DB/CSV, performs it in Exploratory Data Analytics(EDA) to uncover common behavioural patterns(e.g. browser-tracking/spying, advertissents, domain-stalking,etc), and applies ML pipelines, such as clustering tracker type by behvioural and performace metrics, or predicting invasives ones, by potential and/or actual chracteristics. 
 
 
@@ -26,10 +25,11 @@ This repository aims to build a powerful, Python-based browser cookie-tracking a
 
 
 ### Contribution guidelines ###
-
+```
 * Writing tests
 * Code review
 * Other guidelines
+```
 
 ### Who do I talk to? ###
 

@@ -1,6 +1,7 @@
 # README #
 
-**CONCEPT**: A tool that collects browser-cookie data, stores it in DB/CSV, performs it in Exploratory Data Analytics(EDA) to uncover common behavioural patterns(e.g. browser-tracking/spying, advertissents, domain-stalking,etc), and applies ML pipelines, such as clustering tracker type by behvioural and performace metrics, or predicting invasives ones, by potential and/or actual chracteristics. 
+# **CONCEPT** #
+A tool that collects browser-cookie data, stores it in DB/CSV, performs it in Exploratory Data Analytics(EDA) to uncover common behavioural patterns(e.g. browser-tracking/spying, advertissents, domain-stalking,etc), and applies ML pipelines, such as clustering tracker type by behvioural and performace metrics, or predicting invasives ones, by potential and/or actual chracteristics. 
 
 
 ### What is this repository for? ###

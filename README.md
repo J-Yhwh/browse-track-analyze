@@ -15,7 +15,7 @@ CONCEPT: A tool that collects browser-cookie data, stores it in DB/CSV, performs
 
 * Summary of set up
 * Configuration
-* Dependencies
+* Dependencies 
 * Database configuration
 * How to run tests
 * Deployment instructions

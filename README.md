@@ -5,12 +5,14 @@ CONCEPT: A tool that collects browser-cookie data, stores it in DB/CSV, performs
 
 ### What is this repository for? ###
 
-* This repository aims to build a powerful, Python-based browser cookie-tracking analytics tool, to study the extent of invasive behaviour and potential of exploitation for more sinister means such as surreptiious data-harvesting or web-scraping, by browser cookies.  It is intended to build awareness on the sheer volume of website trackers and spyware we deal with on a daily basis simply by being online. The results are compiled into a report, which is then further refined by ML pipelines categorizing tracker by cookie type, behaviour, and prediction by the extent of invasiveness. 
+This repository aims to build a powerful, Python-based browser cookie-tracking analytics tool, to study the extent of invasive behaviour and potential of exploitation for more sinister means such as surreptiious data-harvesting or web-scraping, by browser cookies.  It is intended to build awareness on the sheer volume of website trackers and spyware we deal with on a daily basis simply by being online. The results are compiled into a report, which is then further refined by ML pipelines categorizing tracker by cookie type, behaviour, and prediction by the extent of invasiveness. 
 
-* Version 0.0 - 0.1
+### Version 0.0 - 0.1 ###
 
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
 
+
+
+```
 ### How do I get set up? ###
 
 * Summary of set up
@@ -19,6 +21,8 @@ CONCEPT: A tool that collects browser-cookie data, stores it in DB/CSV, performs
 * Database configuration
 * How to run tests
 * Deployment instructions
+```
+
 
 ### Contribution guidelines ###
 

@@ -7,9 +7,19 @@ A tool that collects browser-cookie data, stores it in DB/CSV, performs it in Ex
 
 This repository aims to build a powerful, Python-based browser cookie-tracking analytics tool, to study the extent of invasive behaviour and potential of exploitation for more sinister means such as surreptiious data-harvesting or web-scraping, by browser cookies.  It is intended to build awareness on the sheer volume of website trackers and spyware we deal with on a daily basis simply by being online. The results are compiled into a report, which is then further refined by ML pipelines categorizing tracker by cookie type, behaviour, and prediction by the extent of invasiveness. 
 
+# 1. Browser Tracker Analyzer
+
+A privacy-focused Python tool that:
+
+- Collects browser cookie, storage, and tracker data across sessions and sites
+- Stores results in CSV or a lightweight database (SQLite)
+- Performs **Exploratory Data Analysis (EDA)** to uncover behavioural patterns (e.g., persistent cross-site tracking, advertising networks, domain stalking, fingerprinting)
+- Applies **machine learning pipelines** to:
+  - Cluster trackers by behavioural similarity and performance metrics
+  - Predict potentially invasive trackers based on characteristics (e.g., lifetime, third-party count, storage usage)
+
+Goal: Move beyond simple detection → understand and quantify how websites actually track users over time.
 ### Version 0.0 - 0.1 ###
-
-
 
 ```
 ### How do I get set up? ###

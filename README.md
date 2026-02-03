@@ -24,8 +24,6 @@ Goal: Move beyond simple detection → understand and quantify how websites actu
 ```
 ### How do I get set up? ###
 
-* Configurartion
-* Dependencies 
 
 * Database configuration
 * How to run tests
@@ -45,12 +43,21 @@ Goal: Move beyond simple detection → understand and quantify how websites actu
 
 ### Dependencies ###
 ```
-As listed in the file "requirements.txt".
+Please refer to the specified file "requirements.txt" for details.
+NOTE:  Adherence to the minimal version listed in the .txt guide is strongly recommended for the desired results or outcome.
+```
+
+### Database configuration ###
+
+
+### How to run tests ###
+
+
+### Deployment Instructions 
+
 
 ### Contribution guidelines ###
-```
-
-```
+``
 * Writing tests
 * Code review
 * Other guidelines

@@ -11,11 +11,10 @@ This repository aims to build a powerful, Python-based browser cookie-tracking a
 
 
 
-
 ```
 ### How do I get set up? ###
 
-* Summary of set up
+|---
 * Configuration
 * Dependencies 
 * Database configuration

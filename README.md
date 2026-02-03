@@ -23,7 +23,7 @@ This repository aims to build a powerful, Python-based browser cookie-tracking a
 ```
 
 ### * Configuration ###
-
+```
 ├── analyzer.py             # Main logi + CLI entry
 ├── trackers.py             # Tracker list parser + detection 
 ├── fingerprint.py          # Fingerprint detecttoin functions
@@ -31,7 +31,7 @@ This repository aims to build a powerful, Python-based browser cookie-tracking a
 ├── requirements.txt
 ├── README.md
 ├── tests/                  # Unit test results
-
+```
 
 
 ### Contribution guidelines ###

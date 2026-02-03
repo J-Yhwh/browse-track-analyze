@@ -26,23 +26,26 @@ Goal: Move beyond simple detection → understand and quantify how websites actu
 
 * Configurartion
 * Dependencies 
+
 * Database configuration
 * How to run tests
 * Deployment instructions
 
 ```
+# * Configuration #
 ```
-├── analyzer.py             # Main logi + CLI entry
+├── analyzer.py             # Main logic + CLI entry
 ├── trackers.py             # Tracker list parser + detection 
-├── fingerprint.py          # Fingerprint detecttoin functions
+├── fingerprint.py          # Fingerprint detecttion functions
 ├── report.py               # Report generation (JSON/CSV/HTML)
 ├── requirements.txt
 ├── README.md
 ├── tests/                  # Unit test results
 ```
 
-### * Dependencies ###
-
+# * Dependencies #
+```
+As listed in the file *requirements.txt*.
 
 ### Contribution guidelines ###
 ```

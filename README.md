@@ -14,13 +14,24 @@ This repository aims to build a powerful, Python-based browser cookie-tracking a
 ```
 ### How do I get set up? ###
 
-|---
 * Configuration
 * Dependencies 
 * Database configuration
 * How to run tests
 * Deployment instructions
+
 ```
+
+### * Configuration ###
+
+├── analyzer.py             # Main logi + CLI entry
+├── trackers.py             # Tracker list parser + detection 
+├── fingerprint.py          # Fingerprint detecttoin functions
+├── report.py               # Report generation (JSON/CSV/HTML)
+├── requirements.txt
+├── README.md
+├── tests/                  # Unit test results
+
 
 
 ### Contribution guidelines ###

@@ -32,7 +32,7 @@ Goal: Move beyond simple detection → understand and quantify how websites actu
 * Deployment instructions
 
 ```
-# * Configuration #
+###* Configuration ###
 ```
 ├── analyzer.py             # Main logic + CLI entry
 ├── trackers.py             # Tracker list parser + detection 
@@ -43,11 +43,12 @@ Goal: Move beyond simple detection → understand and quantify how websites actu
 ├── tests/                  # Unit test results
 ```
 
-# * Dependencies #
+###* Dependencies ###
 ```
-As listed in the file *requirements.txt*.
+As listed in the file _requirements.txt_ .
 
 ### Contribution guidelines ###
+
 ```
 * Writing tests
 * Code review

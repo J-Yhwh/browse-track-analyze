@@ -24,15 +24,13 @@ Goal: Move beyond simple detection → understand and quantify how websites actu
 ```
 ### How do I get set up? ###
 
-* Configuration
+* Configurartion
 * Dependencies 
 * Database configuration
 * How to run tests
 * Deployment instructions
 
 ```
-
-### * Configuration ###
 ```
 ├── analyzer.py             # Main logi + CLI entry
 ├── trackers.py             # Tracker list parser + detection 
@@ -42,6 +40,8 @@ Goal: Move beyond simple detection → understand and quantify how websites actu
 ├── README.md
 ├── tests/                  # Unit test results
 ```
+
+### * Dependencies ###
 
 
 ### Contribution guidelines ###

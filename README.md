@@ -34,7 +34,7 @@ browser-tracker-analyzer/
 ├── report.py               # Report generation (JSON/CSV/HTML)
 ├── requirements.txt
 ├── README.md
-└── tests/                  # Optional: Unit test results later
+  └── tests/                  # Optional: Unit test results later
 ```
 
 ### 2. Dependencies ###

@@ -24,9 +24,9 @@ Goal: Move beyond simple detection → understand and quantify how websites actu
 ```
 ### 5-STEP PROJECT STRUCTURE ###
 
-### 1. Configuration ###
-
 ```
+1. Configuration
+
 browser-tracker-analyzer/
 ├── analyzer.py           # Main logic + CLI entry
 ├── trackers.py           # Tracker list parser + detection
@@ -37,23 +37,28 @@ browser-tracker-analyzer/
 └── tests/                # Optional: unit tests later
 ```
 
-
-### 2. Dependencies ###
 ```
+2. Dependencies 
+
 Please refer to the specified file "requirements.txt" for details.
 NOTE:  Adherence to the minimal version listed in the .txt guide is strongly recommended for the desired results or outcome.
 ```
 
-### 3. Database configuration ###
+```
+3. Database configuration
+```
+
+```
+4. How to run tests 
+```
 
 
-### 4. How to run tests ###
+```
+5. Deployment Instructions 
+```
 
-
-### 5. Deployment Instructions ###
-
-
-### Contribution guidelines ###
+```
+6. Contribution guidelines
 ```
 * Writing tests
 * Code review

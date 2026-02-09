@@ -1,11 +1,12 @@
 
 # CONCEPT #
-A tool that collects browser-cookie data, stores it in DB/CSV, performs it in Exploratory Data Analytics(EDA) to uncover common behavioural patterns(e.g. browser-tracking/spying, advertissents, domain-stalking,etc), and applies ML pipelines, such as clustering tracker type by behvioural and performace metrics, or predicting invasives ones, by potential and/or actual chracteristics. 
+
+A tool that collects browser-cookie data, stores it in DB/CSV, performs it in Exploratory Data Analytics(EDA) to uncover common behavioural patterns (e.g. browser-tracking/spying, advertissents, domain-stalking,etc), and applies ML pipelines, such as clustering tracker types by behvioural and performance metrices, or predicting invasive ones, by potential and actual chracteristics. 
 
 
 ### What is this repository for? ###
 
-This repository aims to build a powerful, Python-based browser cookie-tracking analytics tool, to study the extent of invasive behaviour and potential of exploitation for more sinister means such as surreptiious data-harvesting or web-scraping, by browser cookies.  It is intended to build awareness on the sheer volume of website trackers and spyware we deal with on a daily basis simply by being online. The results are compiled into a report, which is then further refined by ML pipelines categorizing tracker by cookie type, behaviour, and prediction by the extent of invasiveness. 
+This repository aims to build a robust Python-based browser cookie-tracking analytics tool, to study the extent of invasive behaviour and potential for sinister exploitation such as surreptious data-harvesting, web-scraping et al, by browser cookies.  It is intended to build awareness on the sheer volume of website trackers and spyware users deal with on a daily basis simply by being online.  The results are compiled into reports, which are then further refined by ML pipelines categorizing tracker by cookie type, behaviour, and prediction by the extent of invasiveness, prevalance, and potential spyware/malware characteristics. 
 
 # 1. Browser Tracker Analyzer
 
@@ -19,7 +20,7 @@ A privacy-focused Python tool that:
   - Predict potentially invasive trackers based on characteristics (e.g., lifetime, third-party count, storage usage)
 
 Goal: Move beyond simple detection → understand and quantify how websites actually track users over time.
-### Version 0.0 - 0.1 ###
+### Version 1.0 ###
 
 ```
 ### 5-STEP PROJECT STRUCTURE ###

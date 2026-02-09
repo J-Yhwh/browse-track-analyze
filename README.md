@@ -28,14 +28,15 @@ Goal: Move beyond simple detection → understand and quantify how websites actu
 
 ```
 browser-tracker-analyzer/
-├── analyzer.py             # Main logic + CLI entry
-├── trackers.py             # Tracker list parser + detection 
-├── fingerprint.py          # Fingerprint detecttion functions
-├── report.py               # Report generation (JSON/CSV/HTML)
+├── analyzer.py           # Main logic + CLI entry
+├── trackers.py           # Tracker list parser + detection
+├── fingerprint.py        # Fingerprint detection functions
+├── report.py             # Report generation (JSON/CSV/HTML)
 ├── requirements.txt
 ├── README.md
-  └── tests/                  # Optional: Unit test results later
+└── tests/                # Optional: unit tests later
 ```
+
 
 ### 2. Dependencies ###
 ```

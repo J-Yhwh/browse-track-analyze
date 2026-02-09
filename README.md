@@ -2,7 +2,7 @@
 # CONCEPT #
 
 1. [![Python](https://img.shields.io/badge/Python-3.10+-blue)](https://www.python.org/)
-2. [![Appium](https://img.shields.io/badge/Appium-2.0.0+-green)](https://appium.io/)
+2. [![Playwright](https://img.shields.io/badge/Playwright-1.48+-green)](https://playwright.dev/)
 3. [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 

@@ -26,6 +26,7 @@ Goal: Move beyond simple detection → understand and quantify how websites actu
 
 ### 1. Configuration ###
 ```
+browser-tracker-analyzer/
 ├── analyzer.py             # Main logic + CLI entry
 ├── trackers.py             # Tracker list parser + detection 
 ├── fingerprint.py          # Fingerprint detecttion functions

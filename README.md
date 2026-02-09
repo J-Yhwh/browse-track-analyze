@@ -22,15 +22,9 @@ Goal: Move beyond simple detection → understand and quantify how websites actu
 ### Version 0.0 - 0.1 ###
 
 ```
-### How do I get set up? ###
+### 5-STEP PROJECT STRUCTURE ###
 
-
-* Database configuration
-* How to run tests
-* Deployment instructions
-```
-
-### Configuration ###
+### 1. Configuration ###
 ```
 ├── analyzer.py             # Main logic + CLI entry
 ├── trackers.py             # Tracker list parser + detection 
@@ -38,22 +32,22 @@ Goal: Move beyond simple detection → understand and quantify how websites actu
 ├── report.py               # Report generation (JSON/CSV/HTML)
 ├── requirements.txt
 ├── README.md
-├── tests/                  # Unit test results
+└── tests/                  # Optional: Unit test results later
 ```
 
-### Dependencies ###
+### 2. Dependencies ###
 ```
 Please refer to the specified file "requirements.txt" for details.
 NOTE:  Adherence to the minimal version listed in the .txt guide is strongly recommended for the desired results or outcome.
 ```
 
-### Database configuration ###
+### 3. Database configuration ###
 
 
-### How to run tests ###
+### 4. How to run tests ###
 
 
-### Deployment Instructions 
+### 5. Deployment Instructions ###
 
 
 ### Contribution guidelines ###

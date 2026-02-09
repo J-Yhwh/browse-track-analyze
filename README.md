@@ -25,6 +25,7 @@ Goal: Move beyond simple detection → understand and quantify how websites actu
 ### 5-STEP PROJECT STRUCTURE ###
 
 ### 1. Configuration ###
+
 ```
 browser-tracker-analyzer/
 ├── analyzer.py             # Main logic + CLI entry
@@ -52,7 +53,7 @@ NOTE:  Adherence to the minimal version listed in the .txt guide is strongly rec
 
 
 ### Contribution guidelines ###
-``
+```
 * Writing tests
 * Code review
 * Other guidelines

@@ -22,10 +22,9 @@ A privacy-focused Python tool that:
 Goal: Move beyond simple detection → understand and quantify how websites actually track users over time.
 ### Version 1.0 ###
 
-```
+
 ### 5-STEP PROJECT STRUCTURE ###
 
-```
 1. Configuration
 ```
 browser-tracker-analyzer/

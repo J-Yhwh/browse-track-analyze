@@ -15,7 +15,7 @@ This repository aims to build a robust Python-based browser cookie-tracking anal
 
 
 
-# 1. Browser Tracker Analyzer
+# Browser Tracker Analyzer
 
 A privacy-focused Python tool that:
 

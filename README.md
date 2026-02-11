@@ -93,7 +93,6 @@ python3  scripts/extracts/ioc/emulation.py       #Run iOS emulation cookie extra
 MIT License
 ```
 
-
 ### Contact ###
 
 Built by Jacqueline L'aigle Liao 

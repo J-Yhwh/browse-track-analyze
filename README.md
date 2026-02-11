@@ -61,7 +61,9 @@ browser-tracker-analyzer/
 
 See requirements.txt for full list.
 Key dependencies: Playwright, pandas, csv
-NOTE:  Adherence to the minimal versions listed for each dependency in 'requirement.txt' is highly recommended for the desired results or outcome.
+NOTE:  Adherence to the minimal versions listed for each dependency in 'requirement.txt' is highly recommended<br>
+for the desired results or outcome.
+
 
 
 ## Installation:
@@ -99,6 +101,6 @@ MIT License
 
 ### Contact ###
 
-Built by Jacqueline L'aigle Liao 
+Built by Jacqueline L'aigle Liao <br>
 Feedback and suggestions welcome!
 

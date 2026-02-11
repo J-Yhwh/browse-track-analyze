@@ -30,13 +30,14 @@ Goal: Move beyond simple detection → understand and quantify how websites actu
 
 ### PROJECT STRUCTURE ###
 
-1. Configuration:
+```
+Configuration:
 - 'src/'       - Core analysis logic
 - 'notebooks/' - Jupyter notebooks for EDA reports and experiments
 - 'scripts/'   - Standalone utilities for data extraction,fingerprinting, reporting
 - 'data/'      - Sample outputs
 
-```
+
 browser-tracker-analyzer/
 ├── src/
 │   ├── analyzer.py           # Core Python scripts
@@ -53,34 +54,32 @@ browser-tracker-analyzer/
 │   └── brave_ios_cookies.csv
 ├── requirements.txt
 ├── README.md
-
 ```
 
-```
-### Requirements and Dependencies ###
+### REQUIREMENTS AND DEPENDENCIES ###
 
+```
 See requirements.txt for full list.
 Key dependencies: Playwright, pandas, csv
 NOTE:  Adherence to the minimal versions listed for each dependency in 'requirement.txt' is highly recommended for the desired results or outcome.
-
+```
 
 ## Installation:
-```bash
+```
+bash
 pip install -r  requirements.txt
 playwright install  --with-deps
 ```
 
+### QUICK START ###
 ```
-### Quick Start ###
-
-```bash
+bash
 python3  scripts/extract_cookies_macos.py        #Run macOS Brave cookie extraction
 python3  scripts/extracts/ioc/emulation.py       #Run iOS emulation cookie extraction
-
-
 ```
+
+### FUTURE ROADMAP ###
 ```
-### Future Roadmap ###
 1. Multi-browser comparison (Chrome, Firefox, Brave)
 2. Advanced EDA visualizations (matplotlib/seaborn)
 3. Machine learning pipelines (clustering + invasiveness prediction)
@@ -89,7 +88,7 @@ python3  scripts/extracts/ioc/emulation.py       #Run iOS emulation cookie extra
 ```
 
 ```
-###License ###
+###LICENSE###
 
 MIT License
 ```

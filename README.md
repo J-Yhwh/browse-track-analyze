@@ -1,11 +1,9 @@
 
 # CONCEPT #
 
-A tool that collects browser-cookie data, stores it in DB/CSV, performs it in Exploratory Data Analytics(EDA) to uncover common behavioural patterns (e.g. browser-tracking/spying, advertissents, domain-stalking,etc), and applies ML pipelines, such as clustering tracker types by behvioural and performance metrices, or predicting invasive ones, by potential and actual chracteristics. 
+A tool that collects browser-cookie data, stores it in DB/CSV, performs it in Exploratory Data Analytics(EDA) to uncover common behavioural patterns (e.g. browser-tracking/spying, advertisements, domain-stalking,etc), and applies ML pipelines, such as clustering tracker types by behavioural and performance metrics, or predicting invasive ones, by potential and actual characteristics. 
 
-### What is this repository for? ###
-
-This repository aims to build a robust Python-based browser cookie-tracking analytics tool, to study the extent of invasive behaviour and potential for sinister exploitation such as surreptious data-harvesting, web-scraping et al, by browser cookies.  It is intended to build awareness on the sheer volume of website trackers and spyware users deal with on a daily basis simply by being online.  The results are compiled into reports, which are then further refined by ML pipelines categorizing tracker by cookie type, behaviour, and prediction by the extent of invasiveness, prevalance, and potential spyware/malware characteristics. 
+This repository aims to build a robust Python-based browser cookie-tracking analytics tool, to study the extent of invasive behaviour and potential for sinister exploitation such as surreptitious data-harvesting, web-scraping et al, by browser cookies.  It is intended to build awareness on the sheer volume of website trackers and spyware users deal with daily simply by being online.  The results are compiled into reports, which are then further refined by ML pipelines categorizing tracker by cookie type, behaviour, and prediction by the extent of invasiveness, prevalence, and potential spyware or malware characteristics. 
 
 ### TOOLS ###
 
@@ -30,12 +28,10 @@ Goal: Move beyond simple detection → understand and quantify how websites actu
 ### Version 1.0 ###
 
 
-### 5-STEP PROJECT STRUCTURE ###
+### PROJECT STRUCTURE ###
 
-1. Configuration
-
-## Project Structure
-- 'src/' - Core analysis logic
+1. Configuration:
+- 'src/'       - Core analysis logic
 - 'notebooks/' - Jupyter notebooks for EDA reports and experiments
 - 'scripts/'   - Standalone utilities for data extraction,fingerprinting, reporting
 - 'data/'      - Sample outputs
@@ -61,32 +57,47 @@ browser-tracker-analyzer/
 ```
 
 ```
-2. Dependencies 
+### Requirements and Dependencies ###
 
-Please refer to the specified file "requirements.txt" for details.
-NOTE:  Adherence to the minimal version listed in the .txt guide is  highlyrecommended for the desired results or outcome.
+See requirements.txt for full list.
+Key dependencies: Playwright, pandas, csv
+NOTE:  Adherence to the minimal versions listed for each dependency in 'requirement.txt' is highly recommended for the desired results or outcome.
+
+
+## Installation:
+```bash
+pip install -r  requirements.txt
+playwright install  --with-deps
 ```
 
 ```
-3. Installation 
+### Quick Start ###
 
-pip install -r requirements.txt
-playwright install --with-deps
-```
-
-```
-4. How to run tests 
-```
+```bash
+python3  scripts/extract_cookies_macos.py        #Run macOS Brave cookie extraction
+python3  scripts/extracts/ioc/emulation.py       #Run iOS emulation cookie extraction
 
 
 ```
-5. Deployment Instructions 
+```
+### Future Roadmap ###
+1. Multi-browser comparison (Chrome, Firefox, Brave)
+2. Advanced EDA visualizations (matplotlib/seaborn)
+3. Machine learning pipelines (clustering + invasiveness prediction)
+4. Database storage (SQLite)
+5. Web dashboard
 ```
 
+```
+###License ###
+
+MIT License
+```
 
 ```
 
-### Who do I talk to? ###
+### Contact ###
 
-* Repo owner or admin - Jacqueline L'aigle Liao 
+Built by Jacqueline L'aigle Liao 
+Feedback and suggestions welcome!
 

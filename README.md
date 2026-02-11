@@ -34,13 +34,19 @@ Goal: Move beyond simple detection → understand and quantify how websites actu
 
 1. Configuration
 
+## Project Structure
+- 'src/' - Core analysis logic
+- 'notebooks/' - Jupyter notebooks for EDA reports and experiments
+- 'scripts/'   - Standalone utilities for data extraction,fingerprinting, reporting
+- 'data/'      - Sample outputs
+
 ```
 browser-tracker-analyzer/
 ├── src/
 │   ├── analyzer.py           # Core Python scripts
 ├── notebooks/                # Jupyter/ EDA notebooks
 │   └── eda.ipynb
-├── Scripts                   # standalone utility scripts (extraction, helpers)
+├── scripts                   # standalone utility scripts (extraction, helpers)
 ├── └── fingerprint.py        # Fingerprint detection functions
     └── report.py             # Report generation (JSON/CSV/HTML)
     └── extract_cookies_macos.py
@@ -58,11 +64,14 @@ browser-tracker-analyzer/
 2. Dependencies 
 
 Please refer to the specified file "requirements.txt" for details.
-NOTE:  Adherence to the minimal version listed in the .txt guide is strongly recommended for the desired results or outcome.
+NOTE:  Adherence to the minimal version listed in the .txt guide is  highlyrecommended for the desired results or outcome.
 ```
 
 ```
-3. Database configuration
+3. Installation 
+
+pip install -r requirements.txt
+playwright install --with-deps
 ```
 
 ```
@@ -74,12 +83,7 @@ NOTE:  Adherence to the minimal version listed in the .txt guide is strongly rec
 5. Deployment Instructions 
 ```
 
-```
-6. Contribution guidelines
-```
-* Writing tests
-* Code review
-* Other guidelines
+
 ```
 
 ### Who do I talk to? ###

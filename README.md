@@ -87,11 +87,11 @@ python3  scripts/extracts/ioc/emulation.py       #Run iOS emulation cookie extra
 5. Web dashboard
 ```
 
+### LICENSE ###
 ```
-###LICENSE###
-
 MIT License
 ```
+
 
 ### Contact ###
 

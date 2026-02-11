@@ -61,7 +61,7 @@ browser-tracker-analyzer/
 ```
 See requirements.txt for full list.
 Key dependencies: Playwright, pandas, csv
-NOTE:  Adherence to the minimal versions listed for each dependency in 'requirement.txt' is highly recommended for the desired results or outcome.
+NOTE:  Adherence to the minimal versions listed for each dependency in 'requirement.txt' is highly <br/> recommended for the desired results or outcome.
 ```
 
 ## Installation:
@@ -74,8 +74,10 @@ playwright install  --with-deps
 ### QUICK START ###
 ```
 bash
-python3  scripts/extract_cookies_macos.py        #Run macOS Brave cookie extraction
-python3  scripts/extracts/ioc/emulation.py       #Run iOS emulation cookie extraction
+## Run macOS Brave cookie extraction
+python3  scripts/extract_cookies_macos.py 
+## Run iOS emulation cookie extraction
+python3  scripts/extracts/ioc/emulation.py       
 ```
 
 ### FUTURE ROADMAP ###

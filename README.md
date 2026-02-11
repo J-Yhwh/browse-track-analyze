@@ -33,15 +33,25 @@ Goal: Move beyond simple detection → understand and quantify how websites actu
 ### 5-STEP PROJECT STRUCTURE ###
 
 1. Configuration
+
 ```
 browser-tracker-analyzer/
-├── analyzer.py           # Main logic + CLI entry
-├── trackers.py           # Tracker list parser + detection
-├── fingerprint.py        # Fingerprint detection functions
-├── report.py             # Report generation (JSON/CSV/HTML)
+├── src/
+│   ├── analyzer.py           # Core Python scripts
+├── notebooks/                # Jupyter/ EDA notebooks
+│   └── eda.ipynb
+├── Scripts                   # standalone utility scripts (extraction, helpers)
+├── └── fingerprint.py        # Fingerprint detection functions
+    └── report.py             # Report generation (JSON/CSV/HTML)
+    └── extract_cookies_macos.py
+    └── extract_cookies_ios_emulation.py
+    └── compare_cookies.py     # (optional) future merge script
+├── data/
+│   ├── brave_macos_cookies.csv
+│   └── brave_ios_cookies.csv
 ├── requirements.txt
 ├── README.md
-└── tests/                # Optional: unit tests later
+
 ```
 
 ```

@@ -31,13 +31,13 @@ Goal: Move beyond simple detection → understand and quantify how websites actu
 ### PROJECT STRUCTURE ###
 
 Configuration:
+
+```
 - 'src/'       - Core analysis logic
 - 'notebook/' - Jupyter notebooks for EDA reports and experiments
 - 'scripts/'   - Standalone utilities for data extraction,fingerprinting, reporting
 - 'data/'      - Sample outputs
 
-
-```
 browser-tracker-analyzer/
 ├── src/
 │   ├── analyzer.py           # Core Python scripts

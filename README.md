@@ -25,12 +25,11 @@ A privacy-focused Python tool that:
   - Predict potentially invasive trackers based on characteristics (e.g., lifetime, third-party count, storage usage)
 
 Goal: Move beyond simple detection → understand and quantify how websites actually track users over time.
-### Version 1.0 ###
 
+### Version 1.0 ###
 
 ### PROJECT STRUCTURE ###
 
-```
 Configuration:
 - 'src/'       - Core analysis logic
 - 'notebook/' - Jupyter notebooks for EDA reports and experiments
@@ -38,6 +37,7 @@ Configuration:
 - 'data/'      - Sample outputs
 
 
+```
 browser-tracker-analyzer/
 ├── src/
 │   ├── analyzer.py           # Core Python scripts

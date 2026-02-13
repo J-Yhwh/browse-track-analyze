@@ -33,7 +33,7 @@ Goal: Move beyond simple detection → understand and quantify how websites actu
 ```
 Configuration:
 - 'src/'       - Core analysis logic
-- 'notebooks/' - Jupyter notebooks for EDA reports and experiments
+- 'notebook/' - Jupyter notebooks for EDA reports and experiments
 - 'scripts/'   - Standalone utilities for data extraction,fingerprinting, reporting
 - 'data/'      - Sample outputs
 
@@ -41,8 +41,8 @@ Configuration:
 browser-tracker-analyzer/
 ├── src/
 │   ├── analyzer.py           # Core Python scripts
-├── notebooks/                # Jupyter/ EDA notebooks
-│   └── eda.ipynb
+├── notebook/                 # Jupyter/ EDA notebook presenting the results of the analysis
+│   ├── eda.ipynb
 ├── scripts                   # standalone utility scripts (extraction, helpers)
 ├── └── fingerprint.py        # Fingerprint detection functions
     └── report.py             # Report generation (JSON/CSV/HTML)

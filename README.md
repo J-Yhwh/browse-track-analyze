@@ -30,7 +30,7 @@ Goal: Move beyond simple detection → understand and quantify how websites actu
 
 ### PROJECT STRUCTURE ###
 
-Configuration:
+CONFIGURATION:
 
 ```
 - 'src/'       - Core analysis logic

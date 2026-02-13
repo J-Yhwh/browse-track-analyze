@@ -41,9 +41,9 @@ Configuration:
 browser-tracker-analyzer/
 ├── src/
 │   ├── analyzer.py           # Core Python scripts
-├── notebook/                 # Jupyter/ EDA notebook presenting the results of the analysis
+├── notebook/                 # Jupyter notebook of detailed analysis
 │   ├── eda.ipynb
-├── scripts                   # standalone utility scripts (extraction, helpers)
+├── scripts                   # standalone utility scripts
 ├── └── fingerprint.py        # Fingerprint detection functions
     └── report.py             # Report generation (JSON/CSV/HTML)
     └── extract_cookies_macos.py

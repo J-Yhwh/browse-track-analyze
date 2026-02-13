@@ -26,11 +26,10 @@ A privacy-focused Python tool that:
 
 Goal: Move beyond simple detection → understand and quantify how websites actually track users over time.
 
+
 ### Version 1.0 ###
 
-### PROJECT STRUCTURE ###
-
-CONFIGURATION:
+### PROJECT STRUCTURE & CONFIGURATION ###
 
 ```
 - 'src/'       - Core analysis logic

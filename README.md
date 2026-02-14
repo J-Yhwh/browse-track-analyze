@@ -100,6 +100,6 @@ MIT License
 
 ### Contact ###
 
-Built by Jacqueline L'aigle Liao <br>
+Built by JLL <br>
 Feedback and suggestions welcome!
 

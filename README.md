@@ -43,7 +43,7 @@ browser-tracker-analyzer/
 ├── notebook/                 # Jupyter notebook of detailed analysis
 │   ├── eda.ipynb
 ├── scripts                   # standalone utility scripts
-│   └── fingerprint.py        # Fingerprint detection functions
+│   ├── fingerprint.py        # Fingerprint detection functions
     └── report.py             # Report generation (JSON/CSV/HTML)
     └── extract_cookies_macos.py
     └── extract_cookies_ios_emulation.py

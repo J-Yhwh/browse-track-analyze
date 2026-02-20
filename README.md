@@ -85,19 +85,19 @@ python3  scripts/extracts/ioc/emulation.py
 
 ### Next Steps
 ```
-1. **Run it**: `python analyzer.py --url https://example.com --format json --verbose`
-2. **Expand**: Add async Playwright for speed, better filter parsing (use `abp-filter-parser` lib), more fingerprint tests.
-3. **Test**: Use known tracker-heavy sites like cnn.com or nytimes.com.
-4. **README**: Add screenshots of reports, installation, examples.
+1. Run it:  `python analyzer.py --url https://example.com --format json --verbose`
+2. Expand:  Add async Playwright for speed, better filter parsing (use `abp-filter-parser` lib), more fingerprint tests.
+3. Test:    Use known tracker-heavy sites like cnn.com or nytimes.com.
+4. README:  Add screenshots of reports, installation, examples.
 ```
 
 ### FUTURE ROADMAP ###
 ```
-1. Multi-browser comparison (Chrome, Firefox, Brave)
-2. Advanced EDA visualizations (matplotlib/seaborn)
-3. Machine learning pipelines (clustering + invasiveness prediction)
-4. Database storage (SQLite)
-5. Web dashboard
+*  Multi-browser comparison (Chrome, Firefox, Brave)
+*  Advanced EDA visualizations (matplotlib/seaborn)
+*  Machine learning pipelines (clustering + invasiveness prediction)
+*  Database storage (SQLite)
+*  Web dashboard
 ```
 
 ### LICENSE ###

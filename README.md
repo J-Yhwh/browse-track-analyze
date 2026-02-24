@@ -1,7 +1,7 @@
 
 # CONCEPT #
 
-A tool that collects browser-cookie data, stores it in DB/CSV, performs it in Exploratory Data Analytics(EDA) to uncover common behavioural patterns (e.g. browser-tracking/spying, advertisements, domain-stalking,etc), and applies ML pipelines, such as clustering tracker types by prevalance, behavourial metrica, or predicting invasive ones, by potential and actual characteristics. 
+A tool that collects browser-cookie data, stores it in DB/CSV, performs it in Exploratory Data Analytics(EDA) to uncover common behavioural patterns (e.g. browser-tracking/spying, advertisements, domain-stalking,etc), and applies ML pipelines, such as clustering tracker types by prevalance, behavourial metrices, or predicting invasive ones, by potential and actual characteristics. 
 
 This repository aims to build a robust Python-based browser cookie-tracking analytics tool, to study the extent of invasive behaviour and potential for sinister exploitation such as surreptitious data-harvesting, web-scraping et al, by browser cookies.  It is intended to build awareness on the sheer volume of website trackers and spyware users deal with daily simply by being online.  The results are compiled into reports, which are then further refined by ML pipelines categorizing tracker by cookie type, behaviour, and prediction by the extent of invasiveness, prevalence, and potential spyware or malware characteristics. 
 

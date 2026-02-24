@@ -97,7 +97,7 @@ Two versions available in `src/`:
   ```bash
   python src/analyzer.py --mode csv --output analysis --format json
   OR
-  python3 PYTHONPATH=' src/analyzer.py --mode csv --output analysis --format json
+  python3 PYTHONPATH='.' src/analyzer.py --mode csv --output analysis --format json
 - **analyzer_eda.py**
   An extension of 'analyzer.py'. Interactive, scripted EDA version with summaries, stats, and plots.
   Run directly as above (bash).

@@ -97,11 +97,17 @@ Two versions available in `src/`:
   ```bash
   python src/analyzer.py --mode csv --output analysis --format json
   OR
-  python3 PYTHONPATH='.' src/analyzer.py --mode csv --output analysis --format json
+  cd ~/...filepath/PYTHONPATH=. python3 src/analyzer_eda.py --mode csv --output eda_test --format json
+
 - **analyzer_eda.py**
   An extension of 'analyzer.py'. Interactive, scripted EDA version with summaries, stats, and plots.
-  Run directly as above (bash).
-- 
+  Run directly as shown above (bash).
+
+
+## Sample Output
+<image-card alt="CLI Report Generation" src="images/cli-report-output.png" ></image-card>
+<image-card alt="Secure vs Non-Secure Pie Chart" src="images/secure-pie-chart.png" ></image-card>
+<image-card alt="Cookie Expiration Histogram" src="images/expiration-histogram.png" ></image-card>
 ```
 
 ### FUTURE ROADMAP ###
@@ -122,5 +128,8 @@ MIT License
 ### Contact ###
 
 Built by JLL <br>
-Feedback and suggestions welcome!
 
+
+
+
+Feedback and suggestions welcom

@@ -82,7 +82,8 @@ python3  scripts/extract_cookies_macos.py
 python3  scripts/extracts/ioc/emulation.py
 
 ## Create EDA notebook for deeper visual presentation of cookie behaviour analytics (optional)
-bash pip3 install jupyter (if not in system)
+bash pip3 install jupyter  (if not in system)
+Jupyter Notebook
 ```
 
 ### Next Steps

@@ -79,16 +79,28 @@ bash
 python3  scripts/extract_cookies_macos.py 
 
 ## Run iOS emulation cookie extraction
-python3  scripts/extracts/ioc/emulation.py    
+python3  scripts/extracts/ioc/emulation.py
 
+## Create EDA notebook for deeper visual presentation of cookie behaviour analytics (optional)
+bash pip3 install jupyter (if not in system)
 ```
 
 ### Next Steps
 ```
-1. Run it:  `python analyzer.py --url https://example.com --format json --verbose`
-2. Expand:  Add async Playwright for speed, better filter parsing (use `abp-filter-parser` lib), more fingerprint tests.
-3. Test:    Use known tracker-heavy sites like cnn.com or nytimes.com.
-4. README:  Add screenshots of reports, installation, examples.
+## Analysis Tools
+
+Two versions available in `src/`:
+
+- **analyzer.py**  
+  Fast CLI tool to process CSVs and generate JSON/CSV/HTML reports.  
+  ```bash
+  python src/analyzer.py --mode csv --output analysis --format json
+  OR
+  
+- **analyzer_eda.py**
+  An extension of 'analyzer.py'. Interactive, scripted EDA version with summaries, stats, and plots.
+  Run directly or import into notebooks for deeper exploration.
+- 
 ```
 
 ### FUTURE ROADMAP ###

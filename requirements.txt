@@ -2,7 +2,7 @@
 playwright>=1.48.0
 requests>=2.32.0
 pandas>=2.2.0           #for CSV/HTML imports
-jinja>=3.1.0           #for simple HTML imports (optional) 
+jinja2>=3.1.0           #for simple HTML imports (optional) 
 matplotlib>=3.0.0
 seaborn>=0.13.0
 scipy>=1.11.0

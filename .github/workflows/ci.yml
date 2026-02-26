@@ -1,4 +1,4 @@
-name: CI - Lint & Smoke Test
+name: CI - Workflow Automation 
 
 on:
   push:

@@ -123,9 +123,11 @@ Two versions available in `src/`:
 MIT License
 ```
 
-
 ### Contact ###
 
-Built by JLL <br>
+Built by JLL<br>
+Feedback and Suggestions welcome!
+
+
 
 Feedback and suggestions welcom

@@ -127,7 +127,3 @@ MIT License
 
 Built by JLL<br>
 Feedback and Suggestions welcome!
-
-
-
-Feedback and suggestions welcom

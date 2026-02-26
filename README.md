@@ -111,7 +111,9 @@ Two versions available in `src/`:
 
 ### FUTURE ROADMAP ###
 ```
-*  Multi-browser comparison (Chrome, Firefox, Brave)
+*  Multi-browser comparison (Chrome, Firefox, Brave,Safari, etc)
+*  Inclusion of Windows and Android OS
+*  Inter OS comparision, e.g quantity & prevalence of cookies in Brave / Firefox running in Windows vs MacOS)
 *  Advanced EDA visualizations (matplotlib/seaborn)
 *  Machine learning pipelines (clustering + invasiveness prediction)
 *  Database storage (SQLite)

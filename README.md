@@ -104,7 +104,6 @@ Two versions available in `src/`:
   An extension of 'analyzer.py'. Interactive, scripted EDA version with summaries, stats, and plots.
   Run directly as shown above (bash).
 ```
-
 ## Badge for CI
 <image-card alt="CI" src="https://github.com/J-Yhwh/browse-track-analyze/workflows/CI/badge.svg" ></image-card>
 

@@ -11,6 +11,7 @@ This repository aims to build a robust Python-based browser cookie-tracking anal
 2. [![Playwright](https://img.shields.io/badge/Playwright-1.48+-green)](https://playwright.dev/)
 3. [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+<image-card alt="CI" src="https://github.com/J-Yhwh/browse-track-analyze/workflows/CI/badge.svg" ></image-card>
 
 
 # Browser Tracker Analyzer
@@ -104,8 +105,6 @@ Two versions available in `src/`:
   An extension of 'analyzer.py'. Interactive, scripted EDA version with summaries, stats, and plots.
   Run directly as shown above (bash).
 ```
-## Badge for CI
-<image-card alt="CI" src="https://github.com/J-Yhwh/browse-track-analyze/workflows/CI/badge.svg" ></image-card>
 
 ## Sample Output
 

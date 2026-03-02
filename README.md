@@ -50,8 +50,8 @@ browser-tracker-analyzer/
     └── test.py                # confirms all relevant Python libraries & dependencies for project
     └── compare_cookies.py     # (optional) future merge script 
 ├── data/
-│   ├── brave_macos_cookies.csv   #CSV report derrived from running 'scripts/extract_cookies_macos.py'
-│   └── brave_ios_cookies.csv     #CSV report derrived from running 'scripts/extract_ios_emulation.py'
+│   ├── brave_macos_cookies.csv   #CSV report derrived from 'scripts/extract_cookies_macos.py'
+│   └── brave_ios_cookies.csv     #CSV report derrived from'scripts/extract_ios_emulation.py'
 ├── requirements.txt
 ├── README.md
 ```

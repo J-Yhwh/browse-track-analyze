@@ -47,7 +47,7 @@ browser-tracker-analyzer/
     └── report.py             # Report generation (JSON/CSV/HTML)
     └── extract_cookies_macos.py              
     └── extract_cookies_ios_emulation.py
-    └── test.py                # confirms all relevant Python libraries & dependencies for project
+    └── test.py                # confirms all relevant project libraries & dependencies
     └── compare_cookies.py     # (optional) future merge script 
 ├── data/
 │   ├── brave_macos_cookies.csv   #CSV report derrived from 'scripts/extract_cookies_macos.py'
@@ -105,6 +105,8 @@ Two versions available in `src/`:
   Run directly as shown above (bash).
 ```
 
+## Badge for CI
+<image-card alt="CI" src="https://github.com/J-Yhwh/browse-track-analyze/workflows/CI/badge.svg" ></image-card>
 
 ## Sample Output
 

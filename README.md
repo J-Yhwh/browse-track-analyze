@@ -45,12 +45,13 @@ browser-tracker-analyzer/
 ├── scripts                   # standalone utility scripts
 │   ├── fingerprint.py        # Fingerprint detection functions
     └── report.py             # Report generation (JSON/CSV/HTML)
-    └── extract_cookies_macos.py
+    └── extract_cookies_macos.py              
     └── extract_cookies_ios_emulation.py
-    └── compare_cookies.py     # (optional) future merge script
+    └── test.py                # confirms all relevant Python libraries and dependencies required to run rhe project
+    └── compare_cookies.py     # (optional) future merge script 
 ├── data/
-│   ├── brave_macos_cookies.csv
-│   └── brave_ios_cookies.csv
+│   ├── brave_macos_cookies.csv   #CSV report derrived from running 'scripts/extract_cookies_macos.py'
+│   └── brave_ios_cookies.csv     #CSV report derrived from running 'scripts/extract_ios_emulation.py'
 ├── requirements.txt
 ├── README.md
 ```

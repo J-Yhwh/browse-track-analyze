@@ -47,7 +47,7 @@ browser-tracker-analyzer/
     └── report.py             # Report generation (JSON/CSV/HTML)
     └── extract_cookies_macos.py              
     └── extract_cookies_ios_emulation.py
-    └── test.py                # confirms all relevant Python libraries and dependencies required to run rhe project
+    └── test.py                # confirms all relevant Python libraries & dependencies for project
     └── compare_cookies.py     # (optional) future merge script 
 ├── data/
 │   ├── brave_macos_cookies.csv   #CSV report derrived from running 'scripts/extract_cookies_macos.py'

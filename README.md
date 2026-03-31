@@ -26,7 +26,7 @@ A privacy-focused Python tool that:
 Goal: Move beyond simple detection → understand and quantify how websites actually track users over time.
 
 
-### Version 1.0 ###
+### Version 1.2 ###
 
 ### PROJECT STRUCTURE & CONFIGURATION ###
 
@@ -44,13 +44,14 @@ browser-tracker-analyzer/
 ├── scripts                   # standalone utility scripts
 │   ├── fingerprint.py        # Fingerprint detection functions
     └── report.py             # Report generation (JSON/CSV/HTML)
-    └── extract_cookies_macos.py              
+    └── extract_cookies_brave_macos.py
+    └── extract_cookies_safari_macos.py       
     └── extract_cookies_ios_emulation.py
     └── test.py                # confirms all relevant project libraries & dependencies
     └── compare_cookies.py     # (optional) future merge script 
 ├── data/
-│   ├── brave_macos_cookies.csv   #CSV report derrived from 'scripts/extract_cookies_macos.py'
-│   └── brave_ios_cookies.csv     #CSV report derrived from'scripts/extract_ios_emulation.py'
+│   ├── brave_macos_cookies.csv   #CSV report derived from 'scripts/extract_cookies_macos.py'
+│   └── brave_ios_cookies.csv     #CSV report derived from'scripts/extract_ios_emulation.py'
 ├── requirements.txt
 ├── README.md
 ```
@@ -76,7 +77,10 @@ playwright install  --with-deps
 ```
 bash
 ## Run macOS Brave cookie extraction
-python3  scripts/extract_cookies_macos.py 
+python3  scripts/extract_cookies_brave_macos.py
+
+## Run macOS Safari cookie extraction
+python3  scripts/extract_cookies_safari__macos.py 
 
 ## Run iOS emulation cookie extraction
 python3  scripts/extracts/ioc/emulation.py
@@ -111,7 +115,7 @@ Two versions available in `src/`:
 
 ### FUTURE ROADMAP ###
 ```
-*  Multi-browser comparison (Chrome, Firefox, Brave,Safari, etc)
+*  Multi-browser comparison (Chrome, Firefox, Brave,Safari, etc) 
 *  Inclusion of Windows and Android OS
 *  Inter OS comparision, e.g quantity & prevalence of cookies in Brave / Firefox running in Windows vs MacOS)
 *  Advanced EDA visualizations (matplotlib/seaborn)

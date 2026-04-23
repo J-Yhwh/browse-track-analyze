@@ -23,10 +23,21 @@ A privacy-focused Python tool that:
   - Cluster trackers by behavioural similarity and performance metrics
   - Predict potentially invasive trackers based on characteristics (e.g., lifetime, third-party count, storage usage)
 
-Goal: Move beyond simple detection → understand and quantify how websites actually track users over time.
+Goal: Move beyond simple detection → understand and quantify how websites actually track users over time, how cookies behave in diffeerent commonkly-used browsers and operating systems, e.g. Windows vs MacOS, Brave vs. Safari or IE, etc.
 
 
-### Version 1.2 ###
+### Version 1.2 - Released Febuary 2026 ### 
+Main scripts:  extract_cookies_brave_macos.py, extract_cookies_ios_emulation.py
+Source:  analyzer.py, analyzer_eda.py - for amalgation and concentenating features of extracted cookies data (for all scripts)
+
+###[UPDATE] Version 1.4 - Released April 2026 ### 
+Included additional scripts:  extract_cookies_safari_macos.py
+
+Upcoming Additional Pipelines: 
+1. Streamlit dashboards for master-data organisation and analytics (of extracted databases from the relevant scripts)
+2. New Selenium-based (Python) scripts for Brave on Windows, and Windows-native browser IE (Internet Explorer) 
+
+__________________________________________________________________________________________________________________________________________________
 
 ### PROJECT STRUCTURE & CONFIGURATION ###
 

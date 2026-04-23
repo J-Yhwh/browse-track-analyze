@@ -30,7 +30,7 @@ Goal: Move beyond simple detection → understand and quantify how websites actu
 Main scripts:  extract_cookies_brave_macos.py, extract_cookies_ios_emulation.py
 Source:  analyzer.py, analyzer_eda.py - for amalgmation and concatenating features of extracted cookies data (for all scripts)
 
-###[UPDATE] Version 1.4 - Released April 2026 ### 
+### [UPDATE] Version 1.4 - Released April 2026 ### 
 Included additional scripts:  extract_cookies_safari_macos.py
 
 Upcoming Additional Pipelines: 

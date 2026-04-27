@@ -83,7 +83,7 @@ for the desired results or outcome.
 
 ## Installation:
 ```
-bash
+bash | [Terminal/MacOS] [Powershell/WindowsOS]
 pip install -r  requirements.txt
 playwright install  --with-deps
 ```

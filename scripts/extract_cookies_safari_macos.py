@@ -8,7 +8,7 @@ import time
 
 
 # === IMPORTANT: EXPLICIT PATH TO DATA FOLDER FROM PROJECT ROOT DIRECTORY===
-project_root = os.path.expanduser("~/Desktop/Track-analyze-main")
+project_root = os.path.expanduser("~/Desktop/FILEPATH/Project_Folder")
 data_folder = os.path.join(project_root, "data")
 os.makedirs(data_folder, exist_ok=True)
 

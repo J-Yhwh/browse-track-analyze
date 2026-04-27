@@ -59,7 +59,8 @@ browser-tracker-analyzer/
 │   ├── fingerprint.py        # Fingerprint detection functions
     └── report.py             # Report generation (JSON/CSV/HTML)
     └── extract_cookies_brave_macos.py
-    └── extract_cookies_safari_macos.py       
+    └── extract_cookies_safari_macos.py
+    └── extract_cookies_ios_emulation.py       
     └── extract_cookies_ios_emulation.py
     └── test.py                # confirms all relevant project libraries & dependencies
     └── compare_cookies.py     # (optional) future merge script 
@@ -74,7 +75,7 @@ browser-tracker-analyzer/
 
 
 See requirements.txt for full list.
-Key dependencies: Playwright, pandas, csv
+**Key dependencies: Playwright, pandas, csv**
 NOTE:  Adherence to the minimal versions listed for each dependency in 'requirement.txt' is highly recommended
 for the desired results or outcome.
 

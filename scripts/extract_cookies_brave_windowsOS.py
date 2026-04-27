@@ -4,10 +4,10 @@ from pathlib import Path
 from datetime import datetime
 
 # Correct path to Brave Cookies on Windows
-cookie_db_path = Path(r"C:\Users\denis\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Network\Cookies")
+cookie_db_path = Path(r"C:\FILEPATH\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Network\Cookies")
 
 # Use your actual Desktop (OneDrive)
-desktop = Path(r"C:\Users\denis\OneDrive\Desktop")
+desktop = Path(r"C:\FILEPATH\OneDrive\Desktop")
 
 if not cookie_db_path.exists():
     print("❌ Could not find Brave Cookies database.")
@@ -39,7 +39,7 @@ else:
     df['browser'] = "Brave"
 
     # Save files to your actual Desktop
-    raw_file = desktop / "brave_cookies_raw.csv"
+    raw_file = desktop / "brave_cookies_windows_raw.csv"
     df.to_csv(raw_file, index=False,encoding="utf-8")
 
     df.to_csv(raw_file, index=False, encoding="utf-8")

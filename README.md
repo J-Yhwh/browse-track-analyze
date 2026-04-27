@@ -31,11 +31,14 @@ Main scripts:  extract_cookies_brave_macos.py, extract_cookies_ios_emulation.py
 Source:  analyzer.py, analyzer_eda.py - for amalgmation and concatenating features of extracted cookies data (for all scripts)
 
 ### Version 1.4 [UPDATE] - Released April 2026 ### 
-Included additional scripts:  extract_cookies_safari_macos.py
+Included additional Py cookie-scraping scripts for:  
 
-Upcoming Additional Pipelines: 
-1. Streamlit dashboards for master-data organisation and analytics (of extracted databases from the relevant scripts)
-2. New Selenium-based (Python) scripts for Brave on Windows, and Windows-native browser IE (Internet Explorer) 
+1. Safari on MacOS (native browser environment):  extract_cookies_safari_macos.py ✅
+2. Brave on WindowsOS:  extract_cookies_brave_windowsOS.py
+
+### Upcoming Additional Pipelines:  ###
+1. Streamlit dashboards for master-data organisation and analytics (of extracted databases from the relevant scripts) 
+2. New .py script  Windows-native browser IE (Internet Explorer) 
 
 __________________________________________________________________________________________________________________________________________________
 

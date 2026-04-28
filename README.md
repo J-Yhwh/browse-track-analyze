@@ -16,7 +16,7 @@ Move beyond simple detection → **quantify and compare** the extent different b
 
 ---
 ### FEATURES
-- Cross-platform cookie extraction (Brave, Safari,IE,etc)
+- Cross-platform cookie extraction (Brave, Safari, MS Edge, etc)
 - Raw data export to CSV
 - Breakdown of cookie and domain details, including security
 - **Planned**: Streamlit dashboards for amalgamation of results for  comparison

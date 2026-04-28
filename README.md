@@ -1,9 +1,12 @@
 
-# CONCEPT #
+# BROWSER TRACKER ANALYZER - CONCEPT 
 
-A tool that collects browser-cookie data, stores it in DB/CSV, performs it in Exploratory Data Analytics(EDA) to uncover common behavioural patterns (e.g. browser-tracking/spying, advertisements, domain-stalking,etc), and applies ML pipelines, such as clustering tracker types by prevalance, behavourial metrices, or predicting invasive ones, by potential and actual characteristics. 
+__A privacy focused tool for understanding how websites track users across different browsers and operating systems.__ 
 
-This repository aims to build a robust Python-based browser cookie-tracking analytics tool, to study the extent of invasive behaviour and potential for sinister exploitation such as surreptitious data-harvesting, web-scraping et al, by browser cookies.  It is intended to build awareness on the sheer volume of website trackers and spyware users deal with daily simply by being online.  The results are compiled into reports, which are then further refined by ML pipelines categorizing tracker by cookie type, behaviour, and prediction by the extent of invasiveness, prevalence, and potential spyware or malware characteristics. 
+This project utilises Python-based analytic tools and scripts to **scrape** browser cookies and tracker data from mujltiple platforms  (macOS Safari, Brave on macOS/Windows, Microsoft Edge, etc.) in latent form from the cache. The collected data are then collated and parsed by EDA(Exploratory Data Analytics), and then Machine Learning is applied to identify behavourial patterns, clustering, and potentially invasive tracking.
+
+### Goal
+Move beyond simple detection → **quantify and compare** the extent different browsers and OS environments allow for tracking, and **raise awareness about the sheer volume of trackers** users encounter daily.
 
 ### TOOLS ###
 
@@ -11,20 +14,14 @@ This repository aims to build a robust Python-based browser cookie-tracking anal
 2. [![Playwright](https://img.shields.io/badge/Playwright-1.48+-green)](https://playwright.dev/)
 3. [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-
-# Browser Tracker Analyzer
-
-A privacy-focused Python tool that:
-
-- Collects browser cookie, storage, and tracker data across sessions and sites
-- Stores results in CSV or a lightweight database (SQLite)
-- Performs **Exploratory Data Analysis (EDA)** to uncover behavioural patterns (e.g., persistent cross-site tracking, advertising networks, domain stalking, fingerprinting)
-- Applies **machine learning pipelines** to:
-  - Cluster trackers by behavioural similarity and performance metrics
-  - Predict potentially invasive trackers based on characteristics (e.g., lifetime, third-party count, storage usage)
-
-Goal: Move beyond simple detection → understand and quantify how websites actually track users over time, how cookies behave in diffeerent commonkly-used browsers and operating systems, e.g. Windows vs MacOS, Brave vs. Safari or IE, etc.
-
+---
+### FEATURES
+- Cross-platform cookie extraction (Brave, Safari,IE,etc)
+- Raw data export to CSV
+- Breakdown of cookie and domain details, including security
+- **Planned**: Streamlit dashboards for amalgamation of results for  comparison
+- **Planned**: ML pipelines for tracker clustering and invasiveness prediction
+---
 
 ### Version 1.2 - Released Febuary 2026 ### 
 Main scripts:  extract_cookies_brave_macos.py, extract_cookies_ios_emulation.py
@@ -59,9 +56,9 @@ browser-tracker-analyzer/
 │   ├── fingerprint.py        # Fingerprint detection functions
     └── report.py             # Report generation (JSON/CSV/HTML)
     └── extract_cookies_brave_macos.py
-    └── extract_cookies_safari_macos.py
-    └── extract_cookies_ios_emulation.py       
+    └── extract_cookies_brave_windowsOS.py       
     └── extract_cookies_ios_emulation.py
+    └── extract_cookies_safari_macos.py
     └── test.py                # confirms all relevant project libraries & dependencies
     └── compare_cookies.py     # (optional) future merge script 
 ├── data/

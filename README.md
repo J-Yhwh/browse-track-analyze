@@ -123,15 +123,14 @@ Two versions available in `src/`:
 <img width="1229" height="687" alt="Screenshot 2026-02-24 at 2 56 46 pm" src="https://github.com/user-attachments/assets/d7884dd2-b492-46fc-912e-52e22e00a5b8" />
 
 
-### FUTURE ROADMAP ###
+### FUTURE ROADMAP (LONG-TERM) ###
 ```
-*  Multi-browser comparison (Chrome, Firefox, Brave,Safari, etc) 
-*  Inclusion of Windows and Android OS
+*  Addition of other browsers like Chrome(, Firefox, Opera, etc
+*  Inclusion of Android OS
 *  Inter OS comparision, e.g quantity & prevalence of cookies in Brave / Firefox running in Windows vs MacOS)
 *  Advanced EDA visualizations (matplotlib/seaborn)
 *  Machine learning pipelines (clustering + invasiveness prediction)
-*  Database storage (SQLite)
-*  Web dashboard
+*  Web dashboard using Streamlit
 ```
 
 ### LICENSE ###

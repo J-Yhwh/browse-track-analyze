@@ -30,8 +30,8 @@ Source:  analyzer.py, analyzer_eda.py - for amalgmation and concatenating featur
 ### Version 1.4 UPDATE - Released April 2026 ### 
 Included additional Py cookie-scraping scripts for:  
 
-1. Safari on MacOS (native browser environment):  extract_cookies_safari_macos.py ✅
-2. Brave on WindowsOS:  extract_cookies_brave_windowsOS.py 🔄️
+1. Safari on MacOS (native browser environment):  extract_cookies_safari_macos.py 
+2. Brave on WindowsOS:  extract_cookies_brave_windowsOS.py 
 
 ### Upcoming Additional Pipelines:  ###
 1. Streamlit dashboards for master-data organisation and analytics (of extracted databases from the relevant scripts) 

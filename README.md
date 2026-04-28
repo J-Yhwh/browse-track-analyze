@@ -23,11 +23,17 @@ Move beyond simple detection → **quantify and compare** the extent different b
 - **Planned**: ML pipelines for tracker clustering and invasiveness prediction
 ---
 
+### Current Status (April 2026) ###
 
+__Completed__
+1. Brave on MacOS
+2. Brave on Windows OS
+3. Brave on mobile brower simulation by Playwright
+4. Safari on MacOs
 
-### Upcoming Additional Pipelines:  ###
-1. Streamlit dashboards for master-data organisation and analytics (of extracted databases from the relevant scripts) 
-2. New .py script  Windows-native browser IE (Internet Explorer) 
+__Upcoming Additional Pipelines__
+1. Microsoft Edge on Windows
+2. Streamlit dashboards for master-data organisation and analytics (of extracted databases from the relevant scripts) 
 
 __________________________________________________________________________________________________________________________________________________
 

@@ -118,10 +118,10 @@ Two versions available in `src/`:
   Run directly as shown above (bash).
 ```
 
-## Sample Output
+## Sample Outputs
 
-
-
+**Brave on Windows - Powershell**
+![Brave Windows raw Cookies](screenshots/brave_windows_success.png)
 
 ### FUTURE ROADMAP (LONG-TERM) ###
 ```

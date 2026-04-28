@@ -70,7 +70,7 @@ browser-tracker-analyzer/
 
 
 See requirements.txt for full list.
-**Key dependencies: Playwright, pandas, csv** <br>
+**Key dependencies: Playwright, pandas, csv** <br><br>
 NOTE:  Adherence to the minimal versions listed for each dependency in 'requirement.txt' is highly recommended
 for the desired results or outcome.
 

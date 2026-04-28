@@ -125,9 +125,9 @@ Two versions available in `src/`:
 
 ### FUTURE ROADMAP (LONG-TERM) ###
 ```
-*  Addition of other browsers like Chrome(, Firefox, Opera, etc
+*  Addition of other browsers for scraping (Chrome, Firefox, Opera, etc)
 *  Inclusion of Android OS
-*  Inter OS comparision, e.g quantity & prevalence of cookies in Brave / Firefox running in Windows vs MacOS)
+*  Inter OS comparision, e.g quantity & prevalence of cookies in Brave or Firefox running in Windows vs MacOS)
 *  Advanced EDA visualizations (matplotlib/seaborn)
 *  Machine learning pipelines (clustering + invasiveness prediction)
 *  Web dashboard using Streamlit

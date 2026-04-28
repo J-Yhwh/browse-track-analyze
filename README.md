@@ -120,7 +120,7 @@ Two versions available in `src/`:
 
 ## Sample Output
 
-<img width="1229" height="687" alt="Screenshot 2026-02-24 at 2 56 46 pm" src="https://github.com/user-attachments/assets/d7884dd2-b492-46fc-912e-52e22e00a5b8" />
+
 
 
 ### FUTURE ROADMAP (LONG-TERM) ###

@@ -4,6 +4,7 @@ from pathlib import Path
 from datetime import datetime
 
 # Correct path to Brave Cookies on Windows
+# !!IMPORTANT:  Replacing "FILEPATH" with your CORRECT Local Directory, e.g "C:\Users\YourAccountName\" is a MUST 
 cookie_db_path = Path(r"C:\FILEPATH\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Network\Cookies")
 
 # Use your actual Desktop (OneDrive)
@@ -41,12 +42,6 @@ else:
     # Save files to your actual Desktop
     raw_file = desktop / "brave_cookies_windows_raw.csv"
     df.to_csv(raw_file, index=False,encoding="utf-8")
-
-    df.to_csv(raw_file, index=False, encoding="utf-8")
-
-    # Simple summary
-    summary = df.groupby('domain').size().reset_index(name='cookies_count')
-    summary.to_csv(raw_file, index=False, encoding="utf-8")
 
     print(f"✅ Successfully extracted {len(df)} cookies from Brave on Windows!")
     print(f"   • Raw cookies saved to : {raw_file}")

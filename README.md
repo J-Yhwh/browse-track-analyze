@@ -100,7 +100,7 @@ bash pip3 install jupyter  (if not in system)
 Jupyter Notebook
 ```
 
-### Next Steps
+### Core Tools (src)
 ```
 ## Analysis Tools
 

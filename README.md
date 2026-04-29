@@ -3,7 +3,7 @@
 
 __A privacy focused tool for understanding how websites track users across different browsers and operating systems.__ 
 
-This project utilises Python-based analytic tools and scripts to **scrape** browser cookies and tracker data from mujltiple platforms  (macOS Safari, Brave on macOS/Windows, Microsoft Edge, etc.) in latent form from the cache. The collected data are then collated and parsed by EDA(Exploratory Data Analytics), and then Machine Learning is applied to identify behavourial patterns, clustering, and potentially invasive tracking.
+This project utilises Python-based analytic tools and scripts to **scrape** browser cookies and tracker data from multiple platforms  (macOS Safari, Brave on macOS/Windows, Microsoft Edge, etc.) in latent form from the cache. The collected data are then collated and parsed by EDA(Exploratory Data Analytics), and then Machine Learning is applied to identify behavioural patterns, clustering, and potentially invasive tracking.
 
 ### Goal
 Move beyond simple detection → **quantify and compare** the extent different browsers and OS environments allow for tracking, and **raise awareness about the sheer volume of trackers** users encounter daily.
@@ -28,7 +28,7 @@ Move beyond simple detection → **quantify and compare** the extent different b
 __Completed__
 1. Brave on MacOS
 2. Brave on Windows OS
-3. Brave on mobile brower simulation by Playwright
+3. Brave on mobile browser simulation by Playwright
 4. Safari on MacOs
 5. Microsoft Edge on Windows
    
@@ -97,7 +97,7 @@ FILEPATH/python3  scripts/extract_cookies_brave_macos.py
 FILEPATH/python3  scripts/extract_cookies_safari__macos.py 
 
 ## Run iOS emulation cookie extraction
-FILEPATH/python3  scripts/extracts/ioc/emulation.py
+FILEPATH/python3  scripts/extracts/ios/emulation.py
 
 ## Run Windows OS Brave cookie extraction
 FILEPATH\python scripts/extract_cookies_brave_windowsOS.py

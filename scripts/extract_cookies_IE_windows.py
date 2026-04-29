@@ -5,7 +5,8 @@ from pathlib import Path
 from datetime import datetime
 
 # Possible Edge profile paths
-base_path = Path(r"C:\Users\denis\AppData\Local\Microsoft\Edge\User Data")
+# NOTE: Please replace all "FILEPATH" portion of the directory paths with the account/profile name of your local folder(s)
+base_path = Path(r"C:\FILEPATH\AppData\Local\Microsoft\Edge\User Data")
 
 possible_profiles = ["Default", "Profile 1", "Profile 2", "Profile 3", "Profile 4"]
 
@@ -45,7 +46,7 @@ for profile in possible_profiles:
             conn.close()
             
             # Save
-            desktop = Path(r"C:\Users\denis\OneDrive\Desktop")
+            desktop = Path(r"C:\FILEPATH\OneDrive\Desktop")
             raw_file = desktop / "edge_cookies_raw.csv"
             
             df['browser'] = "Edge"

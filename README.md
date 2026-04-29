@@ -30,10 +30,13 @@ __Completed__
 2. Brave on Windows OS
 3. Brave on mobile brower simulation by Playwright
 4. Safari on MacOs
-
+5. Microsoft Edge on Windows
+   
 __Upcoming Additional Pipelines__
-1. Microsoft Edge on Windows
-2. Streamlit dashboards for master-data organisation and analytics (of extracted databases from the relevant scripts) 
+1.  Amalgamation of all 5 CSV databases (above) 
+2.  Streamlit dashboards for master-data organisation and analytics (of extracted databases from the relevant scripts)
+3.  Possibility of the inclusion of Streamlit within Jupyter, rather than as a separate tool.
+
 
 __________________________________________________________________________________________________________________________________________________
 
@@ -86,14 +89,20 @@ playwright install  --with-deps
 ### QUICK START ###
 ```
 bash
-## Run macOS Brave cookie extraction
-python3  scripts/extract_cookies_brave_macos.py
+## Run MacOS Brave cookie extraction
+FILEPATH/python3  scripts/extract_cookies_brave_macos.py
 
-## Run macOS Safari cookie extraction
-python3  scripts/extract_cookies_safari__macos.py 
+## Run MacOS Safari cookie extraction
+FILEPATH/python3  scripts/extract_cookies_safari__macos.py 
 
 ## Run iOS emulation cookie extraction
-python3  scripts/extracts/ioc/emulation.py
+FILEPATH/python3  scripts/extracts/ioc/emulation.py
+
+## Run Windows OS Brave cookie extraction
+FILEPATH\python scripts/extract_cookies_brave_windowsOS.py
+
+## Run Windows OS Microsoft Edge coookie extraction
+FILEPATH\python script/extract_cookies_IS_windowsOS.py
 
 ## Create EDA notebook for deeper visual presentation of cookie behaviour analytics (optional)
 bash pip3 install jupyter  (if not in system)

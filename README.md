@@ -34,8 +34,8 @@ __Completed__
    
 __Upcoming Additional Pipelines__
 1.  Amalgamation of all 5 CSV databases (above) 
-2.  Streamlit dashboards for master-data organisation and analytics (of extracted databases from the relevant scripts)
-3.  Possibility of the inclusion of Streamlit within Jupyter, rather than as a separate tool.
+3.  Streamlit dashboards for master-data organisation and analytics (of extracted databases from the relevant scripts)
+4.  Possibility of the inclusion of Streamlit within Jupyter, rather than as a separate tool.
 
 
 __________________________________________________________________________________________________________________________________________________
@@ -60,6 +60,7 @@ browser-tracker-analyzer/
     └── extract_cookies_brave_windowsOS.py       
     └── extract_cookies_ios_emulation.py
     └── extract_cookies_safari_macos.py
+    └── extract_cookies_IE_windowsOS.py
     └── test.py                # confirms all relevant project libraries & dependencies
     └── compare_cookies.py     # (optional) future merge script 
 ├── data/

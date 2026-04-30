@@ -100,10 +100,10 @@ FILEPATH/python3  scripts/extract_cookies_safari__macos.py
 FILEPATH/python3  scripts/extracts/ios/emulation.py
 
 ## Run Windows OS Brave cookie extraction
-FILEPATH\python scripts/extract_cookies_brave_windowsOS.py
+FILEPATH\python scripts\extract_cookies_brave_windowsOS.py
 
 ## Run Windows OS Microsoft Edge coookie extraction
-FILEPATH\python script/extract_cookies_IS_windowsOS.py
+FILEPATH\python script\extract_cookies_IS_windowsOS.py
 
 ## Create EDA notebook for deeper visual presentation of cookie behaviour analytics (optional)
 bash pip3 install jupyter  (if not in system)

@@ -1,7 +1,7 @@
 
 # BROWSER TRACKER ANALYZER - CONCEPT 
 
-__A privacy focused tool for understanding how websites track users across different browsers and operating systems.__ 
+__A privacy focused tool for understanding how websites track users across browsers and operating systems.__ 
 
 This project utilises Python-based analytic tools and scripts to **scrape** browser cookies and tracker data from multiple platforms  (macOS Safari, Brave on macOS/Windows, Microsoft Edge, etc.) in latent form from the cache. The collected data are then collated and parsed by EDA(Exploratory Data Analytics), and then Machine Learning is applied to identify behavioural patterns, clustering, and potentially invasive tracking.
 

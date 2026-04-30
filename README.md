@@ -3,7 +3,7 @@
 
 __A privacy focused tool for understanding how websites track users across browsers and operating systems.__ 
 
-This project utilises Python-based analytic tools and scripts to **scrape** browser cookies and tracker data from multiple platforms  (macOS Safari, Brave on macOS/Windows, Microsoft Edge, etc.) in latent form from the cache. The collected data are then collated and parsed by EDA(Exploratory Data Analytics), and then Machine Learning is applied to identify behavioural patterns, clustering, and potentially invasive tracking.
+This project utilises Python-based analytic tools and scripts to **scrape** browser cookies and tracker data from multiple platforms  (macOS Safari, Brave on macOS/Windows, Microsoft Edge, etc.) in latent form from the cache. The collected data are then collated and parsed by EDA(Exploratory Data Analytics). Machine Learning will be applied later, to identify behavioural patterns, clustering, and potentially invasive tracking.
 
 ### Goal
 Move beyond simple detection → **quantify and compare** the extent different browsers and OS environments allow for tracking, and **raise awareness about the sheer volume of trackers** users encounter daily.

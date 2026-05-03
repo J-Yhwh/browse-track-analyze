@@ -94,7 +94,7 @@ bash
 FILEPATH/python3  scripts/extract_cookies_brave_macos.py
 
 ## Run MacOS Safari cookie extraction
-FILEPATH/python3  scripts/extract_cookies_safari__macos.py 
+FILEPATH/python3  scripts/extract_cookies_safari_macos.py 
 
 ## Run iOS emulation cookie extraction
 FILEPATH/python3  scripts/extracts/ios/emulation.py

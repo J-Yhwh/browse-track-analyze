@@ -134,10 +134,10 @@ Two versions available in `src/`:
 ![Brave Windows raw Cookies](screenshots/brave_windows_success.png)
 
 **Brave on MacOS - Terminal**
-![Brave MacOS raw Cookies](screenshots/Terminal-Success-Brave.png)
+![Brave MacOS raw Cookies](screenshots/Terminal_Success_Brave.png)
 
 **Safari on MacOS - Terminal**
-![Safari MacOS raw Cookies](screenshots/Terminal-Success-Safari.png)
+![Safari MacOS raw Cookies](screenshots/Terminal_Success_Safari.png)
 
 ### FUTURE ROADMAP (LONG-TERM) ###
 ```

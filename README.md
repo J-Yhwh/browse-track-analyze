@@ -34,7 +34,7 @@ To understand, and visualize how browsers handle user tracking, raising awarenes
 - **Planned**: ML pipelines for tracker clustering and invasiveness prediction
 ---
 
-### Current Status (April 2026) ###
+### Current Status (May 2026) ###
 
 __Completed__
 1. Brave on MacOS
@@ -48,7 +48,6 @@ __Upcoming Additional Pipelines__
 3.  Streamlit dashboards for master-data organisation and analytics (of extracted databases from the relevant scripts)
 4.  Possibility of the inclusion of Streamlit within Jupyter, rather than as a separate tool.
 
-
 __________________________________________________________________________________________________________________________________________________
 
 ### PROJECT STRUCTURE & CONFIGURATION ###
@@ -59,7 +58,7 @@ ________________________________________________________________________________
 - 'scripts/'   - Standalone utilities for data extraction,fingerprinting, reporting
 - 'data/'      - Sample outputs
 
-browser-tracker-analyzer/
+browse-tracke-analyze/
 ├── src/
 │   ├── analyzer.py           # Core Python scripts
 ├── notebook/                 # Jupyter notebook of detailed analysis
@@ -86,6 +85,11 @@ See requirements.txt for full list.
 **Key dependencies: Playwright, pandas, csv** <br><br>
 NOTE:  Adherence to the minimal versions listed for each dependency in 'requirement.txt' is highly recommended
 for the desired results or outcome.
+
+### DIRECTIONS: 
+1. Install the required libraries and dependencies specified in requirements.txt (above) on your local machine. 
+2. Surf the web on the different browsers specified (Brave(MacOS)/Brave(Windows)/MsEdge/Safari/iOS), within a **1-day timeframe** for each and **every** browser, on standard settings.
+3. Download/branch ```browse-track-analyze``` onto your local machine/directory, and run the relevant scripts in Bash to extract cookies from the different browsers. The extracted .csv databases will be stored in the ```FILEPATH/browse-track-analyze/data``` folder of you local direcoty.
 
 
 ## Installation:

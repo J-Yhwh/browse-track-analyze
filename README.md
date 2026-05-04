@@ -3,13 +3,24 @@
 
 __A privacy focused tool for understanding how websites track users across browsers and operating systems.__ 
 
-This project utilises Python-based analytic tools and scripts to **scrape** browser cookies and tracker data from multiple platforms  (macOS Safari, Brave on macOS/Windows, Microsoft Edge, etc.) in latent form from the cache. The collected data are then collated and parsed by EDA(Exploratory Data Analytics). Machine Learning will be applied later, to identify behavioural patterns, clustering, and potentially invasive tracking.
+A practical Python project that extracts and analyzes browser cookies and tracking data across different operating system and platforms in latent form from the cache. The collected data are then collated and parsed by EDA(Exploratory Data Analytics). Machine Learning will be applied later, to identify behavioural patterns, clustering, and potentially invasive tracking.
 
 ### Goal
-Move beyond simple detection → **quantify and compare** the extent different browsers and OS environments allow for tracking, and **raise awareness about the sheer volume of trackers** users encounter daily.
+To understand, and visualize how browsers handle user tracking, raising awareness about digital privacy in real-world environments. 
+
+### Key Highlights
+- **Cross-platform consistency**: Extracts cookies from Safari(MacOS), Brave(MacOS & Windows), Microsoft Edge(Windows), and iOS browser simulation via Playwright. 
+- **Privacy & Compliance Focus**:  Captures detailed cookie metadata(domain, name, value, path, secure, httpOnly, expiry, etc) - highly relevant to data protection, tracking transparency, and regulatory compliance. 
+- **Clean Architecture**: Modular scripts, raw data output, and planned interactive dashboard.
+- **Real-world skills**: Automation, data-scraping, cross-OS comparison, EDA, and privacy-conscious development. 
+
+### Tech Stack 
+- **Language**:  Python 3
+- **Core Libraries**:  Pandas, Pathlib, Playwright, SQLite3
+- **Visualisation (Upcoming)**: Streamlit + Matplotlib / Seaborn
+- **Future ENhancements**:  Machine Learning for tracker pattern analysis and risk scoring 
 
 ### TOOLS ###
-
 1. [![Python](https://img.shields.io/badge/Python-3.10+-blue)](https://www.python.org/)
 2. [![Playwright](https://img.shields.io/badge/Playwright-1.48+-green)](https://playwright.dev/)
 3. [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -71,13 +82,10 @@ browser-tracker-analyzer/
 ```
 
 ### REQUIREMENTS AND DEPENDENCIES ###
-
-
 See requirements.txt for full list.
 **Key dependencies: Playwright, pandas, csv** <br><br>
 NOTE:  Adherence to the minimal versions listed for each dependency in 'requirement.txt' is highly recommended
 for the desired results or outcome.
-
 
 
 ## Installation:

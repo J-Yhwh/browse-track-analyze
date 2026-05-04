@@ -132,6 +132,7 @@ Two versions available in `src/`:
 
 **Brave on Windows - Powershell**
 ![Brave Windows raw Cookies](screenshots/brave_windows_success.png)
+![Brave MacOS raw Cookies](screenshots/Terminal-Success-Brave.png)
 
 ### FUTURE ROADMAP (LONG-TERM) ###
 ```

@@ -3,7 +3,7 @@
 
 __A privacy focused tool for understanding how websites track users across browsers and operating systems.__ 
 
-A practical Python project that extracts and analyzes browser cookies and tracking data across different operating system and platforms in latent form from the cache. The collected data are then collated and parsed by EDA(Exploratory Data Analytics). Machine Learning will be applied later, to identify behavioural patterns, clustering, and potentially invasive tracking.
+A practical Python project that extracts and analyzes browser cookies and tracking data across different operating system and platforms in latent form from the cache. The collected data are then collated and parsed by EDA(Exploratory Data Analytics). Machine Learning is then applied to identify behavioural patterns, clustering, and potentially invasive tracking.
 
 ### Goal
 To understand, and visualize how browsers handle user tracking, raising awareness about digital privacy in real-world environments. 
@@ -18,7 +18,7 @@ To understand, and visualize how browsers handle user tracking, raising awarenes
 - **Language**:  Python 3
 - **Core Libraries**:  Pandas, Pathlib, Playwright, SQLite3
 - **Visualisation (Upcoming)**: Streamlit + Matplotlib / Seaborn
-- **Future ENhancements**:  Machine Learning for tracker pattern analysis and risk scoring 
+- **Future Enhancements**:  Machine Learning for tracker pattern analysis and risk scoring 
 
 ### TOOLS ###
 1. [![Python](https://img.shields.io/badge/Python-3.10+-blue)](https://www.python.org/)
@@ -67,7 +67,7 @@ browse-tracke-analyze/
 │   ├── fingerprint.py        # Fingerprint detection functions
     └── report.py             # Report generation (JSON/CSV/HTML)
     └── extract_cookies_brave_macos.py
-    └── extract_cookies_brave_windowsOS.py       
+    └──extract_cookies_brave_windowsOS.py 
     └── extract_cookies_ios_emulation.py
     └── extract_cookies_safari_macos.py
     └── extract_cookies_IE_windowsOS.py
@@ -89,7 +89,7 @@ for the desired results or outcome.
 ### DIRECTIONS: 
 1. Install the required libraries and dependencies specified in requirements.txt (above) on your local machine. 
 2. Surf the web on the different browsers specified (Brave(MacOS)/Brave(Windows)/MsEdge/Safari/iOS), within a **1-day timeframe** for each and **every** browser, on standard settings.
-3. Download/branch ```browse-track-analyze``` onto your local machine/directory, and run the relevant scripts in Bash to extract cookies from the different browsers. The extracted .csv databases will be stored in the ```FILEPATH/browse-track-analyze/data``` folder of you local direcoty.
+3. Download/branch ```browse-track-analyze``` onto your local machine/directory, and run the relevant scripts in Bash to extract cookies from the different browsers. The extracted .csv databases will be stored in the ```FILEPATH/browse-track-analyze/data``` folder of your local directory.
 
 
 ## Installation:

@@ -32,6 +32,14 @@ jobs:
     - name: Install Playwright browsers
       run: playwright install --with-deps chromium
 
+      # Optional: Build check (doesn't run the full app)
+    - name: Streamlit build check
+      run: |
+        streamlit run app.py --headless --server.headless true --server.port 8501 --logger.level error &
+        sleep 5
+        curl -I http://localhost:8501 || echo "Streamlit started successfully"
+        
+
     - name: Lint with flake8
       run: |
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics

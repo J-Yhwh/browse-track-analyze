@@ -76,6 +76,7 @@ browse-tracke-analyze/
 ├── data/
 │   ├── brave_macos_cookies.csv   #CSV report derived from 'scripts/extract_cookies_macos.py'
 │   └── brave_ios_cookies.csv     #CSV report derived from'scripts/extract_ios_emulation.py'
+├── app.py                     # Streamlit library for combining all csv files in ```data/``` into dashboard for high-level presentation 
 ├── requirements.txt
 ├── README.md
 ```

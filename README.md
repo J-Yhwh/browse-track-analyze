@@ -58,7 +58,7 @@ ________________________________________________________________________________
 - 'scripts/'   - Standalone utilities for data extraction,fingerprinting, reporting
 - 'data/'      - Sample outputs
 
-browse-tracke-analyze/
+browse-track-analyze/
 ├── src/
 │   ├── analyzer.py           # Core Python scripts
 ├── notebook/                 # Jupyter notebook of detailed analysis
@@ -76,7 +76,7 @@ browse-tracke-analyze/
 ├── data/
 │   ├── brave_macos_cookies.csv   #CSV report derived from 'scripts/extract_cookies_macos.py'
 │   └── brave_ios_cookies.csv     #CSV report derived from'scripts/extract_ios_emulation.py'
-├── app.py                     # Streamlit library for combining all csv files in ```data/``` into dashboard for high-level presentation 
+├── app.py                        # Streamlit library - combines all CSV files in ```data/``` into dashboard for high-level presentation 
 ├── requirements.txt
 ├── README.md
 ```

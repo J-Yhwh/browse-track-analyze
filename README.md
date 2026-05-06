@@ -67,16 +67,19 @@ browse-track-analyze/
 │   ├── fingerprint.py        # Fingerprint detection functions
     └── report.py             # Report generation (JSON/CSV/HTML)
     └── extract_cookies_brave_macos.py
-    └──extract_cookies_brave_windowsOS.py 
+    └── extract_cookies_brave_windowsOS.py 
     └── extract_cookies_ios_emulation.py
     └── extract_cookies_safari_macos.py
     └── extract_cookies_IE_windowsOS.py
     └── test.py                # confirms all relevant project libraries & dependencies
     └── compare_cookies.py     # (optional) future merge script 
 ├── data/
-│   ├── brave_macos_cookies.csv   #CSV report derived from 'scripts/extract_cookies_macos.py'
-│   └── brave_ios_cookies.csv     #CSV report derived from'scripts/extract_ios_emulation.py'
-├── app.py                        # Streamlit library - combines all CSV files in ```data/``` into dashboard for high-level presentation 
+│   ├── brave_cookies_raw.csv           #CSV report from 'scripts/extract_cookies_brave_windowsOS.py'
+│   └── brave_ios_emulated_cookies.csv  #CSV report from 'scripts/extract_cookies_ios_emulation.py'
+│   └── brave_macos_cookies.csv         #CSV report from 'scripts/extract_cookies_brave_macos.py'
+│   └── edge_cookies_raw.csv            #CSV report from 'scripts/extract_cookies_IE_windowsOS.py'
+│   └── safari_cookies_full.csv         #CSV report from 'scripts/extract_cookies_safari_macos.py'
+├── app.py                    # Streamlit library - combines all CSV files in ```data/``` into dashboard for high-level presentation 
 ├── requirements.txt
 ├── README.md
 ```

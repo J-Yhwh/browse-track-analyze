@@ -49,7 +49,7 @@ def load_all_data(data_folder="data"):
             st.error(f"Failed to load {file.name}: {e}")
 
     if all_dfs:
-        return.pf.concat(all_dfs, ignore_index=True)
+        return.pd.concat(all_dfs, ignore_index=True)
     return pd.DataFrame()
 
 df = load_all_data()

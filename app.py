@@ -33,7 +33,7 @@ def load_all_data(data_folder="data"):
                 df['browser'] = 'Brave'
                 df['os'] = 'macOS'
             elif 'safari' in fname:
-                df['browser'] = Safari
+                df['browser'] = 'Safari'
                 df['os'] = 'macOS'
             elif 'edge' in fname or 'msedge' in fname:
                 df['browser'] = 'Edge'
@@ -43,7 +43,7 @@ def load_all_data(data_folder="data"):
                 df['os'] = 'Unknown'
 
             all_dfs.append(df)
-            st.success(f"✅ Loased {file.name} -> {len[df]} rows ({df[browser].iloc[0]} on {df['os'].iloc[0]})")
+            st.success(f"✅ Loaded {file.name} -> {len[df]} rows ({df[browser].iloc[0]} on {df['os'].iloc[0]})")
 
         except Exception as e:
             st.error(f"Failed to load {file.name}: {e}")

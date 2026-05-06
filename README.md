@@ -3,7 +3,7 @@
 
 __A privacy focused tool for understanding how websites track users across browsers and operating systems.__ 
 
-A practical Python project that extracts and analyzes browser cookies and tracking data across different operating system and platforms in latent form from the cache. The collected data are then collated and parsed by EDA(Exploratory Data Analytics). Machine Learning is then applied to identify behavioural patterns, clustering, and potentially invasive tracking.
+A practical Python project that extracts and analyzes browser cookies and tracking data across different operating system and platforms in latent form from the cache. The collated data are then parsed by EDA(Exploratory Data Analytics). Machine Learning is then applied to identify behavioural patterns, clustering, and potentially invasive tracking.
 
 ### Goal
 To understand, and visualize how browsers handle user tracking, raising awareness about digital privacy in real-world environments. 

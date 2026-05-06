@@ -1,5 +1,4 @@
 
-
 import streamlit as st
 import pandas as pd
 from pathlib import Path
@@ -14,39 +13,43 @@ st.markdown("**Privacy-focused cross-platform browser cookie & tracking analysis
 @st.cache_data
 def load_all_data(data_folder="data"):
     data_path = Path(data_folder)
-    if not data_path.exists():
-        st.error(f"Folder '{data_folder}' not found!")
-        return pd.DataFrame()
-    
+    st.write(f"🔍 Looking in: {data_path.absolute()}")
+
     csv_files = list(data_path.glob("*.csv"))
-    if not csv_files:
-        st.warning("No CSV files found in data folder.")
-        return pd.DataFrame()
-    
+    st.write(f"📂 Found {len(csv_files)} CSV files: {[f.name for f in csv_files]}")
+
     all_dfs = []
-    for file in csv_files:
+    for file in csv files:
         try:
-            df = pd.read_csv(file)
+            df = pd.read.csv(file)
             df['source_file'] = file.name
-            
-            # Infer browser from filename
+
+            # Infer Browser & OS
             fname = file.name.lower()
-            if 'brave' in fname:
+            if 'brave' in fname and 'windows' in fname:
                 df['browser'] = 'Brave'
+                df['os'] = 'windowsOS'
+            elif 'brave' in fname:
+                df['browser'] = 'Brave'
+                df['os'] = 'macOS'
             elif 'safari' in fname:
-                df['browser'] = 'Safari'
-            elif 'edge' in fname:
+                df['browser'] = Safari
+                df['os'] = 'macOS'
+            elif 'edge' in fname or 'msedge' in fname:
                 df['browser'] = 'Edge'
+                df['os'] = 'windowsOS'
             else:
                 df['browser'] = 'Unknown'
-            
+                df['os'] = 'Unknown'
+
             all_dfs.append(df)
-            
+            st.success(f"✅ Loased {file.name} -> {len[df]} rows ({df[browser].iloc[0]} on {df['os'].iloc[0]})")
+
         except Exception as e:
-            st.warning(f"Could not load {file.name}: {e}")
-    
+            st.error(f"Failed to load {file.name}: {e}")
+
     if all_dfs:
-        return pd.concat(all_dfs, ignore_index=True)
+        return.pf.concat(all_dfs, ignore_index=True)
     return pd.DataFrame()
 
 df = load_all_data()
@@ -55,18 +58,17 @@ df = load_all_data()
 st.sidebar.header("🔍 Advanced Filters")
 
 if not df.empty:
-    browsers = sorted(df['browser'].unique())
-    selected_browsers = st.sidebar.multiselect("Browser(s)", browsers, default=browsers)
+    # Browser & OS Filters
+    selected_browsers = st.sidebar.multiselect("Browser(s)", sorted(df['browser'].unique()), default=df['browser'].unique())
+    selected_os = st.sidebar.multiselect("OS", sorted(df['os'].unique()), default=df['os'].unique())
 
     if 'domain' in df.columns:
         domain_search = st.sidebar.text_input("Search Domain", "")
-        domains = sorted(df['domain'].unique())
-        if domain_search:
-            domains = [d for d in domains if domain_search.lower() in d.lower()]
-        selected_domains = st.sidebar.multiselect("Filter Domains", domains, default=[])
-
+        selected_domains = st.sidebar.multiselect("Filter Domains", sorted(df['domain'].unique()), default=[])
+    
     cookie_search = st.sidebar.text_input("Search Cookie Name", "")
 
+    # Security Filters
     secure_only = st.sidebar.checkbox("Secure cookies only", value=False)
     httponly_only = st.sidebar.checkbox("HttpOnly cookies only", value=False)
 
@@ -75,38 +77,41 @@ filtered_df = df.copy()
 
 if not df.empty:
     if selected_browsers:
-        filtered_df = filtered_df[filtered_df['browser'].isin(selected_browsers)]
-    
-    if 'domain' in filtered_df.columns and 'selected_domains' in locals() and selected_domains:
+        filtered_df = filtered_df[filtered_df['browser'].isin(selected_browsers)]  
+    if selected_os:
+        filtered_df = filtered_df[filtered_df['os'].isin(selected_os)]
+    if 'domain' in filtered_df.columns and selected_domains:
         filtered_df = filtered_df[filtered_df['domain'].isin(selected_domains)]
-    
     if cookie_search and 'name' in filtered_df.columns:
         filtered_df = filtered_df[filtered_df['name'].str.contains(cookie_search, case=False, na=False)]
-    
     if secure_only and 'secure' in filtered_df.columns:
         filtered_df = filtered_df[filtered_df['secure'] == True]
-    
     if httponly_only and 'httpOnly' in filtered_df.columns:
         filtered_df = filtered_df[filtered_df['httpOnly'] == True]
 
-# ====================== MAIN DASHBOARD ======================
+# ====================== DASHBOARD ======================
 if filtered_df.empty:
-    st.info("No data loaded yet. Place your CSV files in the `data/` folder.")
+    st.info("No data loaded yet. Double-check you 'data/' folder to ensure the CSV files are in place.")
 else:
-    col1, col2, col3 = st.columns(3)
+    col1, col2, col3, col4, col5 = st.columns(5)
     with col1:
         st.metric("Total Cookies", len(filtered_df))
     with col2:
         st.metric("Unique Domains", filtered_df['domain'].nunique() if 'domain' in filtered_df.columns else 0)
     with col3:
         st.metric("Browsers", filtered_df['browser'].nunique())
+    with col4:
+        st.metric("OS Variants", filtered_df['os'].nunique())
+    with col5:
+        st.metric("secure", filtered_df['secure'].nunique())
 
-    st.subheader("Cookies per Browser")
-    browser_count = filtered_df['browser'].value_counts().reset_index()
-    browser_count.columns = ['Browser', 'Count']
-    fig = px.bar(browser_count, x='Browser', y='Count', color='Browser', text='Count')
+    # Cookies by browser + OS
+    st.subheader("Cookies by Browser & OS")
+    count_df = filtered_df.groupby(['browser','os']).size().reset_index(name='count')
+    fig = px.bar(count_df, x='browser', y='count', color='os', text='count', barmode='group')
     st.plotly_chart(fig, use_container_width=True)
 
+    # Top Domains
     if 'domain' in filtered_df.columns:
         st.subheader("Top 10 Domains")
         top_domains = filtered_df['domain'].value_counts().head(10).reset_index()
@@ -115,6 +120,6 @@ else:
         st.plotly_chart(fig2, use_container_width=True)
 
     st.subheader("Raw Data Preview")
-    st.dataframe(filtered_df.head(100), use_container_width=True)
+    st.dataframe(filtered_df.head(150), use_container_width=True)
 
-st.caption(f"Last updated: {datetime.now().strftime('%Y-%m-%d %H:%M')} | Built with ❤️")
+st.caption(f"Last updated: {datetime.now().strftime('%Y-%m-%d %H:%M')} | Built By Jacqueline Liao")

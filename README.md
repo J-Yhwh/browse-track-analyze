@@ -86,7 +86,7 @@ browse-track-analyze/
 
 ### REQUIREMENTS AND DEPENDENCIES ###
 See requirements.txt for full list.
-**Key dependencies: CSV(SQLite),Pandas,Playright,Streamlit** <br><br>
+**Key dependencies: CSV(SQLite), Pandas, Playright, Streamlit** <br><br>
 NOTE:  Adherence to the minimal versions listed for each dependency in 'requirement.txt' is highly recommended
 for the desired results or outcome.
 

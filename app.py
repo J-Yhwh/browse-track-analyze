@@ -19,7 +19,7 @@ def load_all_data(data_folder="data"):
     st.write(f"📂 Found {len(csv_files)} CSV files: {[f.name for f in csv_files]}")
 
     all_dfs = []
-    for file in csv files:
+    for file in csv_files:
         try:
             df = pd.read.csv(file)
             df['source_file'] = file.name

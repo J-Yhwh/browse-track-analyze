@@ -21,7 +21,7 @@ def load_all_data(data_folder="data"):
     all_dfs = []
     for file in csv_files:
         try:
-            df = pd.read.csv(file)
+            df = pd.read_csv(file)
             df['source_file'] = file.name
 
             # Infer Browser & OS
@@ -43,7 +43,7 @@ def load_all_data(data_folder="data"):
                 df['os'] = 'Unknown'
 
             all_dfs.append(df)
-            st.success(f"✅ Loaded {file.name} -> {len[df]} rows ({df[browser].iloc[0]} on {df['os'].iloc[0]})")
+            st.success(f"✅ Loaded {file.name} -> {len(df)} rows ({df['browser'].iloc[0]} on {df['os'].iloc[0]})")
 
         except Exception as e:
             st.error(f"Failed to load {file.name}: {e}")

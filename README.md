@@ -42,11 +42,12 @@ __Completed__
 3. Brave on mobile browser simulation by Playwright
 4. Safari on MacOs
 5. Microsoft Edge on Windows
+6. Amalgamation of all 5 CSV databases (above)
+7. Streamlit dashboards for master-data organisation and analytics (of extracted databases from the relevant scripts)
    
 __Upcoming Additional Pipelines__
-1.  Amalgamation of all 5 CSV databases (above) 
-3.  Streamlit dashboards for master-data organisation and analytics (of extracted databases from the relevant scripts)
-4.  Possibility of the inclusion of Streamlit within Jupyter, rather than as a separate tool.
+1.   Possibility of the inclusion of Streamlit within Jupyter, rather than as a separate tool.
+2.   Additional browsers to experiment on - Chrome, Firefox, Opera, Android
 
 __________________________________________________________________________________________________________________________________________________
 

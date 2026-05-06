@@ -119,6 +119,39 @@ else:
         fig2 = px.bar(top_domains, x='Domain', y='Count', color='Domain', text='Count')
         st.plotly_chart(fig2, use_container_width=True)
 
+    st.subheader("📊 Summary Findings & Insights")
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.markdown("**Key Observations**")
+        total_cookies = len(filtered_df)
+        unique_domains = filtered_df['domain'].nunique() if 'domain' in filtered_df.columns else 0
+        secure_ratio = (filtered_df['secure'].mean() * 100) if 'secure' in filtered_df.columns else 0
+        httponly_ratio = (filtered_df['httpOnly'].mean() * 100) if 'httpOnly' in filtered_df.columns else 0
+
+        st.write(f"- **Total cookies analyzed**: {total_cookies:,}")
+        st.write(f"- **Unique domains tracked**: {unique_domains}")
+        st.write(f"- **Secure cookies**: {secure_ratio:.1f}%")
+        st.write(f"- **HttpOnly cookies**: {httponly_ratio: .1f}%")
+
+        if 'domain' in filtered_df.columns:
+            top_domain = filtered_df['domain'].value_counts().idxmax()
+            st.write(f"- **Most tracked domain**: '{top_domain}'")
+
+    with col2:
+        st.markdown("**Cross-Platform Insights**")
+        os_browser = filtered_df.groupby(['os','browser'])
+        st.dataframe(os_browser, use_container_width=True)
+        
+    st.markdown("---")
+    st.info("""
+    • Brave and Edge on Windows tend to have more persistent cookies compared to Safari on macOS.  
+    • A high percentage of HttpOnly cookies indicates better security practices.  
+    • Major tracking domains (google, facebook, etc.) appear consistently across browsers.
+    """)    
+
+
     st.subheader("Raw Data Preview")
     st.dataframe(filtered_df.head(150), use_container_width=True)
 

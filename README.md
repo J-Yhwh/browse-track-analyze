@@ -10,7 +10,7 @@ To understand, and visualize how browsers handle user tracking, raising awarenes
 - **Cross-platform consistency**: Extracts cookies from Safari(MacOS), Brave(MacOS & Windows), Microsoft Edge(Windows), and iOS browser simulation via Playwright. 
 - **Privacy & Compliance Focus**:  Captures detailed cookie metadata(domain, name, value, path, secure, httpOnly, expiry, etc) - highly relevant to data protection, tracking transparency, and regulatory compliance. 
 - **Clean Architecture**: Modular scripts, raw data output, and planned interactive dashboard.
-- **Real-world skills**: Automation, data-scraping, cross-OS comparison, EDA, and privacy-conscious development. 
+- **Real-world skills**: Automation, data-scraping, cross-OS comparision, EDA, and privacy-conscious development. 
 
 ### Tech Stack 
 - **Language**:  Python 3
@@ -118,7 +118,7 @@ FILEPATH/python3  scripts/extracts/ios/emulation.py
 FILEPATH\python scripts\extract_cookies_brave_windowsOS.py
 
 ## Run Windows OS Microsoft Edge cookie extraction
-FILEPATH\python scripts\extract_cookies_IS_windowsOS.py
+FILEPATH\python scripts\extract_cookies_IE_windowsOS.py
 
 ## Create EDA notebook for deeper visual presentation of cookie behaviour analytics (optional)
 bash pip3 install jupyter  (if not in system)

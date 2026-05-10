@@ -5,7 +5,7 @@
 import sys
 import os
 
-#Libraies required to generate the reporting analytics on cookie behaviour (for MacOS/iOS)
+#Libraries required to generate the reporting analytics on cookie behaviour (for MacOS/iOS)
 import argparse
 import json
 import pandas as pd

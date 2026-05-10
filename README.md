@@ -174,4 +174,6 @@ MIT License
 ### Contact ###
 
 Built by JLL<br>
-Feedback and Suggestions welcome!
+**All images and screenshots in this repository are copyrighted.**
+Please **do not** download, copy, or use them without written permission.
+

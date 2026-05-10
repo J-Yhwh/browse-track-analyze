@@ -1,7 +1,6 @@
 # Copyright (c) 2026. Jac LL
 # All Rights Reserved. 
 # Unauthorized use or distribution is prohibited.
-
 import sys
 import os
 

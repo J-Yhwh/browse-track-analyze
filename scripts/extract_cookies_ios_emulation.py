@@ -1,4 +1,6 @@
-
+# Copyright (c) 2026. Jac LL
+# All Rights Reserved. 
+# Unauthorized use or distribution is prohibited.
 
 from playwright.sync_api import sync_playwright
 

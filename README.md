@@ -3,8 +3,6 @@
 
 __A privacy focused tool for understanding how websites track users across browsers and operating systems.__ 
 
-A practical Python project that extracts and analyzes browser cookies and tracking data across different operating system and platforms in latent form from the cache. The collated data are then parsed by EDA(Exploratory Data Analytics). Machine Learning is then applied to identify behavioural patterns, clustering, and potentially invasive tracking.
-
 ### Goal
 To understand, and visualize how browsers handle user tracking, raising awareness about digital privacy in real-world environments. 
 
@@ -87,7 +85,7 @@ browse-track-analyze/
 
 ### REQUIREMENTS AND DEPENDENCIES ###
 See requirements.txt for full list.
-**Key dependencies: CSV(SQLite), Pandas, Playright, Streamlit** <br><br>
+**Key dependencies: CSV(SQLite), Pandas, Playwright, Streamlit** <br><br>
 NOTE:  Adherence to the minimal versions listed for each dependency in 'requirement.txt' is highly recommended
 for the desired results or outcome.
 
@@ -119,7 +117,7 @@ FILEPATH/python3  scripts/extracts/ios/emulation.py
 ## Run Windows OS Brave cookie extraction
 FILEPATH\python scripts\extract_cookies_brave_windowsOS.py
 
-## Run Windows OS Microsoft Edge coookie extraction
+## Run Windows OS Microsoft Edge cookie extraction
 FILEPATH\python scripts\extract_cookies_IS_windowsOS.py
 
 ## Create EDA notebook for deeper visual presentation of cookie behaviour analytics (optional)

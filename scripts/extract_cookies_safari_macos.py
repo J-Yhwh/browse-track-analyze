@@ -1,3 +1,7 @@
+# Copyright (c) 2026. Jac LL
+# All Rights Reserved. 
+# Unauthorized use or distribution is prohibited.
+
 import browser_cookie3
 import traceback
 import pandas as pd

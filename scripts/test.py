@@ -1,3 +1,7 @@
+# Copyright (c) 2026. Jac LL
+# All Rights Reserved. 
+# Unauthorized use or distribution is prohibited.
+
 import sys
 print(f"Python version: {sys.version}")
 
@@ -5,8 +9,6 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import torch
-
-
 
 print(f"NumPy: {np.__version__}")
 print(f"Pandas: {pd.__version__}")

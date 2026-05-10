@@ -1,8 +1,11 @@
+# Copyright (c) 2026. Jac LL
+# All Rights Reserved. 
+# Unauthorized use or distribution is prohibited.
+
 import sys
 import os
 
-
-#Librries required to generate the reporting analytics on cookie behaviour (for MacOS/iOS)
+#Libraies required to generate the reporting analytics on cookie behaviour (for MacOS/iOS)
 import argparse
 import json
 import pandas as pd

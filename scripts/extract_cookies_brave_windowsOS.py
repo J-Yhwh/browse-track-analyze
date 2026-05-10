@@ -1,3 +1,7 @@
+# Copyright (c) 2026. Jac LL
+# All Rights Reserved. 
+# Unauthorized use or distribution is prohibited.
+
 import sqlite3
 import pandas as pd
 from pathlib import Path

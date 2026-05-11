@@ -22,6 +22,7 @@ To understand, and visualize how browsers handle user tracking, raising awarenes
 1. [![Python](https://img.shields.io/badge/Python-3.10+-blue)](https://www.python.org/)
 2. [![Playwright](https://img.shields.io/badge/Playwright-1.48+-green)](https://playwright.dev/)
 3. [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+4. [![Streamlit App](https://streamlit.io)](https://streamlit.app)
 
 ---
 ### FEATURES
@@ -67,7 +68,8 @@ browse-track-analyze/
     └── report.py             # Report generation (JSON/CSV/HTML)
     └── extract_cookies_brave_macos.py
     └── extract_cookies_brave_windowsOS.py 
-    └── extract_cookies_ios_emulation.py
+    └── extract_cookies_brave_ios_emulate.py
+    └── extract_cookies_safari_ios_emulate.py
     └── extract_cookies_safari_macos.py
     └── extract_cookies_IE_windowsOS.py
     └── test.py                # confirms all relevant project libraries & dependencies

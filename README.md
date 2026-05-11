@@ -29,8 +29,8 @@ To understand, and visualize how browsers handle user tracking, raising awarenes
 - Cross-platform cookie extraction (Brave, Safari, MS Edge, etc)
 - Raw data export to CSV
 - Breakdown of cookie and domain details, including security
-- **Planned**: Streamlit dashboards for amalgamation of results for  comparison
-- **Planned**: ML pipelines for tracker clustering and invasiveness prediction
+- Streamlit dashboards for amalgamation of results for  comparison
+- **Planning**: ML pipelines for tracker clustering and invasiveness prediction
 __________________________________________________________________________________________________________________________________________________
 
 ### PROJECT STRUCTURE & CONFIGURATION ###

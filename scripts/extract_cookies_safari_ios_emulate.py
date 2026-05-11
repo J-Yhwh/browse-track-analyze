@@ -9,7 +9,7 @@ from datetime import datetime
 from pathlib import Path
 
 
-def scrape_safari_ios_cookies(urls);
+def scrape_safari_ios_cookies(urls):
     all_data = []
 
     with sync_playwright() as p:

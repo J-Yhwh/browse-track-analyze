@@ -59,10 +59,11 @@ browse-track-analyze/
     └── compare_cookies.py     # (optional) future merge script 
 ├── data/
 │   ├── brave_cookies_raw.csv           #CSV report from 'scripts/extract_cookies_brave_windowsOS.py'
-│   └── brave_ios_emulated_cookies.csv  #CSV report from 'scripts/extract_cookies_ios_emulation.py'
+│   └── brave_ios_emulated_cookies.csv  #CSV report from 'scripts/extract_cookies_brave_ios_emulate.py'
 │   └── brave_macos_cookies.csv         #CSV report from 'scripts/extract_cookies_brave_macos.py'
 │   └── edge_cookies_raw.csv            #CSV report from 'scripts/extract_cookies_IE_windowsOS.py'
 │   └── safari_cookies_full.csv         #CSV report from 'scripts/extract_cookies_safari_macos.py'
+│   └── safari_ios_emulated_cookies.csv #CSV report from 'scripts/extract_cookies_safari_ios_emulate.py
 ├── app.py                    # Streamlit library - combines all CSV files in ```data/``` into dashboard for high-level presentation 
 ├── requirements.txt
 ├── README.md

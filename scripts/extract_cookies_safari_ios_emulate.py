@@ -26,8 +26,7 @@ def scrape_safari_ios_cookies(urls):
 
         page = context.new_page()
         
-
-        for url_in_urls:
+        for url in urls:
             try:
                 print(f"🌐 Visiting: {url}")
                 page.goto(url, wait_until="networkidle", timeout=30000)

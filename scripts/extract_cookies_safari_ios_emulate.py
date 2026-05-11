@@ -3,7 +3,7 @@
 # Unauthorized use or distribution is prohibited.
 
 
-from playwright.sync.api import sync_playwright
+from playwright.sync_api import sync_playwright
 import pandas as pd
 from datetime import datetime
 from pathlib import Path

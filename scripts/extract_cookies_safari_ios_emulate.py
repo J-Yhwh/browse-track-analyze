@@ -56,7 +56,7 @@ def scrape_safari_ios_cookies(urls):
 
     #Save summary
     df = pd.DataFrame(all_data)
-    df_to_csv("data/safari_ios_cookie_summary.csv", index=False)
+    df.to_csv("data/safari_ios_cookie_summary.csv", index=False)
     print("✅ Safari iOS scraping completed!")
 
 

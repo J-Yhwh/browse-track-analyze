@@ -76,15 +76,3 @@ if __name__== "main":
         "https://www.yahoo.com"
     ]
     scrape_safari_ios_cookies(urls)
-
-
-
-
-
-
-
-
-
-  
-    ]
-    scrape_safari_ios_cookies(urls)

@@ -37,6 +37,9 @@ def load_all_data(data_folder="data"):
             elif 'brave' in fname and 'ios' in fname:
                 df['browser'] = 'Brave'
                 df['os'] = 'iOS (Playwright)'
+            elif 'safari' in fname and 'ios' in fname:
+                df['browser'] = 'Safari'
+                df['os'] = 'iOS (Playwright)'
             elif 'brave' in fname:
                 df['browser'] = 'Brave'
                 df['os'] = 'macOS'

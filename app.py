@@ -8,7 +8,7 @@ from pathlib import Path
 import plotly.express as px
 from datetime import datetime
 
-# Preparation of Steamlit Dashboard for high-level cross-CSV analytics and presentation
+# Preparation of Steamlit Dashboard for high-level cross-CSV analysis and presentation
 st.set_page_config(page_title="Browser Tracker Analyzer", layout="wide")
 st.title("🕵️‍♀️ Browser Track Analyze")
 st.markdown("**Privacy-focused cross-platform browser cookie & tracking analysis**")

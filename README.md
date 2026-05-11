@@ -31,23 +31,6 @@ To understand, and visualize how browsers handle user tracking, raising awarenes
 - Breakdown of cookie and domain details, including security
 - **Planned**: Streamlit dashboards for amalgamation of results for  comparison
 - **Planned**: ML pipelines for tracker clustering and invasiveness prediction
----
-
-### Current Status (May 2026) ###
-
-__Completed__
-1. Brave on MacOS
-2. Brave on Windows OS
-3. Brave on mobile browser simulation by Playwright
-4. Safari on MacOs
-5. Microsoft Edge on Windows
-6. Amalgamation of all 5 CSV databases (above)
-7. Streamlit dashboards for master-data organisation and analytics (of extracted databases from the relevant scripts)
-   
-__Upcoming Additional Pipelines__
-1.   Possibility of the inclusion of Streamlit within Jupyter, rather than as a separate tool.
-2.   Additional browsers to experiment on - Chrome, Firefox, Opera, Android
-
 __________________________________________________________________________________________________________________________________________________
 
 ### PROJECT STRUCTURE & CONFIGURATION ###

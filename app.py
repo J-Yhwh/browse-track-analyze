@@ -34,7 +34,7 @@ def load_all_data(data_folder="data"):
             if 'brave' in fname and 'windows' in fname:
                 df['browser'] = 'Brave'
                 df['os'] = 'windowsOS'
-            elif 'brave' in fname nd 'ios' in fname:
+            elif 'brave' in fname and 'ios' in fname:
                 df['browser'] = 'Brave'
                 df['os'] = 'iOS (Playwright)'
             elif 'brave' in fname:

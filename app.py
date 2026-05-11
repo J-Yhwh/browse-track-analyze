@@ -2,13 +2,13 @@
 # All Rights Reserved. 
 # Unauthorized use or distribution is prohibited.
 
-
 import streamlit as st
 import pandas as pd
 from pathlib import Path
 import plotly.express as px
 from datetime import datetime
 
+# Preparation of Steamlit Dashboard for high-level cross-CSV analytics and presentation
 st.set_page_config(page_title="Browser Tracker Analyzer", layout="wide")
 st.title("🕵️‍♀️ Browser Track Analyze")
 st.markdown("**Privacy-focused cross-platform browser cookie & tracking analysis**")
@@ -28,11 +28,15 @@ def load_all_data(data_folder="data"):
             df = pd.read_csv(file)
             df['source_file'] = file.name
 
-            # Infer Browser & OS
+            # Infer Browser & OS from filename
             fname = file.name.lower()
+            
             if 'brave' in fname and 'windows' in fname:
                 df['browser'] = 'Brave'
                 df['os'] = 'windowsOS'
+            elif 'brave' in fname nd 'ios' in fname:
+                df['browser'] = 'Brave'
+                df['os'] = 'iOS (Playwright)'
             elif 'brave' in fname:
                 df['browser'] = 'Brave'
                 df['os'] = 'macOS'

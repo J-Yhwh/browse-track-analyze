@@ -19,7 +19,7 @@ sys.path.insert(0, REPO_ROOT)
 
 
 #######################################################################################################################
-##The idea is to run from "src/analyzer_eda.py", then extract the output for mroe readable diagrams & chart summaries##
+##The idea is to run from "src/analyzer_eda.py", then extract the output for readable diagrams & chart summaries##
 #######################################################################################################################
 
 

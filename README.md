@@ -18,11 +18,11 @@ To understand, and visualize how browsers handle user tracking, raising awarenes
 - **Visualisation (Upcoming)**: Streamlit + Matplotlib / Seaborn
 - **Future Enhancements**:  Machine Learning for tracker pattern analysis and risk scoring 
 
-### TOOLS ###
+### TECH STACK ###
 1. [![Python](https://img.shields.io/badge/Python-3.10+-blue)](https://www.python.org/)
 2. [![Playwright](https://img.shields.io/badge/Playwright-1.48+-green)](https://playwright.dev/)
 3. [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-4. ![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat&logo=streamlit&logoColor=white)
+4. [!Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
 
 ---
 ### FEATURES

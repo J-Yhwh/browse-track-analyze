@@ -143,7 +143,7 @@ if not filtered_df.empty:
             case=False, na=False).astype(int)
 
     features = ['secure', 'httpOnly', 'domain_length']
-    x = df_ml[features].fillna(0)
+    X = df_ml[features].fillna(0)
     y = df_ml['is_tracking']
     
     if len(filtered_df) > 10:

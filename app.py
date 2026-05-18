@@ -14,7 +14,6 @@ import matplotlib.pyplot as plt
 import xgboost as xgb
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
-import plotly.express as px  
 
 
 # Preparation of Steamlit Dashboard for high-level cross-CSV analysis and presentation
@@ -140,8 +139,8 @@ if not filtered_df.empty:
         df_ml = filtered_df.copy()
         df_ml['domain_length'] = df_ml['domain'].str.len()
         df_ml['is_tracking'] = df_ml['domain'].str.contains(
-            r'(google|facebook|doubleclick|analytics|pixel|ads|track|analytics)',
-            case=False, na=False).as.type(int)
+            r'(google|facebook|doubleclick|analytics|pixel|ads|track)',
+            case=False, na=False).astype(int)
 
     features = ['secure', 'httpOnly', 'domain_length']
     x = df_ml[features].fillna(0)

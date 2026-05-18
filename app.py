@@ -167,16 +167,6 @@ if not filtered_df.empty:
         fig_imp = px.bar(importance, x='Importance', y='Feature', orientation='h', title="Feature Importance")
         st.plotly_chart(fig_imp, use_container_width=True)
 
-        
-        
-        
-
-    
-
-
-
-
-
 
 # ====================== DASHBOARD ======================
 if filtered_df.empty:

@@ -137,34 +137,45 @@ if not filtered_df.empty:
 
         # Feature Engineering
         df_ml = filtered_df.copy()
+
+        # IMPORTANT:  Convert boolean/object columns to numeric
+        for col in ['secure','httpOnly']:
+            if col in df_ml.columns:
+                df_ml[col] = df_ml[col].astype(bool).astype(int)   # True ->1, False -> 0
+
+                
         df_ml['domain_length'] = df_ml['domain'].str.len()
         df_ml['is_tracking'] = df_ml['domain'].str.contains(
             r'(google|facebook|doubleclick|analytics|pixel|ads|track)',
             case=False, na=False).astype(int)
+        
 
     features = ['secure', 'httpOnly', 'domain_length']
     X = df_ml[features].fillna(0)
     y = df_ml['is_tracking']
-    
-    if len(filtered_df) > 10:
-        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
 
-        model = xgb.XGBClassifier(random_state=42, eval_metric='logloss')
-        model.fit(X_train, y_train)
+ 
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
 
-        y_pred = model.predict(X_test)
-        acc = accuracy_score(y_test, y_pred)
+    model = xgb.XGBClassifier(random_state=42, eval_metric='logloss')
+    model.fit(X_train, y_train)
 
-        st.success(f"✅ Model Accuracy: **{acc:1%}**")
+    y_pred = model.predict(X_test)
+    acc = accuracy_score(y_test, y_pred)
 
-        # Feature Importance
-        importance = pd.DataFrame({
-            'Feature': features,
-            'Importance': model.feature_importances_
-        }).sort_values('Importance', ascending=False)
+    st.success(f"✅ Model Accuracy: **{acc:1%}**")
 
-        fig_imp = px.bar(importance, x='Importance', y='Feature', orientation='h', title="Feature Importance")
-        st.plotly_chart(fig_imp, use_container_width=True)
+
+    # Feature Importance
+    importance = pd.DataFrame({
+        'Feature': features,
+        'Importance': model.feature_importances_
+    }).sort_values('Importance', ascending=False)
+
+
+    fig_imp = px.bar(importance, x='Importance', y='Feature', orientation='h',
+                     title="Feature Importance (XGBoost")
+    st.plotly_chart(fig_imp, use_container_width=True)
 
 
 # ====================== DASHBOARD ======================

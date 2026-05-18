@@ -8,6 +8,15 @@ from pathlib import Path
 import plotly.express as px
 from datetime import datetime
 
+# ML Libraries for data amalgamation and computing
+import seaborn as sns
+import matplotlib.pyplot as plt
+import xgboost as xgb
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
+import plotly.express as px  
+
+
 # Preparation of Steamlit Dashboard for high-level cross-CSV analysis and presentation
 st.set_page_config(page_title="Browser Tracker Analyzer", layout="wide")
 st.title("🕵️‍♀️ Browser Track Analyze")
@@ -83,7 +92,7 @@ if not df.empty:
     secure_only = st.sidebar.checkbox("Secure cookies only", value=False)
     httponly_only = st.sidebar.checkbox("HttpOnly cookies only", value=False)
 
-# ====================== APPLY FILTERS ======================
+# ====================== APPLY FILTERS =================================
 filtered_df = df.copy()
 
 if not df.empty:
@@ -99,6 +108,75 @@ if not df.empty:
         filtered_df = filtered_df[filtered_df['secure'] == True]
     if httponly_only and 'httpOnly' in filtered_df.columns:
         filtered_df = filtered_df[filtered_df['httpOnly'] == True]
+
+# ===================== ML & ADVANCED DATA VISUALIZATIONS (ANALYTICS)===
+
+if not filtered_df.empty:
+    st.subheader("🔍 Advanced Analysis & Machine Learning")
+
+    # 1. Seaborn Visualisation
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.write("**Cookie Types by Browser & OS**")
+        fig = plt.figure(figsize=(10, 6))
+        sns.countplot(data=filtered_df, x='browser', hue='os', palette='viridis')
+        plt.title("Cookies Distribution by Browser & OS")
+        plt.xticks(rotation=45)
+        st.pyplot(fig)
+
+    with col2:
+        st.write("**Secure vs HttpOnly Cookies**")
+        fig2 = plt.figure(figsize=(10,7))
+        correlation = filtered_df[['secure', 'httpOnly']].corr()
+        sns.heatmap(correlation, annot=True,cmap='coolwarm', center=0)
+        st.pyplot(fig2)
+
+    # 2. XGBoost = Predict "Tracking Cookie" likelihood
+    if 'domain' in filtered_df.columns:
+        st.write("**XGBoost: Tracking Cookie Prediction**")
+
+        # Feature Engineering
+        df_ml = filtered_df.copy()
+        df_ml['domain_length'] = df_ml['domain'].str.len()
+        df_ml['is_tracking'] = df_ml['domain'].str.contains(
+            r'(google|facebook|doubleclick|analytics|pixel|ads|track|analytics)',
+            case=False, na=False).as.type(int)
+
+    features = ['secure', 'httpOnly', 'domain_length']
+    x = df_ml[features].fillna(0)
+    y = df_ml['is_tracking']
+
+    if len(X) > 10:
+        X-train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+
+        model = xgb.XGBClassifier(random_state=42, eval_metric='logloss')
+        model.fit(X_train, y_train)
+
+        y_pred = model.predict(X_test)
+        acc = accuracy_score(y_test, y_pred)
+
+        st.success(f"✅ Model Accuracy: **{acc:1%}**")
+
+        # Feature Importance
+        importance = pd.DataFrame({
+            'Feature': features,
+            'Importance': model.feature_importances_
+        }).sort.values('Importance', ascending=False)
+
+        fig_imp = px.bar(importance, x='Importance', y='Feature', orientation='h', title="Feature Importance")
+        st.plotly_chart(fig_imp, use_container_width=True)
+
+        
+        
+        
+
+    
+
+
+
+
+
 
 # ====================== DASHBOARD ======================
 if filtered_df.empty:

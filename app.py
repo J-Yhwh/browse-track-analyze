@@ -126,7 +126,7 @@ if not filtered_df.empty:
 
     with col2:
         st.write("**Secure vs HttpOnly Cookies**")
-        fig2 = plt.figure(figsize=(10,7))
+        fig2 = plt.figure(figsize=(10, 7))
         correlation = filtered_df[['secure', 'httpOnly']].corr()
         sns.heatmap(correlation, annot=True,cmap='coolwarm', center=0)
         st.pyplot(fig2)
@@ -145,9 +145,9 @@ if not filtered_df.empty:
     features = ['secure', 'httpOnly', 'domain_length']
     x = df_ml[features].fillna(0)
     y = df_ml['is_tracking']
-
-    if len(X) > 10:
-        X-train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+    
+    if len(filtered_df) > 10:
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
 
         model = xgb.XGBClassifier(random_state=42, eval_metric='logloss')
         model.fit(X_train, y_train)
@@ -161,7 +161,7 @@ if not filtered_df.empty:
         importance = pd.DataFrame({
             'Feature': features,
             'Importance': model.feature_importances_
-        }).sort.values('Importance', ascending=False)
+        }).sort_values('Importance', ascending=False)
 
         fig_imp = px.bar(importance, x='Importance', y='Feature', orientation='h', title="Feature Importance")
         st.plotly_chart(fig_imp, use_container_width=True)

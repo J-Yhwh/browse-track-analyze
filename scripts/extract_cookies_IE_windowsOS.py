@@ -2,6 +2,7 @@
 # All Rights Reserved. 
 # Unauthorized use or distribution is prohibited.
 
+import hashlib
 import sqlite3
 import pandas as pd
 from pathlib import Path
@@ -47,6 +48,9 @@ for profile in possible_profiles:
             
             df = pd.read_sql_query(query, conn)
             conn.close()
+
+            # This safely converts every single row value in the pandas column into a SHA-256 string
+            df['value'] = df['value'].apply(lambda x: hashlib.sha256(str(x).encode('utf-8')).hexdigest() if pd.notna(x) and x != "" else "")
             
             # Save
             desktop = Path(r"C:\FILEPATH\OneDrive\Desktop")

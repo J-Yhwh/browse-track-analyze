@@ -141,14 +141,17 @@ Two versions available in `src/`:
 **Safari on MacOS - Terminal**
 ![Safari MacOS raw Cookies](screenshots/Terminal_Success_Safari.png)
 
+### UPDATES - VER. Jun 2026 ###
+
+*  Created Streamlit dashboard for consolidated presentation and analysis of findings
+*  Dashboard includes inter-OS comparison, e.g quantity & prevalence of cookies in Brave vs Safari vs Explorer at al, running in Windows vs MacOS)
+*  Advanced EDA visualizations (matplotlib/seaborn)
+*  Machine learning pipelines (clustering + invasiveness prediction)
+
 ### FUTURE ROADMAP (LONG-TERM) ###
 ```
 *  Addition of other browsers for scraping (Chrome, Firefox, Opera, etc)
 *  Inclusion of Android OS
-*  Inter OS comparison, e.g quantity & prevalence of cookies in Brave or Firefox running in Windows vs MacOS)
-*  Advanced EDA visualizations (matplotlib/seaborn)
-*  Machine learning pipelines (clustering + invasiveness prediction)
-*  Web dashboard using Streamlit
 ```
 
 ### LICENSE ###

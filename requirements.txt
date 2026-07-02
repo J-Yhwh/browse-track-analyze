@@ -4,14 +4,14 @@ playwright>=1.48.0
 requests>=2.32.0
 
 # Core Dependencies
-pandas>=2.2.0           #for CSV/HTML imports
+pandas>=2.2.0           # for CSV/HTML imports
 numpy>=1.26.0
 
 # Environment & utilities
 python-dotenv>=1.0.0
 
 # Mobile templates (if applicable)
-jinja2>=3.1.0           #for simple HTML imports (optional) 
+jinja2>=3.1.0           # for simple HTML imports (optional) 
 
 # Machine-learning (AI/ML analysis)
 scipy>=1.11.0
@@ -23,7 +23,7 @@ xgboost>=2.0
 matplotlib>=3.0.0
 seaborn>=0.13.0
 streamlit>=1.57.0
-polars>=1.0.0 (for enhancement of Streamlit dashboards)
+polars>=1.0.0           # for enhancement of Streamlit dashboards
 
 
 

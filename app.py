@@ -79,7 +79,7 @@ df = load_all_data()
 
 if not df.empty:
     # Convert once to Polars for fast operations
-    df_pl = pl.from.pandas(df)
+    df_pl = pl.from_pandas(df)
     st.success(f"✅ Enhanced with Polars: {len(df_pl):,} rows ready for fast processing")
 
     st.subheader("Advanced Filters (Powered by Polars)")

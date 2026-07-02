@@ -94,114 +94,9 @@ if not df.empty:
 else:
     filtered_df = pd.DataFrame()    
 
-# ====================== SIDEBAR FILTERS ======================
-st.sidebar.header("🔍 Advanced Filters")
-
-if not df.empty:
-    # Browser & OS Filters
-    selected_browsers = st.sidebar.multiselect("Browser(s)", sorted(df['browser'].unique()), default=df['browser'].unique())
-    selected_os = st.sidebar.multiselect("OS", sorted(df['os'].unique()), default=df['os'].unique())
-
-    if 'domain' in df.columns:
-        domain_search = st.sidebar.text_input("Search Domain", "")
-        selected_domains = st.sidebar.multiselect("Filter Domains", sorted(df['domain'].unique()), default=[])
-    
-    cookie_search = st.sidebar.text_input("Search Cookie Name", "")
-
-    # Security Filters
-    secure_only = st.sidebar.checkbox("Secure cookies only", value=False)
-    httponly_only = st.sidebar.checkbox("HttpOnly cookies only", value=False)
-
-# ====================== APPLY FILTERS =================================
-filtered_df = df.copy()
-
-if not df.empty:
-    if selected_browsers:
-        filtered_df = filtered_df[filtered_df['browser'].isin(selected_browsers)]  
-    if selected_os:
-        filtered_df = filtered_df[filtered_df['os'].isin(selected_os)]
-    if 'domain' in filtered_df.columns and selected_domains:
-        filtered_df = filtered_df[filtered_df['domain'].isin(selected_domains)]
-    if cookie_search and 'name' in filtered_df.columns:
-        filtered_df = filtered_df[filtered_df['name'].str.contains(cookie_search, case=False, na=False)]
-    if secure_only and 'secure' in filtered_df.columns:
-        filtered_df = filtered_df[filtered_df['secure'] == True]
-    if httponly_only and 'httpOnly' in filtered_df.columns:
-        filtered_df = filtered_df[filtered_df['httpOnly'] == True]
-
-# ===================== ML & ADVANCED DATA VISUALIZATIONS (ANALYTICS)===
-
-if not filtered_df.empty:
-    st.subheader("🔍 Advanced Analysis & Machine Learning")
-
-    # 1. Seaborn Visualisation
-    col1, col2 = st.columns(2)
-
-    with col1:
-        st.write("**Cookie Types by Browser & OS**")
-        fig = plt.figure(figsize=(10, 6))
-        sns.countplot(data=filtered_df, x='browser', hue='os', palette='viridis')
-        plt.title("Cookies Distribution by Browser & OS")
-        plt.xticks(rotation=45)
-        st.pyplot(fig)
-
-    with col2:
-        st.write("**Secure vs HttpOnly Cookies**")
-        fig2 = plt.figure(figsize=(10, 7))
-        correlation = filtered_df[['secure', 'httpOnly']].corr()
-        sns.heatmap(correlation, annot=True,cmap='coolwarm', center=0)
-        st.pyplot(fig2)
-
-    # 2. XGBoost = Predict "Tracking Cookie" likelihood
-    if 'domain' in filtered_df.columns:
-        st.write("**XGBoost: Tracking Cookie Prediction**")
-
-        # Feature Engineering
-        df_ml = filtered_df.copy()
-
-        # IMPORTANT:  Convert boolean/object columns to numeric
-        for col in ['secure','httpOnly']:
-            if col in df_ml.columns:
-                df_ml[col] = df_ml[col].astype(bool).astype(int)   # True ->1, False -> 0
-
-                
-        df_ml['domain_length'] = df_ml['domain'].str.len()
-        df_ml['is_tracking'] = df_ml['domain'].str.contains(
-            r'(google|facebook|doubleclick|analytics|pixel|ads|track)',
-            case=False, na=False).astype(int)
-        
-
-    features = ['secure', 'httpOnly', 'domain_length']
-    X = df_ml[features].fillna(0)
-    y = df_ml['is_tracking']
-
- 
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
-
-    model = xgb.XGBClassifier(random_state=42, eval_metric='logloss')
-    model.fit(X_train, y_train)
-
-    y_pred = model.predict(X_test)
-    acc = accuracy_score(y_test, y_pred)
-
-    st.success(f"✅ Model Accuracy: **{acc:1%}**")
-
-
-    # Feature Importance
-    importance = pd.DataFrame({
-        'Feature': features,
-        'Importance': model.feature_importances_
-    }).sort_values('Importance', ascending=False)
-
-
-    fig_imp = px.bar(importance, x='Importance', y='Feature', orientation='h',
-                     title="Feature Importance (XGBoost")
-    st.plotly_chart(fig_imp, use_container_width=True)
-
-
 # ====================== DASHBOARD ======================
 if filtered_df.empty:
-    st.info("No data loaded yet. Double-check you 'data/' folder to ensure the CSV files are in place.")
+    st.info("No data loaded yet. Double-check your 'data/' folder.")
 else:
     col1, col2, col3, col4, col5 = st.columns(5)
     with col1:
@@ -213,7 +108,7 @@ else:
     with col4:
         st.metric("OS Variants", filtered_df['os'].nunique())
     with col5:
-        st.metric("secure", filtered_df['secure'].nunique())
+        st.metric("Secure", filtered_df['secure'].nunique() if 'secure' in filtered_df.columns else 0)
 
     # Cookies by browser + OS
     st.subheader("Cookies by Browser & OS")
@@ -229,40 +124,10 @@ else:
         fig2 = px.bar(top_domains, x='Domain', y='Count', color='Domain', text='Count')
         st.plotly_chart(fig2, use_container_width=True)
 
-    st.subheader("📊 Summary Findings & Insights")
-
-    col1, col2 = st.columns(2)
-
-    with col1:
-        st.markdown("**Key Observations**")
-        total_cookies = len(filtered_df)
-        unique_domains = filtered_df['domain'].nunique() if 'domain' in filtered_df.columns else 0
-        secure_ratio = (filtered_df['secure'].mean() * 100) if 'secure' in filtered_df.columns else 0
-        httponly_ratio = (filtered_df['httpOnly'].mean() * 100) if 'httpOnly' in filtered_df.columns else 0
-
-        st.write(f"- **Total cookies analyzed**: {total_cookies:,}")
-        st.write(f"- **Unique domains tracked**: {unique_domains}")
-        st.write(f"- **Secure cookies**: {secure_ratio:.1f}%")
-        st.write(f"- **HttpOnly cookies**: {httponly_ratio: .1f}%")
-
-        if 'domain' in filtered_df.columns:
-            top_domain = filtered_df['domain'].value_counts().idxmax()
-            st.write(f"- **Most tracked domain**: '{top_domain}'")
-
-    with col2:
-        st.markdown("**Cross-Platform Insights**")
-        os_browser = filtered_df.groupby(['os','browser'])
-        st.dataframe(os_browser, use_container_width=True)
-        
-    st.markdown("---")
-    st.info("""
-    • Brave and Edge on Windows tend to have more persistent cookies compared to Safari on macOS.  
-    • A high percentage of HttpOnly cookies indicates better security practices.  
-    • Major tracking domains (google, facebook, etc.) appear consistently across browsers.
-    """)    
-
-
     st.subheader("Raw Data Preview")
     st.dataframe(filtered_df.head(150), use_container_width=True)
 
 st.caption(f"Last updated: {datetime.now().strftime('%Y-%m-%d %H:%M')} | Built By Jacqueline Liao")
+
+
+

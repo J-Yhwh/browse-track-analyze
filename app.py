@@ -4,6 +4,7 @@
 
 import streamlit as st
 import pandas as pd
+import polars as pl
 from pathlib import Path
 import plotly.express as px
 from datetime import datetime
@@ -72,6 +73,26 @@ def load_all_data(data_folder="data"):
     return pd.DataFrame()
 
 df = load_all_data()
+
+
+# ====================== POLARS ENHANCEMENT====================
+
+if not df.empty:
+    # Convert once to Polars for fast operations
+    df_pl = pl.from.pandas(df)
+    st.success(f"✅ Enhanced with Polars: {len(df_pl):,} rows ready for fast processing")
+
+    st.subheader("Advanced Filters (Powered by Polars)")
+
+    selected_browsers = st.multiselect("Browser(s)", options=df['browser'].unique(), default=df['browser'].unique())
+
+    # Fast filtering with Polars
+    
+    filtered_pl = df_pl.filter(pl.col("browser").is_in(selected_browsers))
+    filtered_df = filtered_pl.to_pandas()   # Convert back only when needed for Streamlit
+
+else:
+    filtered_df = pd.DataFrame()    
 
 # ====================== SIDEBAR FILTERS ======================
 st.sidebar.header("🔍 Advanced Filters")

@@ -1,24 +1,27 @@
 
 # BROWSER TRACKER ANALYZER - CONCEPT 
 
-__A privacy focused tool for understanding how websites track users across browsers and operating systems.__ 
+__Privacy focused cross-platform cookie-scraping and analytics tool across browsers and operating systems.__ 
 
 ### Goal
 To understand, and visualize how browsers handle user tracking, raising awareness about digital privacy in real-world environments. 
 
 ### Key Highlights
 - **Cross-platform consistency**: Extracts cookies from Safari(MacOS), Brave(MacOS & Windows), Microsoft Edge(Windows), and iOS browser simulation via Playwright. 
-- **Privacy & Compliance Focus**:  Captures detailed cookie metadata(domain, name, value, path, secure, httpOnly, expiry, etc) - highly relevant to data protection, tracking transparency, and regulatory compliance. 
+- **Privacy & Compliance Focus**:  Captures detailed cookie metadata(domain, name, value, path, secure, httpOnly, expiry, etc), traits highly relevant to data protection, tracking transparency, and regulatory compliance. 
 - **Clean Architecture**: Modular scripts, raw data output, and planned interactive dashboard.
-- **Real-world skills**: Automation, data-scraping, cross-OS comparison, EDA, and privacy-conscious development. 
+- **Real-world skills**: Automation, data-scraping, cross-OS comparison, EDA, and privacy-conscious development.
+- **Dashboard**:  includes inter-OS comparison, e.g quantity & prevalence of cookies in Brave vs Safari vs Explorer at al, running in Windows vs MacOS)
+*  **Advanced EDA visualization**: Using Matplotlib and Seaborn
+*  **Machine learning pipelines**: Includes clustering + invasiveness detection and prediction across platforms
 
 ### Tech Stack 
-- **Language**:  Python 3
-- **Core Libraries**:  Pandas, Pathlib, Playwright, SQLite3
-- **Visualisation (Upcoming)**: Streamlit + Matplotlib / Seaborn
+- **Language**:  Python3
+- **Core Libraries**:  Pandas, Pathlib, Playwright, SQLite3, Polars
+- **Visualisation**: Streamlit,  Matplotlib, Seaborn
 - **Future Enhancements**:  Machine Learning for tracker pattern analysis and risk scoring 
 
-### TECH STACK ###
+### BADGES ###
 1. [![Python](https://img.shields.io/badge/Python-3.10+-blue)](https://www.python.org/)
 2. [![Playwright](https://img.shields.io/badge/Playwright-1.48+-green)](https://playwright.dev/)
 3. [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -141,17 +144,16 @@ Two versions available in `src/`:
 **Safari on MacOS - Terminal**
 ![Safari MacOS raw Cookies](screenshots/Terminal_Success_Safari.png)
 
-### UPDATES - VER. JUL 2026 ###
+### UPDATES - VER.2.0 JUL 2026 ###
 
-*  Created Streamlit dashboard with the addiion of Polars for consolidated, yet concise, summary and analysis of the amalgamated data
-*  Dashboard includes inter-OS comparison, e.g quantity & prevalence of cookies in Brave vs Safari vs Explorer at al, running in Windows vs MacOS)
-*  Advanced EDA visualizations (matplotlib/seaborn)
-*  Machine learning pipelines (clustering + invasiveness prediction)
+*  Added Polars to Streamlit dashboard for better consolidation, concise summary, and analysis of amalgamated data from translated datasets (csv)
+*  Included additional deployment app tools using other platforms apart from Streamlit , eg. Snowflake, Others, etc , for smoother and/or customised application envirornments.
 
 ### FUTURE ROADMAP (LONG-TERM) ###
 ```
 *  Addition of other browsers for scraping (Chrome, Firefox, Opera, etc)
 *  Inclusion of Android OS
+*  Addition of XGBoost and Scikit-learn for deeper Machine-Learning capabilities
 ```
 
 ### LICENSE ###

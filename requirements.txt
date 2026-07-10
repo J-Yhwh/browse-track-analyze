@@ -22,7 +22,7 @@ xgboost>=2.0
 # Visualization (charts and graphs)
 matplotlib>=3.0.0
 seaborn>=0.13.0
-streamlit>=26.0.1
+streamlit>=1.57.0
 polars>=1.0.0           # for enhancement of Streamlit dashboards
 
 

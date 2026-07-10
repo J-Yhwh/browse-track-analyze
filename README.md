@@ -147,7 +147,7 @@ Two versions available in `src/`:
 ### UPDATES - VER.2.0 JUL 2026 ###
 
 *  Added Polars to Streamlit dashboard for better consolidation, concise summary, and analysis of amalgamated data from translated datasets (csv)
-*  Included additional deployment app tools using other platforms apart from Streamlit , eg. Snowflake, Others, etc , for smoother and/or customised application envirornments.
+*  Included additional deployment app tools using other platforms apart from Streamlit , eg. Snowflake, Others, etc , for smoother and/or customised application environments.
 
 ### FUTURE ROADMAP (LONG-TERM) ###
 ```

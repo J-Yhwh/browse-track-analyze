@@ -18,7 +18,7 @@ To understand, and visualize how browsers handle user tracking, raising awarenes
 ### Tech Stack 
 - **Language**:  Python3
 - **Core Libraries**:  Pandas, Pathlib, Playwright, SQLite3, Polars
-- **Visualisation**: Streamlit,  Matplotlib, Seaborn
+- **Visualisation**: Streamlit,  Matplotlib, Seaborn, XGBoost
 - **Future Enhancements**:  Machine Learning for tracker pattern analysis and risk scoring 
 
 ### BADGES ###
@@ -147,6 +147,7 @@ Two versions available in `src/`:
 ### UPDATES - VER.2.0 JUL 2026 ###
 
 *  Added Polars to Streamlit dashboard for better consolidation, concise summary, and analysis of amalgamated data from translated datasets (csv)
+*  Added XGBoost to Streamlit for a snapshot of machine-learning data analytics,to filter and guage the quantity of three main cookie features- Intrusive, HttpOnly, and Domain Length.
 *  Included additional deployment app tools using other platforms apart from Streamlit , eg. Snowflake, Others, etc , for smoother and/or customised application environments.
 
 ### FUTURE ROADMAP (LONG-TERM) ###

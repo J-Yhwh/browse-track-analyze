@@ -145,6 +145,9 @@ Two versions available in `src/`:
 **Safari on MacOS - Terminal**
 ![Safari MacOS raw Cookies](screenshots/Terminal_Success_Safari.png)
 
+**AndroidOS Playwright Simulation  - Terminal**
+![Android Simulation Cookies](screenshots/AndroidOS_Simulation.png)
+
 ### UPDATES - VER.2.0 JUL 2026 ###
 
 *  Added Polars to Streamlit dashboard for better consolidation, concise summary, and analysis of amalgamated data from translated datasets (csv)

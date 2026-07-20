@@ -4,7 +4,7 @@
 __Privacy focused cross-platform cookie-scraping and analytics tool across browsers and operating systems.__ 
 
 ### Goal
-To understand, and visualize how browsers handle user tracking, raising awareness about digital privacy in real-world environments. 
+To understand, and visualize how different browsers handle user tracking, raising awareness about digital privacy in real-world environments. 
 
 ### Key Highlights
 - **Cross-platform consistency**: Extracts cookies from Safari(MacOS), Brave(MacOS & Windows), Microsoft Edge(Windows), and iOS browser simulation via Playwright. 

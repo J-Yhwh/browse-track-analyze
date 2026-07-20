@@ -7,7 +7,7 @@ __Privacy focused cross-platform cookie-scraping and analytics tool across brows
 To understand, and visualize how different browsers handle user tracking, raising awareness about digital privacy in real-world environments. 
 
 ### Key Highlights
-- **Cross-platform consistency**: Extracts cookies from Safari(MacOS), Brave(MacOS & Windows), Microsoft Edge(Windows), and iOS browser simulation via Playwright. 
+- **Cross-platform consistency**: Extracts cookies from Safari(MacOS), Brave(MacOS & Windows), Microsoft Edge(Windows), Chrome(AndriodOS) and Safari(iOS) browser simulation via Playwright. 
 - **Privacy & Compliance Focus**:  Captures detailed cookie metadata(domain, name, value, path, secure, httpOnly, expiry, etc), traits highly relevant to data protection, tracking transparency, and regulatory compliance. 
 - **Clean Architecture**: Modular scripts, raw data output, and planned interactive dashboard.
 - **Real-world skills**: Automation, data-scraping, cross-OS comparison, EDA, and privacy-conscious development.
@@ -31,7 +31,7 @@ To understand, and visualize how different browsers handle user tracking, raisin
 
 ---
 ### FEATURES
-- Cross-platform cookie extraction (Brave, Safari, MS Edge, etc)
+- Cross-platform cookie extraction (Brave, Chrome, Safari, MS Edge, iOS, Android) across: MacOS, WindowsOS, AndroidOS, iOS
 - Raw data export to CSV
 - Breakdown of cookie and domain details, including security
 - Streamlit dashboards for amalgamation of results for  comparison

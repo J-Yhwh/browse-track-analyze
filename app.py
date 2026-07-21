@@ -113,7 +113,7 @@ if not df.empty:
         
     if intrusive_filter:
         filtered_pl = filtered_pl.filter(
-            (pl.col("httpOnly") == False) | (pl.col("secure") == False)
+            (pl.col("httpOnly") == False) & (pl.col("secure") == False)
         )
 
     #Convert back to  Pandas for Streamlit display 

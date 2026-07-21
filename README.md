@@ -153,6 +153,7 @@ Two versions available in `src/`:
 *  Added Polars to Streamlit dashboard for better consolidation, concise summary, and analysis of amalgamated data from translated datasets (csv)
 *  Added XGBoost to Streamlit for a snapshot of machine-learning data analytics,to filter and guage the quantity of three main cookie features- Intrusive, HttpOnly, and Domain Length.
 *  Included additional deployment app tools using other platforms apart from Streamlit , eg. Snowflake, Others, etc , for smoother and/or customised application environments.
+*  Added Playwright-simulation tools cookie-scraper to `/scripts` folder, for Brave and Chrome browsers on Android. 
 
 ### FUTURE ROADMAP (LONG-TERM) ###
 ```

@@ -81,6 +81,8 @@ def load_all_data(data_folder="data"):
 df = load_all_data()
 
 
+
+
 # ====================== POLARS ENHANCEMENT + FILTERS ==============================
 
 if not df.empty:
@@ -113,7 +115,7 @@ if not df.empty:
         
     if intrusive_filter:
         filtered_pl = filtered_pl.filter(
-            (pl.col("httpOnly") == False) & (pl.col("secure") == False)
+            (pl.col("httpOnly") == False) | (pl.col("secure") == False)
         )
 
     #Convert back to  Pandas for Streamlit display 
@@ -152,6 +154,47 @@ if not filtered_df.empty:
         viz_df = viz_df[viz_df['browser'].isin(selected_browsers)]
     if selected_os:
         viz_df = viz_df[viz_df['os'].isin(selected_os)]
+        
+
+# =====================  Top 12 MOST PREVALENT DOMAINS  ===============
+
+st.subheader("🎖️ Top 12 Most Prevalent Domains")
+
+if not viz_df.empty and 'domain' in viz_df.columns:
+    top_domains = (
+        viz_df['domain']
+        .value_counts()
+        .head(12)
+        .reset_index()
+    )
+    top_domains.columns = ["Domain", "Count"]
+
+    # Interactive bar chart
+    fig_top = px.bar(
+        top_domains,
+        x='Count',
+        y='Domain',
+        orientation='h',
+        title='Top 10 Most Frequent Cookeis Domains',
+        color='Count',
+        color_continuous_scale= 'Viridis',
+        text='Count'
+    )
+    fig_top.update_layout(
+        yaxis={'categoryorder': 'total ascending'},
+        xaxis_title="Number of Cookies",
+        yaxis_title="Domain",
+        height=500
+    )
+    st.plotly_chart(fig_top, use_container_width=True)
+
+    # Optional: Show the table too
+    with st.expander("View Top 12 Domains Table"):
+        st.dataframe(top_domains, use_container_width=True)
+else:
+    st.info("No domain data available for Top 12 chart.")
+
+
 
     # ===============INTERACTIVE DASHBOARD FEATURING DYNAMIC METRICS ===============================
     st.markdown("### 📈 Key Metrics (updates with Filters)")
@@ -193,7 +236,7 @@ if not filtered_df.empty:
         
         if 'secure' in viz_df.columns and 'httpOnly' in viz_df.columns:
             secure_ratio = (viz_df['secure'].mean() * 100)
-            httponly_ratio = (viz_df['httponly'].mean() * 100)
+            httponly_ratio = (viz_df['httpOnly'].mean() * 100)
             both_ratio = ((viz_df['secure'] == 1) & (viz_df['httpOnly'] == 1)).mean() * 100
 
             
@@ -214,50 +257,108 @@ if not filtered_df.empty:
           
     
 
-#XG Boost Section
-if not filtered_df.empty and 'domain' in filtered_df.columns:
-    st.subheader("📈 XG Boost - Tracking Cookie Prediction")
+# =========== XG Boost Section | High-Risk Cookie Detection ===============
+st.subheader("📈 XG Boost - Tracking the Highest Risks in Cookie Detections")
 
+if not filtered_df.empty and 'domain' in filtered_df.columns:
 
     df_ml = filtered_df.copy()
-
+    
+    # --- Feature Engineering: Convert boolean-like columns---
     for col in ['secure', 'httpOnly']:
         if col in df_ml.columns:
-            df_ml[col] = df_ml[col].astype(bool).astype(int)
-
-    df_ml['domain_length'] = df_ml['domain'].str.len()
-    df_ml['is_tracking'] = df_ml['domain'].str.contains(
-        r'(google|facebook|doubleclick|analytics|pixel|ads|track)',
-        case=False, na=False).astype(int)
-
-    features = ['secure', 'httpOnly', 'domain_length']
-    X = df_ml[features].fillna(0)
-    y = df_ml['is_tracking']
-
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
-
-    model = xgb.XGBClassifier(random_state=42, eval_metric='logloss')
-    model.fit(X_train, y_train)
-    y_pred = model.predict(X_test)
-    acc =accuracy_score(y_test, y_pred)
-
-    st.success(f"Model Accuracy: **{acc:1%}**")
-
-    importance = pd.DataFrame({
-        'Feature': features,
-        'Importance': model.feature_importances_
-    }).sort_values('Importance', ascending=False)
-
-    fig_imp = px.bar(importance, x='Importance', y='Feature', orientation='h', title='Feature_Importance')
-    st.plotly_chart(fig_imp, use_container_width=True)
+            df_ml[col] = df_ml[col].fillna(False).astype(bool).astype(int)
 
 
-with st.expander("📋 Raw Data Preview (Click to expand)", expanded=False):
-    st.dataframe(viz_df.head(200), use_container_width=True)
-    st.caption(f"Showing first 200 rows of {len(viz_df):,} total cookies")
+    # Domain-length breakdown of cookies
+    df_ml['domain_length'] = df_ml['domain'].astype(str).str.len()
+
+    ## Followed by high-risk / tracking domian flag
+    tracking_pattern = r'(google|facebook|doubleclick|analytics|pixel|adservice|scorecard|hotjar|mixpanel|segment)'
+    df_ml['is_tracking'] = df_ml['domain'].str.contains(tracking_pattern, case=False, na=False).astype(int)
+
+    # Session Cookie Flag (no expiry or < 0)
+    if 'expires' in df_ml.columns:
+        df_ml['is_session'] = df_ml['domain'].str.contains(tracking_pattern, case=False, na=False).astype(int)
+    else:
+        df_ml['is_session'] = 0
+
+
+    features = ['secure', 'httpOnly','domain_length', 'is_session']
+    target = 'is_tracking'
+
+    # Drop rows with missing features
+    df_ml = df_ml.dropna(subset=features)
+
+    if len(df_ml) > 20:           #minimum threshold for training data
+        X = df_ml[features]
+        y = df_ml[target]
+
+        X_train, X_test, y_train, y_test = train_test_split(
+            X, y, test_size=0.3, random_state=42,
+            stratify=y if y.nunique() > 1 else None
+        )
+
+        model = xgb.XGBClassifier(
+            n_estimators=100,
+            max_depth=4,
+            random_state=42,
+            eval_metric='logloss',
+            use_label_encoder=False
+        )
+        model.fit(X_train, y_train)
+
+
+        # Predictions & metrics
+        y_pred = model.predict(X_test)
+        acc = accuracy_score(y_test, y_pred)
+        
+
+        # Display metrics
+        col1, col2, col3 = st.columns(3)
+        col1.metric("Model Accuracy", f"{acc: .1%}")
+        col2.metric("Tracking cookies", int(y.sum()))
+        col3.metric("Total cookies used", len(df_ml))
+
+        # Feature Importance
+        importance_df = pd.DataFrame({
+            'Feature': features,
+            'Importance': model.feature_importances_
+        }).sort_values('Importance', ascending=True)
+
+        fig_imp = px.bar(
+            importance_df,
+             x='Importance',
+             y='Feature',
+             orientation='h',
+             title='Feature_Importance (What drives high-risk prediction?)',
+             color='Importance',
+             color_continuous_scale='Blues'
+         )
+        st.plotly_chart(fig_imp, use_container_width=True)
+
+
+         # High-risk cookies table
+        st.markdown("### 🚨 Highest Risk Cookies(Predicted)")
+        df_ml['risk_score'] = model.predict_proba(X)[:, 1]
+        high_risk = df_ml[df_ml['risk_score'] > 0.7][
+            ['domain', 'name', 'browser', 'os', 'secure', 'httpOnly', 'risk_score']
+        ]
+        high_risk = high_risk.sort_values('risk_score', ascending=False).head(20)
+
+        st.dataframe(high_risk, use_container_width=True)
+
+    else:
+        st.warning("Not enough data to train the model reliably.")
+
+
+else:
+    st.info("No data available for XGBoost analysis.")
+          
+         
+
     
 
-
-st.caption(f"Last updated: {datetime.now().strftime('%Y-%m-%d %H:%M')} | Built By Jacqueline Liao")
-
-
+    
+    
+            

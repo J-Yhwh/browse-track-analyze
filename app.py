@@ -175,7 +175,7 @@ if not viz_df.empty and 'domain' in viz_df.columns:
         x='Count',
         y='Domain',
         orientation='h',
-        title='Top 10 Most Frequent Cookeis Domains',
+        title='Top 12 Most Frequent Cookies Domains',
         color='Count',
         color_continuous_scale= 'Viridis',
         text='Count'
@@ -186,11 +186,11 @@ if not viz_df.empty and 'domain' in viz_df.columns:
         yaxis_title="Domain",
         height=500
     )
-    st.plotly_chart(fig_top, use_container_width=True)
+    st.plotly_chart(fig_top, width='stretch')
 
     # Optional: Show the table too
     with st.expander("View Top 12 Domains Table"):
-        st.dataframe(top_domains, use_container_width=True)
+        st.dataframe(top_domains, width='stretch')
 else:
     st.info("No domain data available for Top 12 chart.")
 
@@ -213,47 +213,47 @@ else:
         st.metric("Secure Cookies", f"{secure_count:,}")
     
 
-    # Cookies Distribution by Browser & OS
-    if not viz_df.empty:
-        count_df = viz_df.groupby(['browser', 'os']).size().reset_index(name='count')
-        fig = px.bar(
-            count_df,
-            x='browser',
-            y='count',
-            color='os',
-            text='count',
-            title= 'Cookies Distribution by Browser & OS',
-            barmode='group'
-        )
-        fig.update_layout(xaxis_title="Browser", yaxis_title="Cookie Count")
-        st.plotly_chart(fig, use_container_width=True)
+# Cookies Distribution by Browser & OS
+if not viz_df.empty:
+    count_df = viz_df.groupby(['browser', 'os']).size().reset_index(name='count')
+    fig = px.bar(
+        count_df,
+        x='browser',
+        y='count',
+        color='os',
+        text='count',
+        title= 'Cookies Distribution by Browser & OS',
+        barmode='group'
+    )
+    fig.update_layout(xaxis_title="Browser", yaxis_title="Cookie Count")
+    st.plotly_chart(fig, width='stretch')
 
 
-        #  Secure vs HttpOnly
-        st.subheader("🔐 Secure vs HttpOnly Cookies")
+    #  Secure vs HttpOnly
+    st.subheader("🔐 Secure vs HttpOnly Cookies")
 
-        col_a, col_b, col_c = st.columns(3)
+    col_a, col_b, col_c = st.columns(3)
         
-        if 'secure' in viz_df.columns and 'httpOnly' in viz_df.columns:
-            secure_ratio = (viz_df['secure'].mean() * 100)
-            httponly_ratio = (viz_df['httpOnly'].mean() * 100)
-            both_ratio = ((viz_df['secure'] == 1) & (viz_df['httpOnly'] == 1)).mean() * 100
+    if 'secure' in viz_df.columns and 'httpOnly' in viz_df.columns:
+        secure_ratio = (viz_df['secure'].mean() * 100)
+        httponly_ratio = (viz_df['httpOnly'].mean() * 100)
+        both_ratio = ((viz_df['secure'] == 1) & (viz_df['httpOnly'] == 1)).mean() * 100
 
             
-            with col_a:
-                st.metric("Secure Cookies", f"{secure_ratio:.1f}%")
-            with col_b:
-                st.metric("HttpOnly Cookies", f"{httponly_ratio:.1f}%")
-            with col_c:
-                st.metric("Both Secure & HttpOnly", f"{both_ratio:.1f}%")
+        with col_a:
+            st.metric("Secure Cookies", f"{secure_ratio:.1f}%")
+        with col_b:
+            st.metric("HttpOnly Cookies", f"{httponly_ratio:.1f}%")
+        with col_c:
+            st.metric("Both Secure & HttpOnly", f"{both_ratio:.1f}%")
 
-            # Heatmap of Secure vs HttpOnly Cookies (seperate & combined)
-            fig2 = plt.figure(figsize=(6, 4))
-            correlation = viz_df[['secure', 'httpOnly']].corr()
-            sns.heatmap(correlation, annot=True, cmap='coolwarm', center=0, fmt=".2f")    
-            st.pyplot(fig2)
-    else:
-        st.warning("No data left after applying filters.")
+        # Heatmap of Secure vs HttpOnly Cookies (seperate & combined)
+        fig2 = plt.figure(figsize=(6, 4))
+        correlation = viz_df[['secure', 'httpOnly']].corr()
+        sns.heatmap(correlation, annot=True, cmap='coolwarm', center=0, fmt=".2f")    
+        st.pyplot(fig2)
+else:
+    st.warning("No data left after applying filters.")
           
     
 
@@ -274,12 +274,12 @@ if not filtered_df.empty and 'domain' in filtered_df.columns:
     df_ml['domain_length'] = df_ml['domain'].astype(str).str.len()
 
     ## Followed by high-risk / tracking domian flag
-    tracking_pattern = r'(google|facebook|doubleclick|analytics|pixel|adservice|scorecard|hotjar|mixpanel|segment)'
+    tracking_pattern = r'(?:google|facebook|doubleclick|analytics|pixel|adservice|scorecard|hotjar|mixpanel|segment)'
     df_ml['is_tracking'] = df_ml['domain'].str.contains(tracking_pattern, case=False, na=False).astype(int)
 
     # Session Cookie Flag (no expiry or < 0)
     if 'expires' in df_ml.columns:
-        df_ml['is_session'] = df_ml['domain'].str.contains(tracking_pattern, case=False, na=False).astype(int)
+        df_ml['is_session'] = df_ml['expires'].isna().astype(int) 
     else:
         df_ml['is_session'] = 0
 
@@ -293,33 +293,34 @@ if not filtered_df.empty and 'domain' in filtered_df.columns:
     if len(df_ml) > 20:           #minimum threshold for training data
         X = df_ml[features]
         y = df_ml[target]
-
+        
+        min_class_count = y.value_counts().min() if len(y) > 0 else 0
         X_train, X_test, y_train, y_test = train_test_split(
             X, y, test_size=0.3, random_state=42,
-            stratify=y if y.nunique() > 1 else None
+            stratify=y if (y.nunique() > 1 and min_class_count > 1) else None
         )
+        
 
         model = xgb.XGBClassifier(
             n_estimators=100,
             max_depth=4,
             random_state=42,
             eval_metric='logloss',
-            use_label_encoder=False
         )
         model.fit(X_train, y_train)
-
 
         # Predictions & metrics
         y_pred = model.predict(X_test)
         acc = accuracy_score(y_test, y_pred)
         
-
         # Display metrics
         col1, col2, col3 = st.columns(3)
         col1.metric("Model Accuracy", f"{acc: .1%}")
         col2.metric("Tracking cookies", int(y.sum()))
         col3.metric("Total cookies used", len(df_ml))
 
+
+        
         # Feature Importance
         importance_df = pd.DataFrame({
             'Feature': features,
@@ -335,7 +336,7 @@ if not filtered_df.empty and 'domain' in filtered_df.columns:
              color='Importance',
              color_continuous_scale='Blues'
          )
-        st.plotly_chart(fig_imp, use_container_width=True)
+        st.plotly_chart(fig_imp, width='stretch')
 
 
          # High-risk cookies table
@@ -346,7 +347,7 @@ if not filtered_df.empty and 'domain' in filtered_df.columns:
         ]
         high_risk = high_risk.sort_values('risk_score', ascending=False).head(20)
 
-        st.dataframe(high_risk, use_container_width=True)
+        st.dataframe(high_risk, width='stretch')
 
     else:
         st.warning("Not enough data to train the model reliably.")
@@ -354,11 +355,5 @@ if not filtered_df.empty and 'domain' in filtered_df.columns:
 
 else:
     st.info("No data available for XGBoost analysis.")
-          
-         
-
-    
-
-    
     
             

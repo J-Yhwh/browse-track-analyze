@@ -82,21 +82,21 @@ with sync_playwright() as p:
 
 
 
-# Export to CSV
-with open(output_csv, 'w', newline='', encoding='utf-8') as f:
-    writer = csv.writer(f)
-    writer.writerow(['domain', 'name', 'value', 'path', 'expires', 'secure', 'httpOnly', 'platform'])
-    for cookie in all_cookies:
-        writer.writerow([
-            cookie["domain"],
-            cookie["name"],
-            cookie["value"],
-            cookie["path"],
-            cookie.get("expires", ""),  # Safe access
-            cookie["secure"],
-            cookie["httpOnly"],
-            "iOS Brave(Webkit emulation)"
-        ])
+    # Export to CSV
+    with open(output_csv, 'w', newline='', encoding='utf-8') as f:
+        writer = csv.writer(f)
+        writer.writerow(['domain', 'name', 'value', 'path', 'expires', 'secure', 'httpOnly', 'platform'])
+        for cookie in all_cookies:
+            writer.writerow([
+                cookie["domain"],
+                cookie["name"],
+                cookie["value"],
+                cookie["path"],
+                cookie.get("expires", ""),  # Safe access
+                cookie["secure"],
+                cookie["httpOnly"],
+                "iOS Brave(Webkit emulation)"
+            ])
 
-print(f"✅ Exported {len(all_cookies)} cookies to {output_csv}")
-browser.close()
+    print(f"✅ Exported {len(all_cookies)} cookies to {output_csv}")
+    browser.close()

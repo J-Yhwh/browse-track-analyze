@@ -55,11 +55,15 @@ browse-track-analyze/
 │   ├── fingerprint.py        # Fingerprint detection functions
     └── report.py             # Report generation (JSON/CSV/HTML)
     └── extract_cookies_brave_macos.py
-    └── extract_cookies_brave_windowsOS.py 
-    └── extract_cookies_brave_ios_emulate.py
-    └── extract_cookies_safari_ios_emulate.py
     └── extract_cookies_safari_macos.py
+    └── extract_cookies_firefox_macos.py
+    └── extract_cookies_opera_macos.py
+    └── extract_cookies_brave_windowsOS.py 
     └── extract_cookies_IE_windowsOS.py
+    └── extract_cookies_brave_ios_emulation.py
+    └── extract_cookies_brave_android_os_emulation.py
+    └── extract_cookies_chrome_android_os_emulation.py
+    └── extract_cookies_safari_ios_emulation.py
     └── test.py                # confirms all relevant project libraries & dependencies
     └── compare_cookies.py     # (optional) future merge script 
 ├── data/

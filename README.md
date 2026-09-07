@@ -56,12 +56,13 @@ browse-track-analyze/
     └── report.py             # Report generation (JSON/CSV/HTML)
     └── MacOS/
     │   ├── extract_cookies_macos.py             # master Py script for  *all* browsers running on MacOS and iOS ecosystem
-    └── extract_cookies_brave_windowsOS.py 
-    └── extract_cookies_IE_windowsOS.py
-    └── extract_cookies_brave_android_os_emulation.py
-    └── extract_cookies_chrome_android_os_emulation.py
-    └── test.py                # confirms all relevant project libraries & dependencies
-    └── compare_cookies.py     # (optional) future merge script 
+    └── WindowsOS/    
+    │   ├── extract_cookies_brave_windowsOS.py 
+        └── extract_cookies_IE_windowsOS.py
+        └── extract_cookies_brave_android_os_emulation.py
+        └── extract_cookies_chrome_android_os_emulation.py
+        └── test.py                # confirms all relevant project libraries & dependencies
+        └── compare_cookies.py     # (optional) future merge script 
 ├── data/
 │   ├── brave_cookies_raw.csv           #CSV report from 'scripts/extract_cookies_brave_windowsOS.py'
 │   └── brave_ios_emulated_cookies.csv  #CSV report from 'scripts/extract_cookies_brave_ios_emulate.py'

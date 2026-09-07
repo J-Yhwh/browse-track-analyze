@@ -4,7 +4,7 @@
 __Privacy focused cross-platform cookie-scraping and analytics tool across browsers and operating systems.__ 
 
 ### Goal
-Utilising Data Analytics, Python-based scraping tools, Streamlit and Jupyter interactive notebooks to highlight the prevalence of cookies and the extent of intrusive behaviour, if any, across different browsers and operating systems, raising awareness about digital privacy in real-world environments. 
+Utilising Data Analytics, Python-based scraping tools, Streamlit and a Jupyter interactive notebook to highlight the prevalence of cookies, and extent of intrusive behaviour, if any, across different browsers and operating systems, to raise awareness about digital privacy in real-world environments. 
 
 ### Key Highlights
 - **Cross-platform consistency**: Extracts cookies from Safari(MacOS), Brave(MacOS & Windows), Microsoft Edge(Windows), Chrome(AndroidOS) and Safari(iOS) browser simulation via Playwright. 
@@ -22,8 +22,8 @@ Utilising Data Analytics, Python-based scraping tools, Streamlit and Jupyter int
 - **Future Enhancements**:  Machine Learning for tracker pattern analysis and risk scoring
 
 ### Upcoming Improvisations (October 2026)
-- **Consolidation of scraping tools**:  Plans to combine the scraping tools for different browsers running on the same platform/OS into a Master-Script.
-- **DONE ✅: MacOS** Folder containing the Master Py-script for various browsers (Safari/Brave/Chrome/Firefox/Opera)running their respective scrapers in a single .py master-file.
+- **Consolidation of scraping tools**:  Plans to combine the scraping tools for different browsers running on the same platform/OS into Master-Scripts.
+- **DONE ✅: MacOS** Folder containing the Master Py-script for various browsers (Safari/Brave/Chrome/Firefox/Opera)running their respective scrapers in a single ```extract_cookies_macos.py``` master-file for better directory-integration and performance.
 - **IN PROGRESS ✍🏽** : **WindowsOS** consolidation of disparate scraping tools into a single Master-list, followed by iOS and Android.
 
 
@@ -87,7 +87,7 @@ browse-track-analyze/
 ### REQUIREMENTS AND DEPENDENCIES ###
 See requirements.txt for full list.
 **Key dependencies: CSV(SQLite), Pandas, Playwright, Streamlit** <br><br>
-NOTE:  Adherence to the minimal versions listed for each dependency in 'requirement.txt' is highly recommended
+NOTE:  Adherence to the minimal versions listed for each dependency in 'requirements.txt' is highly recommended
 for the desired results or outcome.
 
 ### DIRECTIONS: 
@@ -106,20 +106,20 @@ playwright install  --with-deps
 ### QUICK START ###
 ```
 bash
-## Run MacOS Brave cookie extraction
-FILEPATH/python3  scripts/extract_cookies_brave_macos.py
-
-## Run MacOS Safari cookie extraction
-FILEPATH/python3  scripts/extract_cookies_safari_macos.py 
+## Run MacOS Browser(s) cookie extractions
+FILEPATH/python3  scripts/MacOS/extract_cookies_macos.py 
 
 ## Run iOS emulation cookie extraction
 FILEPATH/python3  scripts/extracts/ios/emulation.py
 
 ## Run Windows OS Brave cookie extraction
-FILEPATH\python scripts\extract_cookies_brave_windowsOS.py
+FILEPATH\python scripts\WindowsOS\extract_cookies_brave_windowsOS.py
 
 ## Run Windows OS Microsoft Edge cookie extraction
-FILEPATH\python scripts\extract_cookies_IE_windowsOS.py
+FILEPATH\python scripts\WindowsOS\extract_cookies_IE_windowsOS.py
+
+## Run AndroidOS emulation cookie extraction
+FILEPATH\python scripts\extracts\android\emulation.py
 
 ## Create EDA notebook for deeper visual presentation of cookie behaviour analytics (optional)
 bash pip3 install jupyter  (if not in system)
@@ -161,7 +161,7 @@ Two versions available in `src/`:
 ### UPDATES - VER.2.0 JUL 2026 ###
 
 *  Added Polars to Streamlit dashboard for better consolidation, concise summary, and analysis of amalgamated data from translated datasets (csv)
-*  Added XGBoost to Streamlit for a snapshot of machine-learning data analytics,to filter and guage the quantity of three main cookie features- Intrusive, HttpOnly, and Domain Length.
+*  Added XGBoost to Streamlit for a snapshot of machine-learning data analytics to filter and gauge the quantity of three main cookie features- Intrusive, HttpOnly, and Domain Length.
 *  Included additional deployment app tools using other platforms apart from Streamlit , eg. Snowflake, Others, etc , for smoother and/or customised application environments.
 *  Added Playwright-simulation scripting .py tools to `/scripts` folder, for Brave and Chrome browsers on Android. 
 

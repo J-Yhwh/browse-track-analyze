@@ -364,8 +364,14 @@ def extract_chrome():
             conn = sqlite3.connect(temp_db)
             query = """
                 SELECT
-                    host_key, name, encrypted_value, path, expires,
-                    is_secure, is_httponly, creation_utc,
+                    host_key, 
+                    name, 
+                    encrypted_value, 
+                    path, 
+                    expires_utc,
+                    is_secure, 
+                    is_httponly, 
+                    creation_utc
                 FROM cookies
             """
             rows = conn.execute(query).fetchall()
@@ -378,14 +384,15 @@ def extract_chrome():
 
         cookies = []
         for row in rows:
-            domain, name, enc_value, path, expires_utc, secure, httponly, crested = row
-            value = decrypt_chromium_value(enc_val, aes_key)
+            domain, name, enc_
+            value, path, expires_utc, secure, httponly, created = row
+            value = decrypt_chromium_value(enc_value, aes_key)
             cookies.append({
                 "domain": domain,
                 "name": name,
                 "value": value,
                 "path": path,
-                "expires_utc": expires,
+                "expires_utc": expires_utc,
                 "secure": bool(secure),
                 "httpOnly": bool(httponly),
                 "creation_utc": created,

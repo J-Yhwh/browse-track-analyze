@@ -4,7 +4,7 @@
 __Privacy focused cross-platform cookie-scraping and analytics tool across browsers and operating systems.__ 
 
 ### Goal
-To understand, and visualize how different browsers handle user tracking, raising awareness about digital privacy in real-world environments. 
+Utilising Data Analytics, Python-based scraping tools, Streamlit and Jupyter interactive notebooks to highlight the prevalence of cookies and the extent of intrusive behaviour, if any, across different browsers and operating systems, raising awareness about digital privacy in real-world environments. 
 
 ### Key Highlights
 - **Cross-platform consistency**: Extracts cookies from Safari(MacOS), Brave(MacOS & Windows), Microsoft Edge(Windows), Chrome(AndroidOS) and Safari(iOS) browser simulation via Playwright. 
@@ -19,7 +19,13 @@ To understand, and visualize how different browsers handle user tracking, raisin
 - **Language**:  Python3
 - **Core Libraries**:  Pandas, Pathlib, Playwright, SQLite3, Polars
 - **Visualisation**: Streamlit,  Matplotlib, Seaborn, XGBoost
-- **Future Enhancements**:  Machine Learning for tracker pattern analysis and risk scoring 
+- **Future Enhancements**:  Machine Learning for tracker pattern analysis and risk scoring
+
+### Upcoming Improvisations (October 2026)
+- **Consolidation of scraping tools**:  Plans to combine the scraping tools for different browsers running on the same platform/OS into a Master-Script.
+✅ DONE: **MacOS** Folder containing the Master Py-script for various browsers (Safari/Brave/Chrome/Firefox/Opera)running their respective scrapers in a single .py master-file.
+✍🏽 IN PROGRESS: Plans to incorporate **WindowsOS** consolidation of disparate scraping tools into a single Master-list, followed by iOS and Android.
+
 
 ### BADGES ###
 1. [![Python](https://img.shields.io/badge/Python-3.10+-blue)](https://www.python.org/)

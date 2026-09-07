@@ -55,7 +55,7 @@ browse-track-analyze/
 │   ├── fingerprint.py        # Fingerprint detection functions
     └── report.py             # Report generation (JSON/CSV/HTML)
     └── MacOS/
-    │   ├── extract_cookies_macos.py             # master Py script for  **all** browsers running on MacOS and iOS ecosystem
+    │   ├── extract_cookies_macos.py             # master Py script for  ```all```  browsers running on MacOS and iOS ecosystem
     └── WindowsOS/    
     │   ├── extract_cookies_brave_windowsOS.py 
         └── extract_cookies_IE_windowsOS.py

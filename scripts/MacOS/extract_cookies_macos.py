@@ -379,7 +379,7 @@ def extract_chrome():
         cookies = []
         for row in rows:
             domain, name, enc_value, path, expires_utc, secure, httponly, crested = row
-            value = decrypt_chrome_value(enc_val, aes_key)
+            value = decrypt_chromium_value(enc_val, aes_key)
             cookies.append({
                 "domain": domain,
                 "name": name,

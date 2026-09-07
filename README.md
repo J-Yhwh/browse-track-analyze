@@ -55,7 +55,7 @@ browse-track-analyze/
 │   ├── fingerprint.py        # Fingerprint detection functions
     └── report.py             # Report generation (JSON/CSV/HTML)
     └── MacOS/
-    │   ├── extract_cookies_macos.py             # Py master-script for ALL browsers running on the MacOS and iOS ecosystem
+    │   ├── extract_cookies_macos.py             # Py Master-script for ALL browsers running on the MacOS and iOS ecosystem
     └── WindowsOS/    
     │   ├── extract_cookies_brave_windowsOS.py 
         └── extract_cookies_IE_windowsOS.py
@@ -70,7 +70,7 @@ browse-track-analyze/
 │   └── edge_cookies_raw.csv            #CSV report from 'scripts/extract_cookies_IE_windowsOS.py'
 │   └── safari_cookies_full.csv         #CSV report from 'scripts/extract_cookies_safari_macos.py'
 │   └── safari_ios_emulated_cookies.csv #CSV report from 'scripts/extract_cookies_safari_ios_emulate.py
-├── app.py                    # Streamlit library - combines all CSV files in ```data/``` into dashboard for high-level presentation 
+├── app.py                    # Streamlit library - combines all CSV files in 'data/' into dashboard for high-level presentation 
 ├── requirements.txt
 ├── README.md
 ```

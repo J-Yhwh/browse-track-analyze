@@ -23,8 +23,8 @@ Utilising Data Analytics, Python-based scraping tools, Streamlit and Jupyter int
 
 ### Upcoming Improvisations (October 2026)
 - **Consolidation of scraping tools**:  Plans to combine the scraping tools for different browsers running on the same platform/OS into a Master-Script.
-✅ DONE: **MacOS** Folder containing the Master Py-script for various browsers (Safari/Brave/Chrome/Firefox/Opera)running their respective scrapers in a single .py master-file.
-✍🏽 IN PROGRESS: Plans to incorporate **WindowsOS** consolidation of disparate scraping tools into a single Master-list, followed by iOS and Android.
+- **DONE ✅: MacOS** Folder containing the Master Py-script for various browsers (Safari/Brave/Chrome/Firefox/Opera)running their respective scrapers in a single .py master-file.
+- **IN PROGRESS ✍🏽** : **WindowsOS** consolidation of disparate scraping tools into a single Master-list, followed by iOS and Android.
 
 
 ### BADGES ###

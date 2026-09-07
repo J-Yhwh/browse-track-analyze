@@ -107,19 +107,19 @@ playwright install  --with-deps
 ```
 bash
 ## Run MacOS Browser(s) cookie extractions
-FILEPATH/python3  scripts/MacOS/extract_cookies_macos.py 
+python3  scripts/MacOS/extract_cookies_macos.py 
 
 ## Run iOS emulation cookie extraction
-FILEPATH/python3  scripts/extracts/ios/emulation.py
+python3  scripts/extracts/ios/emulation.py
 
 ## Run Windows OS Brave cookie extraction
-FILEPATH\python scripts\WindowsOS\extract_cookies_brave_windowsOS.py
+python scripts\WindowsOS\extract_cookies_brave_windowsOS.py
 
 ## Run Windows OS Microsoft Edge cookie extraction
-FILEPATH\python scripts\WindowsOS\extract_cookies_IE_windowsOS.py
+python scripts\WindowsOS\extract_cookies_IE_windowsOS.py
 
 ## Run AndroidOS emulation cookie extraction
-FILEPATH\python scripts\extracts\android\emulation.py
+python scripts\extracts\android\emulation.py
 
 ## Create EDA notebook for deeper visual presentation of cookie behaviour analytics (optional)
 bash pip3 install jupyter  (if not in system)

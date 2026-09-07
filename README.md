@@ -49,7 +49,7 @@ ________________________________________________________________________________
 ```
 - 'src/'       - Core analysis logic
 - 'notebook/'  - Jupyter notebooks for EDA reports and experiments
-- 'scripts/'   - Standalone utilities for data extraction,fingerprinting, reporting
+- 'scripts/'   - Standalone utilities for data extraction,fingerprinting, reporting, OS subfolders
 - 'data/'      - Sample outputs
 
 browse-track-analyze/
@@ -58,17 +58,20 @@ browse-track-analyze/
 ├── notebook/                 # Jupyter notebook of detailed analysis
 │   ├── eda.ipynb
 ├── scripts/                   # standalone utility scripts
-│   ├── fingerprint.py        # Fingerprint detection functions
+│   ├── fingerprint.py         # Fingerprint detection functions
+    └── test.py                # confirms all relevant project libraries & dependencies
+    └── compare_cookies.py     # (optional) future merge script
     └── report.py             # Report generation (JSON/CSV/HTML)
+    └── extract_cookies_brave_ios_emulation.py
+    └── extract_cookies_safari_ios_emulation.py
+    └── extract_cookies_brave_android_os_emulation.py               
+    └── extract_cookies_chrome_android_os_emulation.py
     └── MacOS/
     │   ├── extract_cookies_macos.py             # Py Master-script for ALL browsers running on the MacOS and iOS ecosystem
     └── WindowsOS/    
-    │   ├── extract_cookies_brave_windowsOS.py 
-        └── extract_cookies_IE_windowsOS.py
-        └── extract_cookies_brave_android_os_emulation.py
-        └── extract_cookies_chrome_android_os_emulation.py
-        └── test.py                # confirms all relevant project libraries & dependencies
-        └── compare_cookies.py     # (optional) future merge script 
+    │   ├── extract_cookies_brave_windowsOS.py   # Current cookie-extraction scripts for WindowsOS browsers (future plans to merge)
+        └── extract_cookies_IE_windowsOS.py        
+        
 ├── data/
 │   ├── brave_cookies_raw.csv           #CSV report from 'scripts/extract_cookies_brave_windowsOS.py'
 │   └── brave_ios_emulated_cookies.csv  #CSV report from 'scripts/extract_cookies_brave_ios_emulate.py'

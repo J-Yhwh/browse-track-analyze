@@ -163,12 +163,15 @@ Two versions available in `src/`:
 *  Added Polars to Streamlit dashboard for better consolidation, concise summary, and analysis of amalgamated data from translated datasets (csv)
 *  Added XGBoost to Streamlit for a snapshot of machine-learning data analytics to filter and gauge the quantity of three main cookie features- Intrusive, HttpOnly, and Domain Length.
 *  Included additional deployment app tools using other platforms apart from Streamlit , eg. Snowflake, Others, etc , for smoother and/or customised application environments.
-*  Added Playwright-simulation scripting .py tools to `/scripts` folder, for Brave and Chrome browsers on Android. 
+
+### UPDATES - VER.2.1 AUG 2026 ###
+  
+*  Inclusion of Android OS, by additional Playwright-simulation scripting .py tools to `/scripts` folder, for Brave and Chrome browsers on Android.
+*  Added three additional third-party browsers (Chrome, Firefox, Opera) to MacOS for scraping
+*  Organised separate scraping tools for all browsers running on MacOS by consolidation into one Master-list - 'extract_cookies_macos.py' file
 
 ### FUTURE ROADMAP (LONG-TERM) ###
 ```
-*  Addition of other browsers for scraping (Chrome, Firefox, Opera, etc)
-*  Inclusion of Android OS
 *  Addition of XGBoost and Scikit-learn for deeper Machine-Learning capabilities
 ```
 

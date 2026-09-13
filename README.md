@@ -26,7 +26,7 @@ Utilising Data Analytics, Python-based scraping tools, Streamlit and a Jupyter i
 - **DONE ✅:
   1) MacOS** Folder containing the Master Py-script for various browsers (Safari/Brave/Chrome/Firefox/Opera)running their respective scrapers in a single ```extract_cookies_macos.py``` master-file for better directory-integration and performance.
   2) Windows** Folder containing the Master Py-script for various browsers (Safari/Brave/Chrome/Firefox/Opera)running their respective scrapers in a single ```extract_cookies_windows_os.py``` master-file for better directory-integration and performance
-- **IN PROGRESS ✍🏽** : Creation of additional  **iOS** and **Android** folders respectively,  for even more streamlined consolidation of disparate scraping tools for miscellaneous mobile browsers onto a single Master-list, for both mobile OS platforms.
+- **IN PROGRESS ✍🏽** : Creation of additional  **iOS** and **Android** folders respectively,  for even more streamlined consolidation of disparate scraping tools of miscellaneous mobile browsers onto a single Master-list, for both mobile OS platforms.
 
 
 ### BADGES ###

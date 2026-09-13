@@ -69,13 +69,13 @@ def chrome_time_to_unix(chrome_time):
 def get_chromium_key(local_state_path: Path) -> bytes:
     """Get the AES key from the Local State (DPAPI protected)."""
     if not local_state_path.exists():
-        raise FileNotFoundError(f"Local state not found: {local_state}")
+        raise FileNotFoundError(f"Local state not found: {local_state_path}")
 
 
     with open(local_state_path, "r", encoding="utf-8") as f:
-        local_state = json.load(f)
+        data = json.load(f)
 
-    encrypted_key = base64.b64decode(local_state["os_crypt"]["encrypted_key"])
+    encrypted_key = base64.b64decode(data["os_crypt"]["encrypted_key"])
     encrypted_key = encrypted_key[5:]   # remove DPAPI prefix "DPAPI"
 
     if win32crypt is None:
@@ -116,7 +116,7 @@ def extract_chromium_browser(name: str, user_data_dir: Path, profile: str = "Def
     if not cookie_db.exists():
         cookie_db = user_data_dir / profile / "Cookies"
 
-    local_state = user_data_dir / "Local State"
+    local_state_path = user_data_dir / "Local State"
 
     if not cookie_db.exists():
         print(f"❎ {name} cookies database not found.")

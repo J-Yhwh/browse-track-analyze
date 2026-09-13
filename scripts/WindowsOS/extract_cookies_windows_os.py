@@ -124,7 +124,7 @@ def extract_chromium_browser(name: str, user_data_dir: Path, profile: str = "Def
 
 
     try:
-        key = get_chromium_key(local_state)
+        key = get_chromium_key(local_state_path)
 
         with tempfile.TemporaryDirectory() as tmpdir:
             temp_db = Path(tmpdir) / "Cookies"

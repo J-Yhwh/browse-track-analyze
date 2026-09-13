@@ -69,10 +69,10 @@ browse-track-analyze/
     └── extract_cookies_brave_android_os_emulation.py               
     └── extract_cookies_chrome_android_os_emulation.py
     └── MacOS/
-    │   ├── extract_cookies_macos.py             # Py Master-script for ALL browsers running on the MacOS and iOS ecosystem
+    │   ├── extract_cookies_macos.py             # Py Master-script for ALL browsers running on the MacOS ecosystem
     └── WindowsOS/    
-    │   ├── extract_cookies_brave_windowsOS.py   # Current cookie-extraction scripts for WindowsOS browsers (future plans to merge)
-        └── extract_cookies_IE_windowsOS.py        
+    │   ├── extract_cookies_windows_os.py       #  Py Master-script for ALL browsers tunning on the Windows ecosystem
+          
         
 ├── data/
 │   ├── brave_cookies_raw.csv           #CSV report from 'scripts/extract_cookies_brave_windowsOS.py'

@@ -23,8 +23,10 @@ Utilising Data Analytics, Python-based scraping tools, Streamlit and a Jupyter i
 
 ### Upcoming Improvisations (October 2026)
 - **Consolidation of scraping tools**:  Plans to combine the scraping tools for different browsers running on the same platform/OS into Master-Scripts.
-- **DONE ✅: MacOS** Folder containing the Master Py-script for various browsers (Safari/Brave/Chrome/Firefox/Opera)running their respective scrapers in a single ```extract_cookies_macos.py``` master-file for better directory-integration and performance.
-- **IN PROGRESS ✍🏽** : **WindowsOS** consolidation of disparate scraping tools into a single Master-list, followed by iOS and Android.
+- **DONE ✅:
+  1) MacOS** Folder containing the Master Py-script for various browsers (Safari/Brave/Chrome/Firefox/Opera)running their respective scrapers in a single ```extract_cookies_macos.py``` master-file for better directory-integration and performance.
+  2) Windows** Folder containing the Master Py-script for various browsers (Safari/Brave/Chrome/Firefox/Opera)running their respective scrapers in a single ```extract_cookies_windows_os.py``` master-file for better directory-integration and performance
+- **IN PROGRESS ✍🏽** : Creation of additional  **iOS** and **Android** folders respectively,  for even more streamlined consolidation of disparate scraping tools for miscellaneous mobile browsers onto a single Master-list, for both mobile OS platforms.
 
 
 ### BADGES ###

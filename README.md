@@ -112,11 +112,8 @@ python3  scripts/MacOS/extract_cookies_macos.py
 ## Run iOS emulation cookie extraction
 python3  scripts/extracts/ios/emulation.py
 
-## Run Windows OS Brave cookie extraction
-python scripts\WindowsOS\extract_cookies_brave_windowsOS.py
-
-## Run Windows OS Microsoft Edge cookie extraction
-python scripts\WindowsOS\extract_cookies_IE_windowsOS.py
+## Run Windows Browser(s) cookie extractions
+python scripts\WindowsOS\extract_cookies_windows_os.py
 
 ## Run AndroidOS emulation cookie extraction
 python scripts\extracts\android\emulation.py

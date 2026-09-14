@@ -71,16 +71,14 @@ browse-track-analyze/
     └── MacOS/
     │   ├── extract_cookies_macos.py             # Py Master-script for ALL browsers running on the MacOS ecosystem
     └── WindowsOS/    
-    │   ├── extract_cookies_windows_os.py       #  Py Master-script for ALL browsers tunning on the Windows ecosystem
-          
-        
+    │   ├── extract_cookies_windows_os.py       #  Py Master-script for ALL browsers running on the Windows ecosystem     
 ├── data/
-│   ├── brave_cookies_raw.csv           #CSV report from 'scripts/extract_cookies_brave_windowsOS.py'
-│   └── brave_ios_emulated_cookies.csv  #CSV report from 'scripts/extract_cookies_brave_ios_emulate.py'
-│   └── brave_macos_cookies.csv         #CSV report from 'scripts/extract_cookies_brave_macos.py'
-│   └── edge_cookies_raw.csv            #CSV report from 'scripts/extract_cookies_IE_windowsOS.py'
-│   └── safari_cookies_full.csv         #CSV report from 'scripts/extract_cookies_safari_macos.py'
-│   └── safari_ios_emulated_cookies.csv #CSV report from 'scripts/extract_cookies_safari_ios_emulate.py
+│   ├── macos_cookies_full.csv    #CSV report from 'scripts/extract_cookies_macos.py' (actual results vary/ more than 1 file may be saved)
+│   └── windows_cookies_full.csv  #CSV report from 'scripts/extract_cookies_windows_os.py' (actual results vary/ more than 1 file may be saved)
+│   └── brave_ios_emulated_cookies.csv          #CSV report from 'scripts/extract_cookies_brave_ios_emulate.py'        
+│   └── safari_ios_emulated_cookies.csv         #CSV report from 'scripts/extract_cookies_safari_ios_emulate.py'
+│   └── brave_android_emulated_cookies.csv      #CSV report from 'scripts/extract_cookies_brave_android_os_emulation.py'
+│   └── chrome_android_emulated_cookies.csv     #CSV report from 'scripts/extract_cookies_chrome_android_os_emulation.py'
 ├── app.py                    # Streamlit library - combines all CSV files in 'data/' into dashboard for high-level presentation 
 ├── requirements.txt
 ├── README.md

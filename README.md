@@ -45,11 +45,12 @@ Utilising Data Analytics, Python-based scraping tools, Streamlit and a Jupyter i
 - Streamlit dashboards for amalgamation of results for  comparison
 - **Planning**: ML pipelines for tracker clustering and invasiveness prediction
 
-⚠️ __Security & Privacy Disclaimer: Metadata Harvesting
+⚠️ __Security & Privacy Disclaimer: Metadata Harvesting__
 This repository and its associated tools interacts actively with web-browsers, which may contain sensitive metadata content.
-Please be advised that automated scraping utilities often extract a lot more than just visible information; background metadata like active session cookies, authentication tokens, IP headers and local storage values can be revealed.  Running unauthorised scraping tools, or granting them deep DOM/Inspection privileges poses high security and privacy risks, including account hijacking, private data exposure, and unauthorised tracking.
+Please be advised that automated scraping utilities often extract a lot more than just visible information; background metadata like __active session cookies, authentication tokens, IP headers and local storage values can be revealed__.  Running unauthorised scraping tools, or granting them deep DOM/Inspection privileges poses high security and privacy risks, including account hijacking, private data exposure, and unauthorised tracking.
 Any use of third-party utilities, or metadata analysis pipelines within this project comes entirely at user's own risk. 
-The maintainers of this repository disclaim all liability for data breaches or security compromises resulting from external scraping activities.
+
+__The maintainers of this repository disclaim all liability for data breaches or security compromises resulting from external scraping activities.
 Use code with caution.__
 
 __________________________________________________________________________________________________________________________________________________

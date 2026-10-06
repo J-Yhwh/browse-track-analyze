@@ -72,21 +72,21 @@ browse-track-analyze/
 │   ├── fingerprint.py         # Fingerprint detection functions
     └── test.py                # confirms all relevant project libraries & dependencies
     └── compare_cookies.py     # (optional) future merge script
-    └── report.py             # Report generation (JSON/CSV/HTML)
+    └── report.py              # Report generation (JSON/CSV/HTML)
     └── MacOS/
     │   ├── extract_cookies_macos_masterscript.py             # Py Master-script for MacOS 
     └── WindowsOS/    
     │   ├── extract_cookies_windows_os_masterscript.py        # Py Master-script for Windows
     └── Mobile/
     │   ├── extract_cookies_ios_masterscript.py     # Py Master-script for iOS (by Playwright simulation)
-        └── extract_cookies_android_masterscript.py    #  work-in-progress
+        └── extract_cookies_android_masterscript.py # work-in-progress
 ├── data/
-│   ├── macos_cookies_full.csv    #CSV report from 'scripts/extract_cookies_macos.py' (actual results vary/ more than 1 file may be saved)
-│   └── windows_cookies_full.csv  #CSV report from 'scripts/extract_cookies_windows_os.py' (actual results vary/ more than 1 file may be saved)
-│   └── brave_ios_emulated_cookies.csv          #CSV report from 'scripts/extract_cookies_brave_ios_emulate.py'        
-│   └── safari_ios_emulated_cookies.csv         #CSV report from 'scripts/extract_cookies_safari_ios_emulate.py'
-│   └── brave_android_emulated_cookies.csv      #CSV report from 'scripts/extract_cookies_brave_android_os_emulation.py'
-│   └── chrome_android_emulated_cookies.csv     #CSV report from 'scripts/extract_cookies_chrome_android_os_emulation.py'
+│   ├── macos_cookies_full.csv    # CSV report from 'scripts/extract_cookies_macos.py' (actual results vary/ more than 1 file may be saved)
+│   └── windows_cookies_full.csv  # CSV report from 'scripts/extract_cookies_windows_os.py' (actual results vary/ more than 1 file may be saved)
+│   └── brave_ios_emulated_cookies.csv          # CSV report from 'scripts/extract_cookies_brave_ios_emulate.py'        
+│   └── safari_ios_emulated_cookies.csv         # CSV report from 'scripts/extract_cookies_safari_ios_emulate.py'
+│   └── brave_android_emulated_cookies.csv      # CSV report from 'scripts/extract_cookies_brave_android_os_emulation.py'
+│   └── chrome_android_emulated_cookies.csv     # CSV report from 'scripts/extract_cookies_chrome_android_os_emulation.py'
 ├── app.py                    # Streamlit library - combines all CSV files in 'data/' into dashboard for high-level presentation 
 ├── requirements.txt
 ├── README.md
@@ -95,12 +95,11 @@ browse-track-analyze/
 ### REQUIREMENTS AND DEPENDENCIES ###
 See requirements.txt for full list.
 **Key dependencies: CSV(SQLite), Pandas, Playwright, Streamlit** <br><br>
-NOTE:  Adherence to the minimal versions listed for each dependency in 'requirements.txt' is highly recommended
-for the desired results or outcome.
+NOTE:  Adherence to the minimal versions listed for each dependency in 'requirements.txt' is recommended for optimal performance.
 
 ### DIRECTIONS: 
 1. Install the required libraries and dependencies specified in requirements.txt (above) on your local machine. 
-2. Surf the web on the different browsers specified (Brave(MacOS)/Brave(Windows)/MsEdge/Safari/iOS), within a **1-day timeframe** for each and **every** browser, on standard settings.
+2. Surf the web on the different browsers specified (Brave(MacOS)/Brave(Windows)/MsEdge/Safari/iOS), within a **1-day timeframe** for each and **every** browser, on standard settings. For more accurate results, use the exact same websites (eg Google.com. Yahoo.com, etc) across _all__ browsers, and surf with a regulated timeframe - for instance 15 - 20 minutes, at every website.
 3. Download/branch ```browse-track-analyze``` onto your local machine/directory, and run the relevant scripts in Bash to extract cookies from the different browsers. The extracted .csv databases will be stored in the ```FILEPATH/browse-track-analyze/data``` folder of your local directory.
 
 

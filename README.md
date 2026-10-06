@@ -163,7 +163,7 @@ Two versions available in `src/`:
 ![iOS Simulation Cookies](screenshots/iOS_Playwright_Simulation_Success.png)
 
 **AndroidOS Playwright Simulation  - Terminal**
-![Android Simulation Cookies](screenshots/AndroidOS_Simulation.png)
+![Android Simulation Cookies](screenshots/Android_OS_Playwright_Simulation_Success.png)
 
 ### UPDATES - VER.2.0.0 JUL 2026 ###
 

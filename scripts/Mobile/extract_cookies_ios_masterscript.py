@@ -46,7 +46,7 @@ CHROME_UA = (
 
 
 FIREFOX_UA = (
-    "Mozllia/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) "
+    "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) "
     "AppleWebKit/605.1.15 (KHTML, like Gecko) "
     "FxiOS/132.0 Mobile/15E148 Safari 604.1"
     
@@ -56,9 +56,9 @@ FIREFOX_UA = (
 
 PROFILES = [
     {"name": "Safari", "ua": None},
-    {"name": "Brave", "ua": "BRAVE_UA"},
-    {"name": "Firefox", "ua": "FIREFOX_UA"},
-    {"name": "Chrome", "ua": "CHROME_UA"},
+    {"name": "Brave", "ua": BRAVE_UA},
+    {"name": "Firefox", "ua": FIREFOX_UA},
+    {"name": "Chrome", "ua": CHROME_UA},
 ]
 
 

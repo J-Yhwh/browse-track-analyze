@@ -74,12 +74,12 @@ browse-track-analyze/
     └── compare_cookies.py     # (optional) future merge script
     └── report.py             # Report generation (JSON/CSV/HTML)
     └── MacOS/
-    │   ├── extract_cookies_macos.py             # Py Master-script for ALL browsers running on the MacOS ecosystem
+    │   ├── extract_cookies_macos_masterscript.py             # Py Master-script for MacOS 
     └── WindowsOS/    
-    │   ├── extract_cookies_windows_os.py       #  Py Master-script for ALL browsers running on the Windows ecosystem
+    │   ├── extract_cookies_windows_os_masterscript.py        # Py Master-script for Windows
     └── Mobile/
-    │   ├── extract_cookies_ios_emulation.py        #  ready to run 
-        └── extract_cookies_android_emulation.py    #  work-in-progress
+    │   ├── extract_cookies_ios_masterscript.py     # Py Master-script for iOS (by Playwright simulation)
+        └── extract_cookies_android_masterscript.py    #  work-in-progress
 ├── data/
 │   ├── macos_cookies_full.csv    #CSV report from 'scripts/extract_cookies_macos.py' (actual results vary/ more than 1 file may be saved)
 │   └── windows_cookies_full.csv  #CSV report from 'scripts/extract_cookies_windows_os.py' (actual results vary/ more than 1 file may be saved)

@@ -46,7 +46,7 @@ CHROME_UA = (
 
 
 FIREFOX_UA = (
-    "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) "
+    "Mozllia/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) "
     "AppleWebKit/605.1.15 (KHTML, like Gecko) "
     "FxiOS/132.0 Mobile/15E148 Safari 604.1"
     
@@ -56,9 +56,9 @@ FIREFOX_UA = (
 
 PROFILES = [
     {"name": "Safari", "ua": None},
-    {"name": "Brave", "ua": BRAVE_UA},
-    {"name": "Firefox", "ua": FIREFOX_UA},
-    {"name": "Chrome", "ua": CHROME_UA},
+    {"name": "Brave", "ua": "BRAVE_UA"},
+    {"name": "Firefox", "ua": "FIREFOX_UA"},
+    {"name": "Chrome", "ua": "CHROME_UA"},
 ]
 
 
@@ -80,19 +80,25 @@ SHOW_BROWSER = True    #Boolean switch to False if silent run (no pop-up of Play
 
 with sync_playwright() as p:
     browser = p.webkit.launch(
-        headless=not SHOW_BROWSER,
+        headless = not SHOW_BROWSER,
         slow_mo=400 if SHOW_BROWSER else 0,
     )
     device = p.devices["iPhone 15"]
-
+    PHONE = {"width": 393, "height": 852}
 
     for profile in PROFILES:
-        rows = []    #one list per browser, created before any append
+        rows = []                               #one list per browser, created before any append
         kwargs = dict(device)
+        kwargs["viewport"] = PHONE
+        kwargs["screen"] = PHONE
+        kwargs["is_mobile"] = True
+        kwargs["has_touch"] = True
+        kwargs["device_scale_factor"] = 3
         if profile["ua"]:
             kwargs["user_agent"] = profile["ua"]
         context = browser.new_context(**kwargs)
         page = context.new_page()
+        page.set_viewport_size(PHONE)
     
 
         for url in URLS:

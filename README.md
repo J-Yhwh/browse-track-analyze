@@ -21,13 +21,13 @@ Utilising Data Analytics, Python-based scraping tools, Streamlit and a Jupyter i
 - **Visualisation**: Streamlit,  Matplotlib, Seaborn, XGBoost
 - **Future Enhancements**:  Machine Learning for tracker pattern analysis and risk scoring
 
-### Upcoming Improvisations (October 2026)
+### Upcoming Improvisations (Updated 6 October 2026)
 - **Consolidation of scraping tools**:  Plans to combine the scraping tools for different browsers running on the same platform/OS into Master-Scripts.
 - **DONE ✅:
-  1) MacOS** Folder containing the Master Py-script for various browsers (Safari/Brave/Chrome/Firefox/Opera)running their respective scrapers in a single ```extract_cookies_macos.py``` master-file for better directory-integration and performance.
-  2) Windows** Folder containing the Master Py-script for various browsers (Safari/Brave/Chrome/Firefox/Opera)running their respective scrapers in a single ```extract_cookies_windows_os.py``` master-file for better directory-integration and performance
-- **IN PROGRESS ✍🏽** : Creation of additional  **iOS** and **Android** folders respectively,  for even more streamlined consolidation of disparate scraping tools of miscellaneous mobile browsers onto a single Master-list, for both mobile OS platforms.
-
+  1) MacOS** Folder containing the Master Py-script for various browsers (Safari/Brave/Chrome/Firefox/Opera), arranged _modularly__ in a single ```extract_cookies_macos.py``` master-file for better directory-integration and performance.
+  2) Windows** Folder containing the Master Py-script for various browsers (Safari/Brave/Chrome/Firefox/Opera), arranged _modularly__ in a single ```extract_cookies_windows_os.py``` master-file for better directory-integration and performance
+  3) Mobile** Folder containing Master Py-script of various _modular__ browser-scraping tools running on **iOS** operating system, utilising **Playwright** simulation. 
+- **IN PROGRESS ✍🏽** : Creation of an **Android** Master-script, for a complete, streamlined consolidation of disparate scraping tools of miscellaneous mobile browsers onto singular OS-based Masterlists across all platforms (Mac| iOS | Windows | Android) 
 
 ### BADGES ###
 1. [![Python](https://img.shields.io/badge/Python-3.10+-blue)](https://www.python.org/)
@@ -73,14 +73,13 @@ browse-track-analyze/
     └── test.py                # confirms all relevant project libraries & dependencies
     └── compare_cookies.py     # (optional) future merge script
     └── report.py             # Report generation (JSON/CSV/HTML)
-    └── extract_cookies_brave_ios_emulation.py
-    └── extract_cookies_safari_ios_emulation.py
-    └── extract_cookies_brave_android_os_emulation.py               
-    └── extract_cookies_chrome_android_os_emulation.py
     └── MacOS/
     │   ├── extract_cookies_macos.py             # Py Master-script for ALL browsers running on the MacOS ecosystem
     └── WindowsOS/    
-    │   ├── extract_cookies_windows_os.py       #  Py Master-script for ALL browsers running on the Windows ecosystem     
+    │   ├── extract_cookies_windows_os.py       #  Py Master-script for ALL browsers running on the Windows ecosystem
+    └── Mobile/
+    │   ├── extract_cookies_ios_emulation.py        #  ready to run 
+        └── extract_cookies_android_emulation.py    #  work-in-progress
 ├── data/
 │   ├── macos_cookies_full.csv    #CSV report from 'scripts/extract_cookies_macos.py' (actual results vary/ more than 1 file may be saved)
 │   └── windows_cookies_full.csv  #CSV report from 'scripts/extract_cookies_windows_os.py' (actual results vary/ more than 1 file may be saved)

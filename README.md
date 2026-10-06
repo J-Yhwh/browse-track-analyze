@@ -160,7 +160,7 @@ Two versions available in `src/`:
 ![Safari MacOS raw Cookies](screenshots/Terminal_Success_Safari.png)
 
 **iOS Playwright Simulation - Terminal**
-![iOS Simulation Cookies](screenshots/iOS_Simulation_Success.png)
+![iOS Simulation Cookies](screenshots/iOS_Playwright_Simulation_Success.png)
 
 **AndroidOS Playwright Simulation  - Terminal**
 ![Android Simulation Cookies](screenshots/AndroidOS_Simulation.png)

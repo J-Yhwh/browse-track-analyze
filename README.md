@@ -79,7 +79,7 @@ browse-track-analyze/
     │   ├── extract_cookies_windows_os_masterscript.py        # Py Master-script for Windows
     └── Mobile/
     │   ├── extract_cookies_ios_masterscript.py     # Py Master-script for iOS (by Playwright simulation)
-        └── extract_cookies_android_masterscript.py # work-in-progress
+        └── extract_cookies_android_masterscript.py # Py Master-script for Android (by Playwright simulation)
 ├── data/
 │   ├── macos_cookies_full.csv    # CSV report from 'scripts/extract_cookies_macos.py' (actual results vary/ more than 1 file may be saved)
 │   └── windows_cookies_full.csv  # CSV report from 'scripts/extract_cookies_windows_os.py' (actual results vary/ more than 1 file may be saved)

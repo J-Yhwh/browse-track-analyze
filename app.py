@@ -32,6 +32,7 @@ def load_all_data(data_folder="data"):
     st.write(f"📂 Found {len(csv_files)} CSV files: {[f.name for f in csv_files]}")
 
     all_dfs = []
+    
     for file in csv_files:
         try:
             df = pd.read_csv(file)
@@ -40,18 +41,36 @@ def load_all_data(data_folder="data"):
             # Infer Browser & OS from filename
             fname = file.name.lower()
             
-            if 'brave' in fname and 'windows' in fname:
-                df['browser'] = 'Brave'
-                df['os'] = 'windowsOS'
+            if 'safari' in fname and 'macos' in fname:
+                df['browser'] = 'Safari'
+                df['os'] = 'macOS'
             elif 'brave' in fname and 'macos' in fname:
                 df['browser'] = 'Brave'
                 df['os'] = 'macOS'
-            elif 'safari' in fname and 'macos' in fname:
-                df['browser'] = 'Safari'
+            elif 'chrome' in fname and 'macos' in fname:
+                df['browser'] = 'Chrome'
+                df['os'] = 'macOS'
+            elif 'firefox' in fname and 'macos' in fname:
+                df['browser'] = 'Firefox'
+                df['os'] = 'macOS'
+            elif 'opera' in fname and 'macos' in fname:
+                df['browser'] = 'Opera'
                 df['os'] = 'macOS'
             elif 'edge' in fname or 'msedge' in fname:
                 df['browser'] = 'Edge'
                 df['os'] = 'windowsOS'
+            elif 'brave' in fname and 'windows' in fname:
+                df['browser'] = 'Brave'
+                df['os'] = 'windowsOS'
+            elif 'chrome' in fname or 'windows' in fname:
+                df['browser'] = 'Chrome'
+                df['os'] = 'windowsOS'
+            elif 'firefox' in fname and 'windows' in fname:
+                df['browser'] = 'Firefox'
+                df['os'] = 'windowsOS'
+            elif 'opera' in fname or 'windows' in fname:
+                df['browser'] = 'Opera'
+                df['os'] = 'windowsOS'             
             elif 'brave' in fname and 'ios' in fname:
                 df['browser'] = 'Brave'
                 df['os'] = 'iOS (Playwright)'
@@ -70,7 +89,6 @@ def load_all_data(data_folder="data"):
 
             all_dfs.append(df)
             st.success(f"✅ Loaded {file.name} -> {len(df)} rows ({df['browser'].iloc[0]} on {df['os'].iloc[0]})")
-
         except Exception as e:
             st.error(f"Failed to load {file.name}: {e}")
 
@@ -91,15 +109,25 @@ if not df.empty:
     # Fix boolean columns 
     for col in ['secure', 'httpOnly']:
         if col in df_clean.columns:
-            # Fill NaN with False and convert to integer (0/1)
-            df_clean[col] = df_clean[col].fillna(False).astype(bool).astype(int)
-    
+            df_clean[col] = (
+                df_clean[col]
+                .astype(str)
+                .str.strip()
+                .str.lower()
+                .isin(['true', '1', 'yes', 't'])
+                .astype(int)
+            )
+
+    for col in df_clean.select_dtypes(include='object').columns:
+        df_clean[col] = df_clean[col].astype(str)
+
+   
     # Now safely convert to Polars
     df_pl = pl.from_pandas(df_clean)
     st.success(f"✅ Enhanced with Polars: {len(df_pl):,} rows")
 
 
-    # =======FILTERS (Checkboxes)
+    # =========================== FILTERS (Checkboxes)  ==============================
     st.subheader("🔍Filters")
     col_a, col_b = st.columns(2)
     with col_a:
@@ -355,5 +383,6 @@ if not filtered_df.empty and 'domain' in filtered_df.columns:
 
 else:
     st.info("No data available for XGBoost analysis.")
+          
     
             

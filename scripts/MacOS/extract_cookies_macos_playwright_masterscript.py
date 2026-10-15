@@ -407,7 +407,7 @@ def extract_chrome():
                 "name": name,
                 "value": value,
                 "path": path,
-                "expires_utc": expires,
+                "expires_utc": expires_utc,
                 "secure": bool(secure),
                 "httpOnly": bool(httponly),
                 "creation_utc": created,

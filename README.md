@@ -80,7 +80,8 @@ browse-track-analyze/
     └── compare_cookies.py     # (optional) future merge script
     └── report.py              # Report generation (JSON/CSV/HTML)
     └── MacOS/
-    │   ├── extract_cookies_macos_masterscript.py             # Py Master-script for MacOS 
+    │   ├── extract_cookies_macos_masterscript.py                # Py Master-script | MacOS
+        └── extract_cookies_macos_playwright_masterscript.py.    # Py PLAYWRIGHT-simulation Master-script | MacOS
     └── WindowsOS/    
     │   ├── extract_cookies_windows_os_masterscript.py        # Py Master-script for Windows
     └── Mobile/

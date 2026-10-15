@@ -21,13 +21,19 @@ Utilising Data Analytics, Python-based scraping tools, Streamlit and a Jupyter i
 - **Visualisation**: Streamlit,  Matplotlib, Seaborn, XGBoost
 - **Future Enhancements**:  Machine Learning for tracker pattern analysis and risk scoring
 
-### Upcoming Improvisations (Updated 6 October 2026)
+### Improvisations (Updated 15 October 2026)
 - **Consolidation of scraping tools**:  Plans to combine the scraping tools for different browsers running on the same platform/OS into Master-Scripts.
 - **DONE ✅:
-  1) MacOS** Folder containing the Master Py-script for various browsers (Safari/Brave/Chrome/Firefox/Opera), arranged _modularly__ in a single ```extract_cookies_macos.py``` master-file for better directory-integration and performance.
-  2) Windows** Folder containing the Master Py-script for various browsers (Safari/Brave/Chrome/Firefox/Opera), arranged _modularly__ in a single ```extract_cookies_windows_os.py``` master-file for better directory-integration and performance
-  3) Mobile** Folder containing Master Py-script of various _modular__ browser-scraping tools running on **iOS** operating system, utilising **Playwright** simulation. 
-- **IN PROGRESS ✍🏽** : Creation of an **Android** Master-script, for a complete, streamlined consolidation of disparate scraping tools of miscellaneous mobile browsers onto singular OS-based Masterlists across all platforms (Mac| iOS | Windows | Android) 
+  1) **MacOS** Folder containing the Master Py-script for various browsers (Safari/Brave/Chrome/Firefox/Opera), arranged _modularly__ in a single ```extract_cookies_macos.py``` master-file for better directory-integration and performance.
+  2) **Windows** Folder containing the Master Py-script for various browsers (Safari/Brave/Chrome/Firefox/Opera), arranged _modularly__ in a single ```extract_cookies_windows_os.py``` master-file for better directory-integration and performance
+  3) **Mobile** Folder containing Master Py-script of various _modular__ browser-scraping tools running on **iOS** operating system, utilising **Playwright** simulation.
+  4) **Android** Master Py-script equivalent of _modular__ browser-scraping tools running on Android added to  **Mobile** folder.
+
+- **IN PROGRESS ✍🏽:
+  1) Integration of **Playwright** across all desktop scripts - MacOS and Windows - for consistency in results and acceleration of outcome
+  2) Possible inclusion of **Linux** OS into test metric (tentative)
+  
+  
 
 ### BADGES ###
 1. [![Python](https://img.shields.io/badge/Python-3.10+-blue)](https://www.python.org/)

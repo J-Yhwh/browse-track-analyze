@@ -34,7 +34,18 @@ ROAMING = Path(os.environ["APPDATA"])
 DATA_FOLDER = Path("data")
 DATA_FOLDER.mkdir(exist_ok=True)
 
-
+URLS = [
+         "https://youtube.com",
+         "https://www.google.com",
+         "https://www.bing.com",
+         "https://www.channelnewsasia.com",
+         "https://www.dailymail.co.uk",
+         "https://www.foxnews.com",
+         "https://www.msn.com",
+         "https://www.tiktok.com",
+         "https://www.x.com",
+         "https://www.yahoo.com",
+]
 
 
 # ============================================================
@@ -229,7 +240,6 @@ def extract_firefox():
 # PLAYWRIGHT SIMULATION
 # ============================================================
 
-
 def run_playwright_simulation():
     """Run strict Playwright simulation across the shared site list."""
     print("\n=== Playwright simulation - Strict Metrics ===")
@@ -244,7 +254,7 @@ def run_playwright_simulation():
         print(f"\n--- Simulating {btype} -> {out_name}---")
         scrape_cookies_playwright(
             browser_type=btype,
-            urls=URLS,
+            urls=URLs,
             output_name= out_name      
             )
 

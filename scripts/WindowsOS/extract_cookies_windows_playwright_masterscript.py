@@ -26,6 +26,7 @@ from Crypto.Cipher import AES  # pip install pycryptodome
 # PATHS
 # ============================================================
 
+from playwright_utils  import scrape_cookies_playwright
 
 LOCAL = Path(os.environ["LOCALAPPDATA"])
 ROAMING = Path(os.environ["APPDATA"])

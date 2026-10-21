@@ -254,7 +254,7 @@ def run_playwright_simulation():
         print(f"\n--- Simulating {btype} -> {out_name}---")
         scrape_cookies_playwright(
             browser_type=btype,
-            urls=URLs,
+            urls=URLS,
             output_name= out_name      
             )
 

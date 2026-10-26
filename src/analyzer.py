@@ -38,20 +38,20 @@ def verify_sanitize_schema(df: pd.DataFrame, source_name: str) -> pd.DataFrame:
     'expiry': 'Int64'
     }
 
-logging.info(f"Initiating schema verfification for batch source:  [{source_name}]")
+    logging.info(f"Initiating schema verfification for batch source:  [{source_name}]")
+    
+    # Check for missing critical columns
+    missing_cols = [col for col in EXPECTED_SCHEMA if col not in df.columns]
+    if missing_cols:
+        error_msg = f"SCHEMA CRITICAL ERROR: Source [{source_name}] is missing required columns: {missing_cols}"
+        logging.error(error_msg)
+        for col in missing_cols:
+            df[col] = pd.NA
 
-# Check for missing critical columns
-missing_cols = [col for col in EXPECTED_SCHEMA if col not in df.columns]
-if missing_cols:
-    error_msg = f"SCHEMA CRITICAL ERROR: Source [{source_name}] is missing required columns: {missing_cols}"
-    logging.error(error_msg)
-    for col in missing_cols:
-        df[col] = pd.NA
-
-for column, target_type in EXPECTED_SCHEMA.items():
-    if column in df.columns:
-        try:
-            initial_nulls = df.column.isna().sum
+    for column, target_type in EXPECTED_SCHEMA.items():
+        if column in df.columns:
+            try:
+                initial_nulls = df.column.isna().sum
 
             if target_type == "boolean":
                 df[column] = df[column].astype.bool
@@ -69,11 +69,11 @@ for column, target_type in EXPECTED_SCHEMA.items():
         except Exception as e:
             logging.error(f" Failed to enforce type [{target_type}] on column[{column}] for [{source_name}]: (str{e})")
 
-    # Filter to strictly match the institutional format
-    sanitized_df = df[list(EXPECTED_SCHEMA.keys())].copy()
-    logging.info(f"Schema verification complete for [{source.name}]. Processed rows: {len(sanitized_df)}")
+        # Filter to strictly match the institutional format
+        sanitized_df = df[list(EXPECTED_SCHEMA.keys())].copy()
+        logging.info(f"Schema verification complete for [{source.name}]. Processed rows: {len(sanitized_df)}")
 
-    return sanitized_df
+        return sanitized_df
 
 
 # Transformation of raw data to readable CSV tables by parsing  

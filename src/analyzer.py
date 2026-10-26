@@ -69,11 +69,11 @@ for column, target_type in EXPECTED_SCHEMA.items():
         except Exception as e:
             logging.error(f" Failed to enforce type [{target_type}] on column[{column}] for [{source_name}]: (str{e})")
 
-# Filter to strictly match the institutional format
-sanitized_df = df[list(EXPECTED_SCHEMA.keys())].copy()
-logging.info(f"Schema verification complete for [{source.name}]. Processed rows: {len(sanitized_df)}")
+    # Filter to strictly match the institutional format
+    sanitized_df = df[list(EXPECTED_SCHEMA.keys())].copy()
+    logging.info(f"Schema verification complete for [{source.name}]. Processed rows: {len(sanitized_df)}")
 
-return sanitized_df
+    return sanitized_df
 
 
 # Transformation of raw data to readable CSV tables by parsing  

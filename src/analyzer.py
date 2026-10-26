@@ -54,7 +54,7 @@ def verify_sanitize_schema(df: pd.DataFrame, source_name: str) -> pd.DataFrame:
                 initial_nulls = df.column.isna().sum
 
             if target_type == "boolean":
-                df[column] = df[column].astype.bool
+                df[column] = df[column].astype(bool)
             elif target_type == "Int64":
                 df[column] = pd.to_numeric(df[column], errors='coerce').astype('Int64')
             else:
@@ -67,7 +67,10 @@ def verify_sanitize_schema(df: pd.DataFrame, source_name: str) -> pd.DataFrame:
                     f"{final_nulls - initial_nulls} records failed type coercion and were set to NULL."
                 )
             except Exception as e:
-                logging.error(f" Failed to enforce type [{target_type}] on column[{column}] for [{source_name}]: (str{e})")
+                logging.error(
+                    f" Failed to enforce type [{target_type}] on column[{column}]" 
+                    f" for [{source_name}]: (str{e})"
+                )
 
     # Filter to strictly match the institutional format
     sanitized_df = df[list(EXPECTED_SCHEMA.keys())].copy()

@@ -62,10 +62,10 @@ def verify_sanitize_schema(df: pd.DataFrame, source_name: str) -> pd.DataFrame:
 
                     final_nulls = df[column].isna().sum()
                     if final_nulls > initial_nulls:
-                    logging.warning(
-                        f"Data anomaly in [{source_name}] column [{column}]. "
-                        f"{final_nulls - initial_nulls} records failed type coercion and were set to NULL."
-                    )
+                        logging.warning(
+                            f"Data anomaly in [{source_name}] column [{column}]. "
+                            f"{final_nulls - initial_nulls} records failed type coercion and were set to NULL."
+                        )
             except Exception as e:
                 logging.error(
                     f"Failed to enforce type [{target_type}] on column [{column}] "

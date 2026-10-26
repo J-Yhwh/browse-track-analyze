@@ -66,14 +66,14 @@ def verify_sanitize_schema(df: pd.DataFrame, source_name: str) -> pd.DataFrame:
                     f"Data anomaly in [{source_name}] column [{column}]."
                     f"{final_nulls - initial_nulls} records failed type coercion and were set to NULL."
                 )
-        except Exception as e:
-            logging.error(f" Failed to enforce type [{target_type}] on column[{column}] for [{source_name}]: (str{e})")
+            except Exception as e:
+                logging.error(f" Failed to enforce type [{target_type}] on column[{column}] for [{source_name}]: (str{e})")
 
-        # Filter to strictly match the institutional format
-        sanitized_df = df[list(EXPECTED_SCHEMA.keys())].copy()
-        logging.info(f"Schema verification complete for [{source.name}]. Processed rows: {len(sanitized_df)}")
+    # Filter to strictly match the institutional format
+    sanitized_df = df[list(EXPECTED_SCHEMA.keys())].copy()
+    logging.info(f"Schema verification complete for [{source.name}]. Processed rows: {len(sanitized_df)}")
 
-        return sanitized_df
+    return sanitized_df
 
 
 # Transformation of raw data to readable CSV tables by parsing  

@@ -9,15 +9,74 @@ import os
 import argparse
 import json
 import pandas as pd
+import logging
 from pathlib import Path
 from scripts.report import generate_report  # your report function
 
 
-#Repo root designed to work exacly as categorized in project file-structure git
+# Repo root designed to work exactly as categorized in project file-structure git
 REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.insert(0, REPO_ROOT)
 
+# Setup logging envirornment
+logging.basicConfig(
+    filename= 'pipeline.integrity.log',
+    level=logging.INFO,
+    format='%(asctime)s [%(levelname)s] %(message)s',
+    datefmt='%Y-%m-%d  %H:%M:%S'
+)
 
+# Define and set schema for data-cleansing
+def verify_sanitize_schema(df: pd.DataFrame, source_name: str) -> pd.DataFrame:
+    EXPECTED_SCHEMA = {
+    'domain'= 'string',
+    'name' = 'string',
+    'value' = 'string',
+    'path' = 'string',
+    'secure' = 'boolean',
+    'httpOnly'= 'boolean',
+    'expiry'= 'Int64'
+    }
+
+logging.info(f"Initiating schema verfification for batch source:  [{source_name}]")
+
+# Check for missing critical columns
+missing_cols = [col for col in EXPECTED_SCHEMA if col not in df.columns]
+if missing_cols:
+    error_msg = f"SCHEMA CRITICAL ERROR: Source [{source_name}] is missing required columns: {missing_cols}"
+    logging.error(error_msg)
+    for col in missing_cols:
+        df[col] = pd.NA
+
+for column, target_type in EXPECTED_SCHEMA.items():
+    if column in df.columns:
+        try:
+            initial_nulls = df.column.isna().sum
+
+            if target_type == "boolean":
+                df[column] = df[column].astype.bool
+            elif target_type == "Int64":
+                df[column] = pd.to_numeric(df[column], errors='coerce').astype('Int64')
+            else:
+                df[column] = df[column].astype(target_type)
+
+            final_nulls = df[column].isna().sum()
+            if final_nulls > initial_nulls:
+                logging.warning(
+                    f"Data anomaly in [{source_name}] column [{column}]."
+                    f"{final_nulls - initial_nulls} records failed type coercion and were set to NULL."
+                )
+        except Exception as e:
+            logging.error(f" Failed to enforce type [{target_type}] on column[{column}] for [{source_name}]: (str{e})")
+
+# Filter to strictly match the institutional format
+sanitized_df = df[list(EXPECTED_SCHEMA.keys())].copy()
+logging.info(f"Schema verification complete for [{source.name}]. Processed rows: {len(sanitized_df)}")
+
+return sanitized_df
+
+
+# Transformation of raw data to readable CSV tables by parsing  
 def main():
     parser = argparse.ArgumentParser(description="Browser Tracker Analyzer CLI")
     parser.add_argument("--mode", choices=["csv", "live"], default="csv",

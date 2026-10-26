@@ -20,7 +20,7 @@ sys.path.insert(0, REPO_ROOT)
 
 # Setup logging envirornment
 logging.basicConfig(
-    filename= 'pipeline.integrity.log',
+    filename= 'pipeline_integrity.log',
     level=logging.INFO,
     format='%(asctime)s [%(levelname)s] %(message)s',
     datefmt='%Y-%m-%d  %H:%M:%S'

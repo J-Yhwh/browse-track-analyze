@@ -29,13 +29,13 @@ logging.basicConfig(
 # Define and set schema for data-cleansing
 def verify_sanitize_schema(df: pd.DataFrame, source_name: str) -> pd.DataFrame:
     EXPECTED_SCHEMA = {
-    'domain'= 'string',
-    'name' = 'string',
-    'value' = 'string',
-    'path' = 'string',
-    'secure' = 'boolean',
-    'httpOnly'= 'boolean',
-    'expiry'= 'Int64'
+    'domain': 'string',
+    'name': 'string',
+    'value': 'string',
+    'path': 'string',
+    'secure': 'boolean',
+    'httpOnly': 'boolean',
+    'expiry': 'Int64'
     }
 
 logging.info(f"Initiating schema verfification for batch source:  [{source_name}]")

@@ -4,7 +4,7 @@
 __Privacy focused cross-platform cookie-scraping and analytics tool across browsers and operating systems.__ 
 
 ### Goal
-Utilising Data Analytics, Python-based scraping tools, Streamlit and a Jupyter interactive notebook to highlight the prevalence of cookies, and extent of intrusive behaviour, if any, across different browsers and operating systems, to raise awareness about digital privacy in real-world environments. 
+Utilising Data Analytics, Python-based scraping tools, Streamlit and a Jupyter interactive notebook to highlight the prevalence of cookies, and extent of intrusive behaviour, if any, across different browsers and operating systems, to raise awareness about digital privacy and security in real-world environments. 
 
 ### Key Highlights
 - **Cross-platform consistency**: Extracts cookies from Safari(MacOS), Brave(MacOS & Windows), Microsoft Edge(Windows), Chrome(AndroidOS) and Safari(iOS) browser simulation via Playwright. 
@@ -31,8 +31,8 @@ Utilising Data Analytics, Python-based scraping tools, Streamlit and a Jupyter i
   5) **Playwright** integration across all desktop scripts - MacOS and Windows - for consistency in results and acceleration of outcome
 
 - **IN PROGRESS ✍🏽:
-  Possible inclusion of **Linux** OS into test metrics (tentative)
-  
+  1) Possible inclusion of **Linux** OS into test metrics (tentative)
+  2) Additional or complete conversion to asynchronous data production architecture
   
 
 ### BADGES ###

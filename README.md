@@ -31,9 +31,9 @@ Utilising Data Analytics, Python-based scraping tools, Streamlit and a Jupyter i
   5) **Playwright** integration across all desktop scripts - MacOS and Windows - for consistency in results and acceleration of outcome
 
 - **IN PROGRESS ✍🏽:
-  1) Possible inclusion of **Linux** OS into test metrics (tentative)
-  2) Additional or complete conversion to asynchronous data production architecture
-  
+  1) Additional or complete conversion to asynchronous data production architecture, towards an event-driven architecture (EDA)
+  2) Possible inclusion of **Linux** OS into test metrics (tentative)  
+
 
 ### BADGES ###
 1. [![Python](https://img.shields.io/badge/Python-3.10+-blue)](https://www.python.org/)
@@ -102,7 +102,7 @@ browse-track-analyze/
 ### REQUIREMENTS AND DEPENDENCIES ###
 See requirements.txt for full list.
 **Key dependencies: CSV(SQLite), Pandas, Playwright, Streamlit** <br><br>
-NOTE:  Adherence to the minimal versions listed for each dependency in 'requirements.txt' is recommended for optimal performance.
+NOTE:  Adherence to minimal versions listed for each dependency in 'requirements.txt' is recommended for optimal performance.
 
 ### DIRECTIONS: 
 1. Install the required libraries and dependencies specified in requirements.txt (above) on your local machine. 
